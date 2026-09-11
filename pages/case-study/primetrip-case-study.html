@@ -11,14 +11,17 @@
     progress = Math.min(100, Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100));
   }, { passive: true });
 " class="scroll-smooth">
+
 <head>
-<meta name="description" content="PrimeTrip — UX case study by Asir Durai Selvan, covering bus booking journeys, responsive interfaces, mobile-first design and booking workflows."/>
-<meta name="author" content="Asir Durai Selvan"/>
-<meta property="og:title" content="PrimeTrip · UX Case Study — Asir Durai Selvan"/>
-<meta property="og:description" content="UX case study covering bus booking journeys, responsive interfaces, mobile-first design and booking workflows for PrimeTrip."/>
-<meta property="og:type" content="article"/>
-<title>PrimeTrip · UX Case Study — Asir Durai Selvan</title>
-  
+  <meta name="description"
+    content="PrimeTrip — UX case study by Asir Durai Selvan, covering bus booking journeys, responsive interfaces, mobile-first design and booking workflows." />
+  <meta name="author" content="Asir Durai Selvan" />
+  <meta property="og:title" content="PrimeTrip · UX Case Study — Asir Durai Selvan" />
+  <meta property="og:description"
+    content="UX case study covering bus booking journeys, responsive interfaces, mobile-first design and booking workflows for PrimeTrip." />
+  <meta property="og:type" content="article" />
+  <title>PrimeTrip · UX Case Study — Asir Durai Selvan</title>
+
   <!-- Local Tailwind CSS -->
   <link rel="stylesheet" href="../../assets/css/tailwind.generated.css">
 
@@ -33,7 +36,8 @@
 <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-body antialiased">
 
   <!-- Reading progress bar -->
-  <div class="progress-bar" :style="`width:${progress}%`" role="progressbar" :aria-valuenow="progress" aria-valuemin="0" aria-valuemax="100" aria-label="Reading progress"></div>
+  <div class="progress-bar" :style="`width:${progress}%`" role="progressbar" :aria-valuenow="progress" aria-valuemin="0"
+    aria-valuemax="100" aria-label="Reading progress"></div>
 
   <!-- ═══ NAV ═══ -->
   <header class="fixed top-0.5 left-0 right-0 z-50 transition-all duration-300"
@@ -43,36 +47,68 @@
         <span class="text-zinc-900 dark:text-white">asir</span><span class="text-accent">.</span>
       </a>
       <ul class="hidden md:flex items-center gap-8 text-sm font-medium" role="list">
-        <li><a href="../../index.html#services" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Expertise</a></li>
+        <li><a href="../../index.html#services"
+            class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Expertise</a>
+        </li>
         <li><a href="primetrip-case-study.html" class="nav-link text-accent font-medium">Work</a></li>
-        <li><a href="../../index.html#about" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a></li>
-        <li><a href="../../index.html#blog" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Insights</a></li>
-        <li><a href="../../index.html#contact" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a></li>
+        <li><a href="../../index.html#about"
+            class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a>
+        </li>
+        <li><a href="../../index.html#blog"
+            class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Insights</a>
+        </li>
+        <li><a href="../../index.html#contact"
+            class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a>
+        </li>
       </ul>
       <div class="flex items-center gap-3">
         <button @click="dark=!dark"
           class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
           :aria-label="dark ? 'Light mode' : 'Dark mode'">
-          <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-          <svg x-show="dark" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+          <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+          </svg>
+          <svg x-show="dark" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+          </svg>
         </button>
-        <a href="../../index.html#contact" class="hidden md:inline-flex items-center gap-2 btn-primary bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">Let's talk →</a>
-        <button @click="mobileMenu=!mobileMenu" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800" aria-label="Toggle menu">
-          <svg x-show="!mobileMenu" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-          <svg x-show="mobileMenu" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        <a href="../../index.html#contact"
+          class="hidden md:inline-flex items-center gap-2 btn-primary bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">Let's
+          talk →</a>
+        <button @click="mobileMenu=!mobileMenu"
+          class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800"
+          aria-label="Toggle menu">
+          <svg x-show="!mobileMenu" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg x-show="mobileMenu" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
         </button>
       </div>
     </nav>
-    <div x-show="mobileMenu" x-cloak
-      x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
-      x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2"
+    <div x-show="mobileMenu" x-cloak x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 -translate-y-2"
       class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
       <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-medium" role="list">
-        <li><a href="../../index.html#services" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Expertise</a></li>
-        <li><a href="primetrip-case-study.html" @click="mobileMenu=false" class="block text-accent font-medium">Work</a></li>
-        <li><a href="../../index.html#about" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">About</a></li>
-        <li><a href="../../index.html#blog" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Insights</a></li>
-        <li><a href="../../index.html#contact" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Contact</a></li>
+        <li><a href="../../index.html#services" @click="mobileMenu=false"
+            class="block text-zinc-700 dark:text-zinc-300">Expertise</a></li>
+        <li><a href="primetrip-case-study.html" @click="mobileMenu=false" class="block text-accent font-medium">Work</a>
+        </li>
+        <li><a href="../../index.html#about" @click="mobileMenu=false"
+            class="block text-zinc-700 dark:text-zinc-300">About</a></li>
+        <li><a href="../../index.html#blog" @click="mobileMenu=false"
+            class="block text-zinc-700 dark:text-zinc-300">Insights</a></li>
+        <li><a href="../../index.html#contact" @click="mobileMenu=false"
+            class="block text-zinc-700 dark:text-zinc-300">Contact</a></li>
       </ul>
     </div>
   </header>
@@ -84,23 +120,32 @@
       <header class="pt-32 pb-10 max-w-4xl mx-auto px-6">
 
         <!-- Back link -->
-        <a href="../../pages/projects/projects.html" class="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors mb-8">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
+        <a href="../../pages/projects/projects.html"
+          class="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors mb-8">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
           </svg>
           Back to projects
         </a>
 
         <!-- Tags -->
         <div class="flex flex-wrap items-center gap-3 mb-6">
-          <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Travel</span>
-          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">Booking Platform</span>
-          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">Responsive Web</span>
-          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">Mobile-First</span>
+          <span
+            class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Travel</span>
+          <span
+            class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">Booking
+            Platform</span>
+          <span
+            class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">Responsive
+            Web</span>
+          <span
+            class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">Mobile-First</span>
           <span class="text-xs text-zinc-400 ml-1">UI/UX Design</span>
         </div>
 
-        <h1 class="reveal font-display font-bold text-4xl md:text-5xl lg:text-6xl text-zinc-900 dark:text-white leading-tight mb-6">
+        <h1
+          class="reveal font-display font-bold text-4xl md:text-5xl lg:text-6xl text-zinc-900 dark:text-white leading-tight mb-6">
           PrimeTrip — Bus Booking Platform
         </h1>
 
@@ -110,11 +155,13 @@
         </p>
 
         <p class="reveal d1 text-md text-zinc-500 dark:text-zinc-400 leading-relaxed mb-10 max-w-2xl">
-          A Figma-designed bus booking experience focused on route discovery, journey selection, seat selection, passenger details and booking confirmation across responsive web and mobile interfaces.
+          A Figma-designed bus booking experience focused on route discovery, journey selection, seat selection,
+          passenger details and booking confirmation across responsive web and mobile interfaces.
         </p>
 
         <!-- Meta row -->
-        <div class="reveal d2 grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-t border-b border-zinc-100 dark:border-zinc-900">
+        <div
+          class="reveal d2 grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-t border-b border-zinc-100 dark:border-zinc-900">
           <div>
             <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Client</p>
             <p class="font-medium text-zinc-900 dark:text-white text-sm">PrimeTrip</p>
@@ -134,12 +181,13 @@
         </div>
       </header>
 
-      
+
 
       <!-- ═══ HERO IMAGE ═══ -->
       <div class="max-w-6xl mx-auto px-6 mb-16">
         <div class="reveal photo-frame w-full rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
-          <img src="../../assets/images/projects/primetrip/primetrip-cover.png" alt="Tamil Nadu Public Distribution System" loading="eager"/>
+          <img src="../../assets/images/projects/primetrip/primetrip-cover.png"
+            alt="Tamil Nadu Public Distribution System" loading="eager" />
         </div>
         <p class="img-caption">PrimeTrip — bus booking platform designed around a connected traveller journey.</p>
       </div>
@@ -170,420 +218,658 @@
       <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
 
         <h2>The brief</h2>
-          <p>PrimeTrip is a bus booking platform designed to help travellers search routes, explore available journeys, select seats and complete their booking through a responsive digital experience.</p>
-          <p>My work focused on the UI/UX design of the PrimeTrip booking experience in Figma, covering the key stages of the journey from route discovery through booking confirmation.</p>
-          <p>The experience was approached as one connected journey rather than a collection of independent screens. Each stage needed to provide the information and interaction required for the traveller to move confidently towards the next step.</p>
-        <blockquote>
-          <p>
-            "For citizen-facing government platforms, clarity is not just a visual
-            quality — it is part of the service itself."
-          </p>
-        </blockquote>
 
-        <h2>Route discovery</h2>
-        <p>The starting point needed to make route and travel information easy to understand so users could begin the booking journey without unnecessary complexity.</p>
-        
-        <h2>Journey selection</h2>
-        <p>Available journey information needed to be presented with a clear hierarchy so travellers could evaluate their options and continue with their preferred journey.</p>
-        
+        <p>
+          PrimeTrip is a bus booking platform designed to help travellers discover
+          routes, compare available journeys, select seats and complete their bookings
+          through a connected digital experience.
+        </p>
+
+        <p>
+          My role focused on the UI/UX design of the PrimeTrip booking experience in
+          Figma, covering the key stages of the traveller journey from route discovery
+          through booking completion.
+        </p>
+
+        <p>
+          The goal was to create a clear and connected experience where each step gives
+          travellers the information they need to make the next booking decision with
+          confidence.
+        </p>
+
+        <h2>The challenge</h2>
+
+        <p>
+          Bus booking involves several decisions in a single journey. Travellers need
+          to enter their route, review available services, understand journey details,
+          choose boarding and dropping points, select a seat, provide passenger
+          information and complete payment.
+        </p>
+
+        <p>
+          The interface therefore needed to keep information organised while making the
+          progression between these stages feel simple and predictable.
+        </p>
+
+        <h2>Booking journey</h2>
+
+        <p>
+          The PrimeTrip experience was structured around a connected booking journey,
+          where travellers move through a series of decisions from searching for a
+          route to completing their booking.
+        </p>
+
+        <p>
+          Each stage was designed to provide the information needed for the next
+          decision while keeping the selected journey and booking context clear.
+        </p>
+
+        <!-- Booking journey visual -->
+        <div class="max-w-5xl mx-auto px-6 my-10 not-prose">
+          <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-4">
+
+            <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 border border-zinc-100 dark:border-zinc-800">
+              <p class="text-xs text-accent uppercase tracking-widest mb-2">01</p>
+              <p class="font-display font-bold text-zinc-900 dark:text-white">Search</p>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+                Define the travel route and date.
+              </p>
+            </div>
+
+            <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 border border-zinc-100 dark:border-zinc-800">
+              <p class="text-xs text-accent uppercase tracking-widest mb-2">02</p>
+              <p class="font-display font-bold text-zinc-900 dark:text-white">Explore</p>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+                Review available journeys and options.
+              </p>
+            </div>
+
+            <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 border border-zinc-100 dark:border-zinc-800">
+              <p class="text-xs text-accent uppercase tracking-widest mb-2">03</p>
+              <p class="font-display font-bold text-zinc-900 dark:text-white">Select</p>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+                Choose boarding, dropping and seats.
+              </p>
+            </div>
+
+            <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 border border-zinc-100 dark:border-zinc-800">
+              <p class="text-xs text-accent uppercase tracking-widest mb-2">04</p>
+              <p class="font-display font-bold text-zinc-900 dark:text-white">Complete</p>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+                Enter passenger details and complete payment.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="max-w-5xl mx-auto px-6 mb-16 not-prose">
+
+          <div class="reveal grid md:grid-cols-2 gap-5">
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Choose Date.png" alt="PrimeTrip choose date screen"
+                  loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">
+                Choose Date — defining the travel date within the booking flow.
+              </p>
+            </div>
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Search Result.png" alt="PrimeTrip search result screen"
+                  loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">
+                Search Result — presenting available journeys for comparison and selection.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <h2>Search and journey selection</h2>
+
+        <p>
+          The booking experience begins by helping travellers define their route and
+          travel date, followed by a clear presentation of available journeys.
+          The interface keeps the search context visible while users review their
+          options.
+        </p>
+
+        <div class="max-w-5xl mx-auto px-6 my-10 not-prose">
+          <div class="reveal grid md:grid-cols-2 gap-5">
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Choose Date.png" alt="PrimeTrip choose date interface"
+                  loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">
+                Choosing the travel date before exploring available journeys.
+              </p>
+            </div>
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Home.png"
+                  alt="PrimeTrip home and route search interface" loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">
+                Route search — the starting point of the PrimeTrip booking journey.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
         <h2>Seat selection</h2>
-        <p>Seat selection introduces a more visual decision into the experience. Available and selected states need to remain understandable while preserving the context of the journey.</p>
-        
+
+        <p>
+          Seat selection is one of the more visual decisions in the booking journey.
+          The interface needs to make seat availability and the current selection easy
+          to understand while keeping the selected journey context visible.
+        </p>
+
+        <div class="max-w-5xl mx-auto px-6 my-10 not-prose">
+          <div class="reveal grid md:grid-cols-2 gap-5">
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Select Seat.png"
+                  alt="PrimeTrip seat selection interface" loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">
+                Seat selection — presenting the seating layout as a direct visual decision.
+              </p>
+            </div>
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Select Seat-1.png"
+                  alt="PrimeTrip alternate seat selection interface" loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">
+                Seat selection states within the booking experience.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <h2>Boarding and dropping points</h2>
+
+        <p>
+          After choosing the journey and seat, travellers need to define where they
+          will board and where they will leave the bus. These selections are kept as
+          distinct steps so the available choices remain easy to scan.
+        </p>
+
+        <div class="max-w-5xl mx-auto px-6 my-10 not-prose">
+          <div class="reveal grid md:grid-cols-2 gap-5">
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Boarding Point.png"
+                  alt="PrimeTrip boarding point selection" loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">
+                Boarding Point — selecting the preferred boarding location.
+              </p>
+            </div>
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Dropping Point.png"
+                  alt="PrimeTrip dropping point selection" loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">
+                Dropping Point — selecting the destination stop.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
         <h2>Passenger details</h2>
-        <p>Passenger information introduces a form-heavy stage. Clear grouping, readable labels and a predictable progression help keep the experience focused.</p>
-        
-        <h2>Booking completion</h2>
-        <p>The final stage needs to clearly communicate that the booking journey has reached completion and preserve the relevant booking context.</p>
-        
-        <h3>Understanding the Booking Journey</h3>
-        <p>The PrimeTrip experience was structured around the traveller's progression through a series of connected decisions.</p>
-        <p>The core booking journey moves through: route search → search results → journey selection → seat selection → passenger details → booking confirmation.</p>
-        <p>Each stage has a specific purpose, while the overall experience needs to preserve enough context for users to understand where they are, what they have selected and what they need to do next.</p>
-
-        <h3>Information complexity</h3>
-        <p>
-          A public distribution system contains different types of information,
-          services, notices and user interactions. The interface needs to present
-          these different content types in a way that remains structured and
-          easy to scan.
-        </p>
-
-        <h3>Different user needs</h3>
-        <p>
-          Not every visitor approaches the portal with the same goal. Some users
-          may be looking for general information, while others may be trying to
-          access a specific service or find the status of an existing request.
-          The experience therefore needs to support both exploration and
-          task-oriented navigation.
-        </p>
-
-        <h3>Responsive access</h3>
-        <p>
-          The public portal also needs to remain usable across different screen
-          sizes. Responsive layouts, readable content, accessible controls and
-          appropriate spacing help maintain a consistent experience across
-          devices.
-        </p>
-
-
-        <h2>Understanding the public portal</h2>
-        <p>
-          Before approaching individual interface elements, the experience needs
-          to be understood as a collection of connected citizen services rather
-          than a set of independent pages.
-        </p>
 
         <p>
-          The public portal brings together service access, information,
-          notifications and other citizen-facing resources within the wider
-          TNPDS ecosystem. This makes information architecture and navigation
-          especially important to the overall experience.
+          Once the journey selections are complete, passenger information becomes the
+          next step. The form is structured around the information required to
+          continue the booking while keeping the interaction focused and predictable.
         </p>
-      </div>
 
-      <!-- Full-width image -->
-      <div class="max-w-5xl mx-auto px-6 mb-4">
-        <div class="reveal photo-frame w-full h-56 md:h-80 rounded-2xl">
-          <img src="../../assets/images/projects/tnpds/tnpds.png" alt="Tamil Nadu Public Distribution System public portal" loading="lazy"/>
+        <div class="max-w-5xl mx-auto px-6 my-10 not-prose">
+          <div class="reveal photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+            <img src="../../assets/images/projects/primetrip/Passenger Details.png"
+              alt="PrimeTrip passenger details interface" loading="lazy" class="w-full h-auto block" />
+          </div>
+
+          <p class="img-caption">
+            Passenger Details — capturing traveller information before payment.
+          </p>
         </div>
-        <p class="img-caption">TNPDS Public Portal — the citizen-facing entry point for Public Distribution System services and information.</p>
-      </div>
 
-      <!-- ═══ DESIGN STRATEGY ═══ -->
-      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
-        <h2>Design strategy</h2>
+        <h2>Payment and booking confirmation</h2>
+
         <p>
-          The design approach focused on making the TNPDS Public Portal easier to
-          understand and navigate by giving services, information and actions a
-          clear and consistent structure.
+          After the traveller has selected the journey, seat, boarding and dropping
+          points, the final stage brings the booking information together before
+          payment.
         </p>
-      </div>
 
-      <!-- 3-column principles -->
-      <div class="max-w-5xl mx-auto px-6 mb-12">
-        <div class="reveal grid md:grid-cols-3 gap-5">
-
-          <!-- Principle 1 -->
-          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
-            <div class="w-10 h-10 bg-orange-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
-              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-            </div>
-            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">
-              Service clarity
-            </h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">
-              Make services and their purpose easier to understand so citizens can quickly identify what they need.
-            </p>
-          </div>
-
-          <!-- Principle 2 -->
-          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
-            <div class="w-10 h-10 bg-orange-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
-              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
-            </div>
-            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">
-              Clear information hierarchy
-            </h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">
-              Organise content, navigation and supporting information so users can scan the portal and understand where to go next.
-            </p>
-          </div>
-
-          <!-- Principle 3 -->
-          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
-            <div class="w-10 h-10 bg-orange-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
-              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-            </div>
-            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">
-              Responsive accessibility
-            </h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">
-              Maintain readable content, usable controls and a consistent experience across different screen sizes and access contexts.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- ═══ PROCESS ═══ -->
-      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
-        <h2>Process</h2>
-        <h3>Understand → Structure → Design → Refine</h3>
         <p>
-          I approached the TNPDS Public Portal by first understanding the services,
-          information and content that citizens need to access. I then considered
-          how these elements should be structured across the portal before
-          refining the interface, responsive behaviour and reusable UI patterns.
+          The payment experience was designed to keep the booking context visible while
+          making the final action clear and easy to understand.
         </p>
-      </div>
 
-      <!-- Process steps -->
-      <div class="max-w-4xl mx-auto px-6 mb-12">
-        <div class="reveal space-y-4">
-          <!-- Step -->
-          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
-            <div class="step-badge shrink-0 mt-0.5">1</div>
+        <div class="max-w-5xl mx-auto px-6 my-10 not-prose">
+
+          <div class="reveal grid md:grid-cols-2 gap-5">
+
             <div>
-              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Understand the services</p>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                Understand the purpose of each service, the information users need and the actions available through the public portal.
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Payment Details.png"
+                  alt="PrimeTrip payment details interface" loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">
+                Payment Details — presenting the final booking information before payment.
               </p>
             </div>
-          </div>
-          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
-            <div class="step-badge shrink-0 mt-0.5">2</div>
-            <div>
-              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Structure information</p>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                Organise services, content and navigation into a structure that makes the portal easier to explore and understand.
-              </p>
-            </div>
-          </div>
-          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
-            <div class="step-badge shrink-0 mt-0.5">3</div>
-            <div>
-              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Design the interface</p>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                Translate the information structure into clear layouts, navigation, service sections and reusable interface components.
-              </p>
-            </div>
-          </div>
-          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
-            <div class="step-badge shrink-0 mt-0.5">4</div>
-            <div>
-              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Refine the experience</p>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                Review the interface against the workflow and refine hierarchy, spacing, information visibility and interaction patterns where required.
-              </p>
-            </div>
-          </div>
-          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
-            <div class="step-badge shrink-0 mt-0.5">5</div>
-            <div>
-              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Consider responsive use</p>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                Ensure the interface remains readable, usable and consistent across different screen sizes and access contexts.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- ═══ PUBLIC PORTAL EXPERIENCE ═══ -->
-      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
-        <h2>Public portal experience</h2>
-        <p>
-          The TNPDS Public Portal brings together multiple citizen-facing services
-          and information within a single government platform. The interface needs
-          to help users move from discovering a service to understanding the
-          information available and taking the appropriate next step.
-        </p>
-        <p>
-          My focus was on creating a clear visual hierarchy across these
-          experiences, while maintaining consistency in navigation, content
-          sections, service access and responsive interface behaviour.
-        </p>
-      </div>
-      
-      <!-- Main portal showcase -->
-      <div class="max-w-5xl mx-auto px-6 mb-4">
-        <div class="reveal photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
-          <img src="../../assets/images/projects/tnpds/tnpds.png" alt="TNPDS Public Portal interface" loading="lazy"
-            class="w-full h-auto block" />
-        </div>
-      
-        <p class="img-caption">
-          TNPDS Public Portal — bringing citizen services and public information together within a single digital experience.
-        </p>
-      </div>
-      
-      <!-- Second full-width image -->
-      <div class="max-w-5xl mx-auto px-6 mb-4">
-        <div class="reveal photo-frame w-full h-56 md:h-80 rounded-2xl">
-          <img src="../../assets/images/projects/up-excise/up-small-list.png"
-            alt="High-fidelity Figma screens — new dashboard layout" loading="lazy" />
-        </div>
-        <p class="img-caption">Technical Resource Attendance Verification workflow showing structured information, detailed
-          entries and approval actions.</p>
-      </div>
-      
-      <!-- Before / After split -->
-      <div class="max-w-5xl mx-auto px-6 mb-12">
-        <div class="reveal grid md:grid-cols-2 gap-4">
-          <div>
-            <div class="photo-frame w-full h-52 rounded-2xl">
-              <img src="../../assets/images/projects/up-excise/up-excise.png" alt="UP Excise — Administration Interface"
-                loading="lazy" />
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Payment Successful.png"
+                  alt="PrimeTrip payment successful confirmation" loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">
+                Payment Successful — clearly communicating completion of the booking process.
+              </p>
             </div>
-            <p class="img-caption mt-2">Tamil Nadu Public Distribution System administration interface.</p>
-          </div>
-          <div>
-            <div class="photo-frame w-full h-52 rounded-2xl">
-              <img src="../../assets/images/projects/up-excise/up-excise-cover.png" alt="UP Excise — IESCMS Access"
-                loading="lazy" />
-            </div>
-            <p class="img-caption mt-2">IESCMS access and authentication interface.</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- UX focus cards -->
-      <div class="max-w-5xl mx-auto px-6 mb-16">
-        <div class="reveal grid md:grid-cols-3 gap-5">
-      
-          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
-            <p class="text-xs text-accent uppercase tracking-widest mb-3">
-              01
-            </p>
-      
-            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">
-              Service discovery
-            </h3>
-      
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
-              Organise citizen-facing services so users can quickly recognise
-              available options and identify the service relevant to their need.
-            </p>
-          </div>
-      
-          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
-            <p class="text-xs text-accent uppercase tracking-widest mb-3">
-              02
-            </p>
-      
-            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">
-              Information access
-            </h3>
-      
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
-              Present supporting information with clear hierarchy so users can
-              scan content and understand what is relevant to them.
-            </p>
-          </div>
-      
-          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
-            <p class="text-xs text-accent uppercase tracking-widest mb-3">
-              03
-            </p>
-      
-            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">
-              Consistent interaction
-            </h3>
-      
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
-              Maintain familiar layouts, controls and interaction patterns across
-              different areas of the public portal.
-            </p>
-          </div>
-      
-        </div>
-      </div>
 
-      <!-- ═══ KEY DESIGN DECISIONS ═══ -->
-      <div class="max-w-3xl mx-auto px-6 pb-16 prose-cs">
-      
-        <h2>Key design decisions</h2>
-      
-        <h3>Information architecture</h3>
-      
+          </div>
+
+        </div>
+
+        <h2>Booking details</h2>
+
         <p>
-          A public service portal needs to help users understand what is available
-          before asking them to interact with the system. I focused on organising
-          services, supporting information and navigation into a structure that
-          makes the portal easier to explore.
+          Once the booking is completed, travellers need a clear way to review their
+          booking information. The booking details experience keeps the relevant
+          journey and transaction information organised for later reference.
         </p>
-      
+
+        <div class="max-w-5xl mx-auto px-6 my-10 not-prose">
+
+          <div class="reveal grid md:grid-cols-2 gap-5">
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Booking Detail.png"
+                  alt="PrimeTrip booking detail interface" loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">
+                Booking Detail — providing access to the completed journey information.
+              </p>
+            </div>
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/My Bookings.png" alt="PrimeTrip my bookings interface"
+                  loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">
+                My Bookings — organising previously created bookings in one place.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <h2>Transaction and cancellation</h2>
+
         <p>
-          Clear grouping and hierarchy help users move from broad information to
-          the specific service or action they are looking for without having to
-          understand the underlying complexity of the government system.
+          Supporting booking interactions extend beyond the initial purchase. PrimeTrip
+          includes interfaces for reviewing transaction information and managing
+          cancellation-related actions.
         </p>
-      
-      
-        <h3>Service discovery & navigation</h3>
-      
+
+        <div class="max-w-5xl mx-auto px-6 my-10 not-prose">
+
+          <div class="reveal grid md:grid-cols-2 gap-5">
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Transaction Details.png"
+                  alt="PrimeTrip transaction details interface" loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">
+                Transaction Details — keeping payment and booking information accessible.
+              </p>
+            </div>
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Cancel Ticket.png"
+                  alt="PrimeTrip cancel ticket interface" loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">
+                Cancel Ticket — supporting post-booking ticket management.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <h2>Mobile experience</h2>
+
         <p>
-          Service discovery was an important part of the public-facing experience.
-          Navigation and service entry points need to be recognisable and
-          predictable so citizens can identify the appropriate path quickly.
+          Alongside the responsive booking experience, PrimeTrip includes a mobile
+          journey that introduces travellers to the platform and provides access to
+          the core booking experience through a compact interface.
         </p>
-      
+
         <p>
-          The interface therefore gives priority to clear labels, familiar
-          navigation patterns and visible service entry points while keeping
-          supporting information available when required.
+          The mobile screens focus on clear content hierarchy, familiar interaction
+          patterns and focused layouts so important actions remain easy to identify
+          within a smaller viewport.
         </p>
-      
-      
-        <h3>Content hierarchy</h3>
-      
+
+        <div class="max-w-5xl mx-auto px-6 my-10 not-prose">
+
+          <div class="reveal grid md:grid-cols-3 gap-5">
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Onboarding - 01.png"
+                  alt="PrimeTrip onboarding screen one" loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">
+                Onboarding — introducing the PrimeTrip experience.
+              </p>
+            </div>
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Onboarding - 02.png"
+                  alt="PrimeTrip onboarding screen two" loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">
+                Onboarding — continuing the mobile introduction.
+              </p>
+            </div>
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Onboarding - 03.png"
+                  alt="PrimeTrip onboarding screen three" loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">
+                Onboarding — completing the initial mobile flow.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <h3>Access and account experience</h3>
+
         <p>
-          The portal contains different types of government information, from
-          service-related content to notices and supporting resources. Establishing
-          a consistent hierarchy helps users distinguish primary information from
-          secondary content.
+          The account entry points were designed as part of the wider product
+          experience, providing a clear path for travellers to sign in or create an
+          account before continuing with their activities.
         </p>
-      
+
+        <div class="max-w-5xl mx-auto px-6 my-10 not-prose">
+
+          <div class="reveal grid md:grid-cols-2 gap-5">
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Sign In.png" alt="PrimeTrip sign in interface"
+                  loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">
+                Sign In — a focused entry point for returning travellers.
+              </p>
+            </div>
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Sign Up.png" alt="PrimeTrip sign up interface"
+                  loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">
+                Sign Up — supporting new account creation within the product experience.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <h3>Supporting mobile interactions</h3>
+
         <p>
-          Typography, spacing, grouping and visual emphasis are used to create
-          clearer relationships between sections and make information easier to
-          scan.
+          Beyond the primary booking journey, the mobile experience also includes
+          supporting areas such as profile, wallet, feedback and referral features.
+          These interfaces extend the product beyond the initial booking transaction.
         </p>
-      
-      
-        <h3>Responsive experience</h3>
-      
+
+        <div class="max-w-5xl mx-auto px-6 mb-16 not-prose">
+
+          <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-4">
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/profile.png" alt="PrimeTrip profile interface"
+                  loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">Profile</p>
+            </div>
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Wallet.png" alt="PrimeTrip wallet interface"
+                  loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">Wallet</p>
+            </div>
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/feedback.png" alt="PrimeTrip feedback interface"
+                  loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">Feedback</p>
+            </div>
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/refer and earn.png"
+                  alt="PrimeTrip refer and earn interface" loading="lazy" class="w-full h-auto block" />
+              </div>
+              <p class="img-caption mt-2">Refer &amp; Earn</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <h2>Key UX decisions</h2>
+
+        <h3>1. Keep the booking journey connected</h3>
+
         <p>
-          The public portal needs to remain usable across different screen sizes.
-          Responsive layouts, appropriate spacing and readable content help
-          preserve the same core experience when users access the portal from
-          different devices.
+          The booking experience was treated as one continuous journey rather than a
+          collection of separate screens. Route, date, journey, seat and passenger
+          selections are progressively carried forward so each step has a clear
+          relationship with the previous one.
         </p>
-      
-      
-        <h3>Consistent interaction patterns</h3>
-      
+
+        <h3>2. Make travel decisions easy to scan</h3>
+
         <p>
-          Consistency helps users build familiarity as they move between different
-          services and sections of the portal. Reusable patterns for navigation,
-          buttons, forms, information blocks and service interactions help create
-          a more predictable experience.
+          Travellers need to compare information before choosing a journey. The
+          interface therefore gives important journey details clear visual hierarchy,
+          allowing key information to be identified before moving forward.
         </p>
-      
+
+        <h3>3. Use visual interaction for seat selection</h3>
+
+        <p>
+          Seat selection is inherently spatial, so the interface uses a visual seating
+          layout rather than relying only on text-based choices. Availability and
+          selection states are presented as part of the interaction.
+        </p>
+
+        <h3>4. Separate complex decisions into focused steps</h3>
+
+        <p>
+          Boarding points, dropping points, seat selection and passenger information
+          represent different decisions within the same booking. Keeping these stages
+          focused helps prevent the experience from becoming a single overwhelming
+          form.
+        </p>
+
+        <h3>5. Maintain context through completion</h3>
+
+        <p>
+          As travellers move towards payment and confirmation, the experience continues
+          to preserve the relevant booking context. This helps connect the final
+          payment stage with the journey and selections made earlier.
+        </p>
+
+        <h3>6. Extend the experience beyond booking</h3>
+
+        <p>
+          PrimeTrip also includes areas for viewing bookings, reviewing transaction
+          information and managing post-booking actions. These supporting experiences
+          make the product more than a single-use booking flow.
+        </p>
+
         <blockquote>
           <p>
-            "Good citizen-facing UX makes complex government services feel
-            understandable without hiding the information users need."
+            Good booking UX should make the next decision clear without losing the
+            context of the journey.
           </p>
         </blockquote>
 
-        <h2>Reflections</h2>
-        <p>
-          Working on the TNPDS Public Portal reinforced the importance of designing
-          government services around clarity and accessibility. When a portal brings
-          together many services and information types, users should not need to
-          understand the complexity behind the system to find what they need.
-        </p>
-        
-        <p>
-          The project strengthened my approach to information architecture,
-          service discovery, content hierarchy and responsive interface design.
-          It also highlighted how consistency across navigation, content and
-          interaction patterns can make a large public-facing platform easier to
-          understand.
-        </p>
-        
-        <p>
-          The experience reinforced a principle I continue to apply in my work:
-          <strong>good public-service design should make essential information
-            easier to find, understand and act upon.</strong>
-        </p>
-        <hr />
-        <p><em>
-          Interested in creating a clearer digital experience for your users? 
-          <a href="../../index.html#contact">Get in touch</a> — I'd be happy to discuss your product, platform or service.
-        </em></p>
+        <h2>Final UI showcase</h2>
 
-      </div>
+        <p>
+          The final interface brings the PrimeTrip experience together across route
+          discovery, journey selection, seat selection, passenger details, payment and
+          booking management.
+        </p>
+
+        <div class="max-w-6xl mx-auto px-6 mb-16 not-prose">
+
+          <div class="reveal grid md:grid-cols-3 gap-5">
+
+            <div class="md:col-span-2">
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Home.png" alt="PrimeTrip home interface" loading="lazy"
+                  class="w-full h-auto block" />
+              </div>
+            </div>
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Search Result.png"
+                  alt="PrimeTrip search results interface" loading="lazy" class="w-full h-auto block" />
+              </div>
+            </div>
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Select Seat.png"
+                  alt="PrimeTrip seat selection interface" loading="lazy" class="w-full h-auto block" />
+              </div>
+            </div>
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Passenger Details.png"
+                  alt="PrimeTrip passenger details interface" loading="lazy" class="w-full h-auto block" />
+              </div>
+            </div>
+
+            <div>
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Payment Details.png" alt="PrimeTrip payment interface"
+                  loading="lazy" class="w-full h-auto block" />
+              </div>
+            </div>
+
+            <div class="md:col-span-2">
+              <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <img src="../../assets/images/projects/primetrip/Booking Detail.png"
+                  alt="PrimeTrip booking details interface" loading="lazy" class="w-full h-auto block" />
+              </div>
+            </div>
+
+          </div>
+
+          <p class="img-caption">
+            Selected PrimeTrip interfaces showing the connected booking experience from
+            discovery through post-booking management.
+          </p>
+
+        </div>
+
+        <div class="max-w-3xl mx-auto px-6 pb-16 prose-cs">
+
+          <h2>Outcome</h2>
+
+          <p>
+            The final PrimeTrip design brings the core bus booking journey into a
+            connected responsive experience, covering route discovery, journey
+            selection, seat selection, passenger information, payment and booking
+            management.
+          </p>
+
+          <p>
+            The work establishes a consistent interface direction across the different
+            stages of the product while keeping each interaction focused on the
+            traveller's immediate task.
+          </p>
+
+          <h2>Reflection</h2>
+
+          <p>
+            PrimeTrip strengthened my approach to designing multi-step transactional
+            experiences where every screen contributes to a larger journey.
+          </p>
+
+          <p>
+            The project reinforced the importance of information hierarchy, progressive
+            decision-making, visual interaction and maintaining context throughout a
+            booking flow.
+          </p>
+
+          <p>
+            It also gave me an opportunity to work across responsive web and mobile
+            interfaces while maintaining a consistent product experience.
+          </p>
+
+          <hr />
+
+          <p>
+            <em>
+              Interested in creating a clearer digital experience for your users?
+              <a href="../../index.html#contact">Get in touch</a> — I'd be happy to
+              discuss your product, platform or service.
+            </em>
+          </p>
+
+        </div>
     </article>
 
     <!-- ═══ MORE PROJECTS ═══ -->
@@ -591,55 +877,71 @@
       <div class="max-w-6xl mx-auto px-6">
         <div class="flex items-center justify-between mb-8">
           <h2 class="font-display font-bold text-2xl text-zinc-900 dark:text-white">More projects</h2>
-          <a href="../../pages/projects/projects.html" class="text-sm font-medium text-accent nav-link hidden md:block">View all work →</a>
+          <a href="../../pages/projects/projects.html"
+            class="text-sm font-medium text-accent nav-link hidden md:block">View all work →</a>
         </div>
         <div class="grid md:grid-cols-3 gap-6">
 
           <!-- U.P. Excise -->
-          <article class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+          <article
+            class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
             <div class="photo-frame w-full h-44">
-              <img src="../../assets/images/projects/up-excise/up-excise.png" alt="U.P. Excise Department Systems" loading="lazy"/>
+              <img src="../../assets/images/projects/up-excise/up-excise.png" alt="U.P. Excise Department Systems"
+                loading="lazy" />
             </div>
             <div class="p-5">
               <div class="flex gap-2 mb-2">
-                <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Government</span>
+                <span
+                  class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Government</span>
               </div>
               <a href="#">
-                <h3 class="font-display font-bold text-base text-zinc-900 dark:text-white group-hover:text-accent transition-colors">U.P. Excise Department Systems</h3>
+                <h3
+                  class="font-display font-bold text-base text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
+                  U.P. Excise Department Systems</h3>
                 <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug mb-2">Government Enterprise UX</p>
               </a>
               <a href="#" class="text-sm font-medium text-accent nav-link">View project →</a>
             </div>
           </article>
 
-          <!-- PrimeTrip -->
-          <article class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+          <!-- TNPDS -->
+          <article
+            class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
             <div class="photo-frame w-full h-44">
-              <img src="../../assets/images/projects/primetrip/primetrip.jpg" alt="PrimeTrip" loading="lazy"/>
+              <img src="../../assets/images/projects/tnpds/tnpds.png" alt="TNPDS" loading="lazy" />
             </div>
             <div class="p-5">
               <div class="flex gap-2 mb-2">
-                <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">Travel</span>
+                <span
+                  class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Government</span>
               </div>
-              <a href="#">
-                <h3 class="font-display font-bold text-base text-zinc-900 dark:text-white group-hover:text-accent transition-colors">PrimeTrip</h3>
-                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug mb-2">Travel Booking Platform</p>
+              <a href="../../pages/case-study/tnpds-case-study.html">
+                <h3
+                  class="font-display font-bold text-base text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
+                  TNPDS</h3>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug mb-2">Public Distribution System
+                </p>
               </a>
-              <a href="#" class="text-sm font-medium text-accent nav-link">View project →</a>
+              <a href="../../pages/case-study/tnpds-case-study.html"
+                class="text-sm font-medium text-accent nav-link">View project →</a>
             </div>
           </article>
-          
+
           <!-- Co-optex -->
-          <article class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+          <article
+            class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
             <div class="photo-frame w-full h-44">
-              <img src="../../assets/images/projects/cooptex/cooptex.png" alt="Co-optex" loading="lazy"/>
+              <img src="../../assets/images/projects/cooptex/cooptex.png" alt="Co-optex" loading="lazy" />
             </div>
             <div class="p-5">
               <div class="flex gap-2 mb-2">
-                <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">E-commerce</span>
+                <span
+                  class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">E-commerce</span>
               </div>
               <a href="#">
-                <h3 class="font-display font-bold text-base text-zinc-900 dark:text-white group-hover:text-accent transition-colors">Co-optex</h3>
+                <h3
+                  class="font-display font-bold text-base text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
+                  Co-optex</h3>
                 <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug mb-2">E-commerce Platform</p>
               </a>
               <a href="#" class="text-sm font-medium text-accent nav-link">View project →</a>
@@ -657,13 +959,17 @@
     <section class="py-24">
       <div class="max-w-6xl mx-auto px-6">
         <div class="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-10 md:p-14 text-center relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
-          <div class="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
+          <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none"
+            aria-hidden="true"></div>
+          <div class="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-2xl pointer-events-none"
+            aria-hidden="true"></div>
           <div class="relative z-10">
             <p class="text-xs font-medium text-accent tracking-widest uppercase mb-4">Let's work together</p>
             <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-4">Have a project in mind?</h2>
-            <p class="text-zinc-400 max-w-md mx-auto mb-8">I'm available for UI/UX design, enterprise applications and digital product work. Tell me what you're building and let's discuss how I can help.</p>
-            <a href="../../index.html#contact" class="inline-flex items-center gap-2 btn-primary bg-accent text-white font-medium px-8 py-3.5 rounded-full hover:bg-accent-light transition-colors">
+            <p class="text-zinc-400 max-w-md mx-auto mb-8">I'm available for UI/UX design, enterprise applications and
+              digital product work. Tell me what you're building and let's discuss how I can help.</p>
+            <a href="../../index.html#contact"
+              class="inline-flex items-center gap-2 btn-primary bg-accent text-white font-medium px-8 py-3.5 rounded-full hover:bg-accent-light transition-colors">
               Let's talk →
             </a>
           </div>
@@ -677,9 +983,12 @@
     <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
       <p class="text-sm text-zinc-400">© <span id="yr"></span> Asir Durai Selvan. All rights reserved.</p>
       <p class="text-xs text-zinc-500">Built with
-        <a href="https://www.w3schools.com/html/" rel="noopener noreferrer" target="_blank" class="hover:text-accent transition-colors">HTML,</a>
-        <a href="https://www.w3schools.com/Css/" rel="noopener noreferrer" target="_blank" class="hover:text-accent transition-colors">CSS</a>&amp;
-        <a href="https://www.w3schools.com/js/" rel="noopener noreferrer" target="_blank" class="hover:text-accent transition-colors">JavaScript</a>
+        <a href="https://www.w3schools.com/html/" rel="noopener noreferrer" target="_blank"
+          class="hover:text-accent transition-colors">HTML,</a>
+        <a href="https://www.w3schools.com/Css/" rel="noopener noreferrer" target="_blank"
+          class="hover:text-accent transition-colors">CSS</a>&amp;
+        <a href="https://www.w3schools.com/js/" rel="noopener noreferrer" target="_blank"
+          class="hover:text-accent transition-colors">JavaScript</a>
       </p>
     </div>
   </footer>
@@ -689,4 +998,5 @@
   <script src="../../assets/js/case-study.js"></script>
 
 </body>
+
 </html>
