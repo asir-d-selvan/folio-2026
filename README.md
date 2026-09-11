@@ -1,25 +1,86 @@
-# Folio— Freelance Portfolio Template (HTML · Tailwind · Alpine.js)
-#### Preview
+# Asir Durai Selvan — Portfolio
 
- - [Demo](https://themewagon.github.io/folio-html/)
+Personal portfolio website of **Asir Durai Selvan**, Senior UI/UX Designer and UI Developer.
 
-#### Download
- - [Download from ThemeWagon](https://themewagon.com/themes/folio-html/)
+The portfolio showcases selected work across enterprise UX, government platforms, responsive web products, design systems, HRMS, travel booking, e-commerce and operational applications.
 
-## Getting Started
+## About
 
-1. Clone Repository
-```
-git clone https://github.com/themewagon/folio-html.git
-```
+**Asir Durai Selvan**  
+Senior UI/UX Designer | UI Developer
 
-## Author 
-```
-Design and code is completely written by Laurent Begey and development team. 
-```
+7.5+ years of experience in UI/UX design, responsive interface design, design systems and UI development.
 
-## License
+### Core Focus
 
- - Design and Code is Copyright &copy; <a href="https://lbegey78.gumroad.com/" target="_blank">Laurent Begey</a>
- - Licensed cover under [MIT]
- - Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+- UI/UX Design
+- Enterprise UX
+- Responsive Web Design
+- Mobile-First Design
+- Design Systems
+- UI Development
+- HTML5
+- CSS3
+- Bootstrap
+- JavaScript
+- Angular UI Integration
+- Figma
+
+## Selected Projects
+
+- **PrimeTrip** — Bus Booking Platform
+- **Tamil Nadu Public Distribution System (TNPDS)** — Public Portal
+- **U.P. Excise Department Systems**
+- **Co-Optex** — E-commerce Platform
+- **OASYS Design System & Component Library**
+- **OASYS Portal** — HRMS
+- **UPPDS** — Government E-Procurement Platform
+- **OASYS Point of Sale (POS)**
+
+## Portfolio
+
+**Website:**  
+Portfolio website — deployment in progress
+
+**LinkedIn:**  
+https://www.linkedin.com/in/asirduraiselvan/
+
+**Behance:**  
+https://www.behance.net/asir-durai-selvan
+
+**GitHub:**  
+https://github.com/asir-d-selvan
+
+**Email:**  
+asir.d.selvan@gmail.com
+
+## Technology
+
+This portfolio is built using:
+
+- HTML5
+- CSS3
+- Tailwind CSS
+- JavaScript
+- Alpine.js
+- Responsive design principles
+
+## Project Structure
+
+```text
+folio-v1/
+├── assets/
+│   ├── css/
+│   ├── documents/
+│   ├── fonts/
+│   ├── images/
+│   └── js/
+├── pages/
+│   ├── case-study/
+│   └── projects/
+├── blog.html
+├── blog-article.html
+├── case-study.html
+├── index.html
+├── package.json
+└── tailwind.config.js
