@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{
+  dark: localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches),
+  scrolled: false,
+  mobileMenu: false,
+  progress: 0
+}" :class="{'dark':dark}" x-init="
+  $watch('dark', v => localStorage.setItem('theme', v ? 'dark' : 'light'));
+  window.addEventListener('scroll', () => {
+    scrolled = window.scrollY > 20;
+    progress = Math.min(100, Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100));
+  }, { passive: true });
+" class="scroll-smooth">
+<head>
+<meta name="description" content="U.P. Excise Department Systems — UX case study by Asir Durai Selvan, covering enterprise workflows, data-heavy interfaces, complex forms and scalable UI patterns."/>
+<meta name="author" content="Asir Durai Selvan"/>
+<meta property="og:title" content="U.P. Excise Department Systems · UX Case Study — Asir Durai Selvan"/>
+<meta property="og:description" content="UX case study covering enterprise workflows, data-heavy interfaces, complex forms and scalable UI patterns for U.P. Excise Department Systems."/>
+<meta property="og:type" content="article"/>
+<title>U.P. Excise Department Systems · UX Case Study — Asir Durai Selvan</title>
+  
+  <!-- Local Tailwind CSS -->
+  <link rel="stylesheet" href="../../assets/css/tailwind.generated.css">
+
+  <!-- Local case study styles -->
+  <link rel="stylesheet" href="../../assets/css/case-study.css">
+
+  <!-- Local Alpine.js -->
+  <script defer src="../../assets/js/alpine.js"></script>
+
+</head>
+
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-body antialiased">
+
+  <!-- Reading progress bar -->
+  <div class="progress-bar" :style="`width:${progress}%`" role="progressbar" :aria-valuenow="progress" aria-valuemin="0" aria-valuemax="100" aria-label="Reading progress"></div>
+
+  <!-- ═══ NAV ═══ -->
+  <header class="fixed top-0.5 left-0 right-0 z-50 transition-all duration-300"
+    :class="scrolled ? 'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5' : 'bg-transparent'">
+    <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
+      <a href="../../index.html" class="font-display font-bold text-xl tracking-tight z-10">
+        <span class="text-zinc-900 dark:text-white">asir</span><span class="text-accent">.</span>
+      </a>
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium" role="list">
+        <li><a href="../../index.html#services" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Expertise</a></li>
+        <li><a href="up-excise-case-study.html" class="nav-link text-accent font-medium">Work</a></li>
+        <li><a href="../../index.html#about" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a></li>
+        <li><a href="../../index.html#blog" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Insights</a></li>
+        <li><a href="../../index.html#contact" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a></li>
+      </ul>
+      <div class="flex items-center gap-3">
+        <button @click="dark=!dark"
+          class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+          :aria-label="dark ? 'Light mode' : 'Dark mode'">
+          <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg x-show="dark" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+        </button>
+        <a href="../../index.html#contact" class="hidden md:inline-flex items-center gap-2 btn-primary bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">Let's talk →</a>
+        <button @click="mobileMenu=!mobileMenu" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800" aria-label="Toggle menu">
+          <svg x-show="!mobileMenu" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg x-show="mobileMenu" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </nav>
+    <div x-show="mobileMenu" x-cloak
+      x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2"
+      class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
+      <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-medium" role="list">
+        <li><a href="../../index.html#services" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Expertise</a></li>
+        <li><a href="up-excise-case-study.html" @click="mobileMenu=false" class="block text-accent font-medium">Work</a></li>
+        <li><a href="../../index.html#about" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">About</a></li>
+        <li><a href="../../index.html#blog" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Insights</a></li>
+        <li><a href="../../index.html#contact" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══ CASE STUDY HEADER ═══ -->
+    <article>
+      <header class="pt-32 pb-10 max-w-4xl mx-auto px-6">
+
+        <!-- Back link -->
+        <a href="../../pages/projects/projects.html" class="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors mb-8">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+          Back to projects
+        </a>
+
+        <!-- Tags + date -->
+        <div class="flex flex-wrap items-center gap-3 mb-6">
+          <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Government</span>
+          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">Enterprise UX</span>
+          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">IESCMS</span>
+          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">Web Application</span>
+          <span class="text-xs text-zinc-400 ml-1">UI/UX Design</span>
+        </div>
+
+        <h1 class="reveal font-display font-bold text-4xl md:text-5xl lg:text-6xl text-zinc-900 dark:text-white leading-tight mb-6">
+          U.P. Excise Department Systems
+        </h1>
+
+        <!-- Short positioning statement -->
+        <p class="reveal d1 text-xl md:text-2xl text-zinc-400 dark:text-zinc-300 leading-relaxed mb-4 max-w-2xl">
+          Designing clearer enterprise workflows for a complex government ecosystem.
+        </p>
+
+        <p class="reveal d1 text-md text-zinc-500 dark:text-zinc-400 leading-relaxed mb-10 max-w-2xl">
+          A complex government platform supporting excise administration, supply-chain operations, licensing, tracking, verification and reporting across multiple stakeholder workflows.
+        </p>
+
+        <!-- Meta row -->
+        <div class="reveal d2 grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-t border-b border-zinc-100 dark:border-zinc-900">
+          <div>
+            <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Client</p>
+            <p class="font-medium text-zinc-900 dark:text-white text-sm">U.P. Excise Department</p>
+          </div>
+          <div>
+            <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">System</p>
+            <p class="font-medium text-zinc-900 dark:text-white text-sm">IESCMS</p>
+          </div>
+          <div>
+            <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Role</p>
+            <p class="font-medium text-zinc-900 dark:text-white text-sm">UI/UX Design</p>
+          </div>
+          <div>
+            <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Focus</p>
+            <p class="font-medium text-zinc-900 dark:text-white text-sm">Workflows · Forms · Data</p>
+          </div>
+        </div>
+      </header>
+
+      <!-- ═══ HERO IMAGE ═══ -->
+      <div class="max-w-6xl mx-auto px-6 mb-16">
+        <div class="reveal photo-frame w-full rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+          <img src="../../assets/images/projects/up-excise/up-excise-cover.png" alt="U.P. Excise Department Systems" loading="eager"/>
+        </div>
+        <p class="img-caption">Selected enterprise workflow interface from the U.P. Excise Department system.</p>
+      </div>
+
+      <!-- ═══ PROJECT CHARACTERISTICS ═══ -->
+      <div class="max-w-4xl mx-auto px-6 mb-16">
+        <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
+            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">Multi-module</p>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">Government enterprise ecosystem</p>
+          </div>
+          <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
+            <p class="font-display font-bold text-3xl text-accent">Data-heavy</p>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">Operational records and tables</p>
+          </div>
+          <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
+            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">Workflow-led</p>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">Entry, review and approval</p>
+          </div>
+          <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
+            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">Scalable</p>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">Reusable UI patterns</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ ARTICLE BODY ═══ -->
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+
+        <h2>The brief</h2>
+        <p>The U.P. Excise Department systems form part of a larger digital ecosystem for managing excise-related operations across Uttar Pradesh. The IESCMS platform connects processes across different entities in the excise supply chain, including manufacturing, warehousing, wholesale and retail operations.</p>
+        <p>My work focused on designing and refining interfaces for selected enterprise workflows, with particular attention to information hierarchy, navigation, forms, data presentation, status visibility and consistent interaction patterns.</p>
+        <p>The challenge was not simply to make individual screens look cleaner. The interfaces needed to support structured operational tasks where users work with large amounts of information, move between modules, review records and complete workflow-driven actions.</p>
+
+        <blockquote>
+          <p>"Enterprise UX is less about isolated screens and more about making information, actions and workflows understandable within the larger system."</p>
+        </blockquote>
+
+        <h2>The challenge</h2>
+        <p>Designing for a government enterprise platform means working with complex information, multiple operational contexts and workflows that often require users to enter, review, verify and act on structured data.</p>
+        <h3>Complex information</h3>
+        <p>Operational screens can contain large datasets, multiple filters, detailed records and several possible actions. The interface needs to establish a clear hierarchy so users can quickly understand what they are looking at and what they can do next.</p>
+        <ul>
+          <li>Large operational datasets need strong visual hierarchy.</li>
+          <li>Users need quick access to search and filtering controls.</li>
+          <li>Status information needs to remain visible while reviewing records.</li>
+          <li>Row-level actions need to be distinguishable from supporting information.</li>
+          <li>Different modules should follow familiar interaction patterns.</li>
+        </ul>
+
+        <h3>Complex workflows</h3>
+        <p>Administrative workflows often extend beyond a single action. Users may need to enter information, review related details, verify records and then save, submit or approve the work. The interface therefore needs to preserve context throughout the process.</p>
+
+      </div>
+
+      <!-- Full-width image -->
+      <div class="max-w-5xl mx-auto px-6 mb-4">
+        <div class="reveal photo-frame w-full h-56 md:h-80 rounded-2xl">
+          <img src="../../assets/images/projects/up-excise/up-excise-cms.png" alt="Public-facing U.P. Excise portal within the wider digital ecosystem" loading="lazy"/>
+        </div>
+        <p class="img-caption">Public-facing U.P. Excise portal within the wider digital ecosystem.</p>
+      </div>
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+
+        <h2>Design strategy</h2>
+        <p>The interface approach focused on making complex operational workflows easier to understand through structure, hierarchy and predictable interaction patterns.</p>
+
+      </div>
+
+      <!-- 3-column principles -->
+      <div class="max-w-5xl mx-auto px-6 mb-12">
+        <div class="reveal grid md:grid-cols-3 gap-5">
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
+            <div class="w-10 h-10 bg-orange-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">Progressive disclosure</h3>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">Present the information needed for the current task while keeping supporting details accessible without overwhelming the user.</p>
+          </div>
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
+            <div class="w-10 h-10 bg-orange-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">Structured navigation</h3>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">Organise modules, page hierarchy and related actions so users can understand their location and move through the workflow with confidence.</p>
+          </div>
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
+            <div class="w-10 h-10 bg-orange-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">Clear task focus</h3>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">Keep the primary task, relevant information and next action visually clear within each workflow.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+
+        <h2>Process</h2>
+        <h3>Understand → Structure → Design → Refine</h3>
+        <p>I approached the interface work by first understanding the operational context and the information involved in each workflow. I then structured the navigation, content hierarchy and interaction patterns before refining the visual interface and reusable UI elements.</p>
+
+      </div>
+
+      <!-- Process steps -->
+      <div class="max-w-4xl mx-auto px-6 mb-12">
+        <div class="reveal space-y-4">
+          <!-- Step -->
+          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge shrink-0 mt-0.5">1</div>
+            <div>
+              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Understand the workflow</p>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Understand the purpose of the screen, the user's context, the information required and the actions that need to be completed.</p>
+            </div>
+          </div>
+          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge shrink-0 mt-0.5">2</div>
+            <div>
+              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Structure information & navigation</p>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Organise page hierarchy, navigation, filters, content groups and actions around the user's operational task.</p>
+            </div>
+          </div>
+          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge shrink-0 mt-0.5">3</div>
+            <div>
+              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Design the interface</p>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Translate the workflow into clear interfaces using consistent layouts, forms, tables, status patterns and reusable UI components.</p>
+            </div>
+          </div>
+          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge shrink-0 mt-0.5">4</div>
+            <div>
+              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Validate through iteration</p>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Review the interface against the workflow and refine hierarchy, spacing, information visibility and interaction patterns where required.</p>
+            </div>
+          </div>
+          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge shrink-0 mt-0.5">5</div>
+            <div>
+              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Refine & maintain consistency</p>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Polish the interface while maintaining familiar patterns across related modules and workflows within the wider system.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second full-width image -->
+      <div class="max-w-5xl mx-auto px-6 mb-4">
+        <div class="reveal photo-frame w-full h-56 md:h-80 rounded-2xl">
+          <img src="../../assets/images/projects/up-excise/up-small-list.png" alt="High-fidelity Figma screens — new dashboard layout" loading="lazy"/>
+        </div>
+        <p class="img-caption">Technical Resource Attendance Verification workflow showing structured information, detailed entries and approval actions.</p>
+      </div>
+
+      <!-- Before / After split -->
+      <div class="max-w-5xl mx-auto px-6 mb-12">
+        <div class="reveal grid md:grid-cols-2 gap-4">
+          <div>
+            <div class="photo-frame w-full h-52 rounded-2xl">
+              <img src="../../assets/images/projects/up-excise/up-excise.png" alt="UP Excise — Administration Interface" loading="lazy"/>
+            </div>
+            <p class="img-caption mt-2">U.P. Excise Department administration interface.</p>
+          </div>
+          <div>
+            <div class="photo-frame w-full h-52 rounded-2xl">
+              <img src="../../assets/images/projects/up-excise/up-excise-cover.png" alt="UP Excise — IESCMS Access" loading="lazy"/>
+            </div>
+            <p class="img-caption mt-2">IESCMS access and authentication interface.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-3xl mx-auto px-6 pb-16 prose-cs">
+
+        <h2>Key design decisions</h2>
+        <h3>Information hierarchy</h3>
+        <p>The U.P. Excise interfaces contain multiple layers of information, from page context and navigation to summary information, filters, detailed records and actions. Establishing a clear hierarchy helps users understand the screen before moving into the operational details.</p>
+        <p>Page titles and breadcrumbs establish context first, followed by summary information and filtering controls. Detailed records are then presented in structured tables so users can move from an overview into the information they need.</p>
+
+        <h3>Designing for data density</h3>
+        <p>Operational workflows often depend on reviewing many records at once. Instead of reducing the amount of necessary information, the interface uses structured columns, consistent alignment, status indicators and row-level actions to make dense datasets easier to scan.</p>
+        <p>This approach is particularly important for workflows such as Transport Pass and vehicle arrival confirmation, where users need to compare records, identify statuses and access individual actions without leaving the main workflow.</p>
+
+        <h3>Structuring complex forms</h3>
+        <p>Administrative forms can contain multiple related pieces of information that need to be entered and reviewed in sequence. Grouping related fields into clearly defined sections helps users understand the purpose of each part of the workflow.</p>
+        <p>For approval-oriented workflows, actions such as Save as draft, Submit & Approve and Back are kept distinct so the user can clearly understand the next step before committing the information.</p>
+       
+        <h3>Designing for different user contexts</h3>
+        <p>The wider U.P. Excise ecosystem serves different types of users. Internal workflows require detailed operational information, while public-facing services need clear navigation and easier access to information and services.</p>
+        <p>Recognising these different contexts helps shape the level of information, navigation and interaction required by each experience while maintaining a consistent connection to the wider digital ecosystem.</p>
+
+        <h2>Consistency across modules</h2>
+        <p>A large enterprise system becomes easier to navigate when related modules follow familiar interaction patterns. Consistent navigation, breadcrumbs, filters, tables, form sections, status labels and actions help users transfer their understanding from one workflow to another.</p>
+        <p>The aim was to create interfaces that feel like parts of the same ecosystem rather than isolated screens, while still allowing each workflow to present the information specific to its operational context.</p>
+        <p>The design decisions were focused on improving clarity, consistency and task structure across the selected workflows rather than measuring the work through fabricated performance metrics.</p>
+
+        <blockquote>
+          <p>"Good enterprise UX does not remove necessary complexity. It gives that complexity a clear structure so users can understand information, make decisions and complete their tasks with confidence."</p>
+        </blockquote>
+
+        <h2>Reflections</h2>
+        <p>Working on a complex government platform reinforced that enterprise UX is less about designing isolated screens and more about understanding how information, actions and workflows connect across a larger system.</p>
+        <p>The project strengthened my approach to information architecture, data-heavy interfaces, complex forms, workflow design and reusable UI patterns. It also highlighted the importance of maintaining consistency when users move between different modules within the same ecosystem.</p>
+        <p>The experience reinforced a simple principle I carry into enterprise design: when a workflow is complex, the interface should provide structure and clarity rather than add more complexity.</p>
+
+        <hr/>
+        <p><em>Interested in simplifying a complex enterprise experience? <a href="../../index.html#contact">Get in touch</a> — I'd be happy to discuss your product, platform or workflow.</em></p>
+
+      </div>
+    </article>
+
+    <!-- ═══ MORE PROJECTS ═══ -->
+    <section class="bg-zinc-50 dark:bg-zinc-900/50 py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="font-display font-bold text-2xl text-zinc-900 dark:text-white">More projects</h2>
+          <a href="../../pages/projects/projects.html" class="text-sm font-medium text-accent nav-link hidden md:block">View all work →</a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+
+          <article class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+            <div class="photo-frame w-full h-44">
+              <img src="../../assets/images/projects/tnpds/tnpds.png" alt="TNPDS" loading="lazy"/>
+            </div>
+            <div class="p-5">
+              <div class="flex gap-2 mb-2">
+                <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Government</span>
+              </div>
+              <a href="../../pages/case-study/tnpds-case-study.html">
+                <h3 class="font-display font-bold text-base text-zinc-900 dark:text-white group-hover:text-accent transition-colors">TNPDS</h3>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug mb-2">Public Distribution System</p>
+              </a>
+              <a href="../../pages/case-study/tnpds-case-study.html" class="text-sm font-medium text-accent nav-link">View project →</a>
+            </div>
+          </article>
+
+          <article class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+            <div class="photo-frame w-full h-44">
+              <img src="../../assets/images/projects/primetrip/primetrip.jpg" alt="PrimeTrip" loading="lazy"/>
+            </div>
+            <div class="p-5">
+              <div class="flex gap-2 mb-2">
+                <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">Travel</span>
+              </div>
+              <a href="#">
+                <h3 class="font-display font-bold text-base text-zinc-900 dark:text-white group-hover:text-accent transition-colors">PrimeTrip</h3>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug mb-2">Travel Booking Platform</p>
+              </a>
+              <a href="#" class="text-sm font-medium text-accent nav-link">View project →</a>
+            </div>
+          </article>
+          
+          <article class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+            <div class="photo-frame w-full h-44">
+              <img src="../../assets/images/projects/cooptex/cooptex.png" alt="Co-optex" loading="lazy"/>
+            </div>
+            <div class="p-5">
+              <div class="flex gap-2 mb-2">
+                <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">E-commerce</span>
+              </div>
+              <a href="#">
+                <h3 class="font-display font-bold text-base text-zinc-900 dark:text-white group-hover:text-accent transition-colors">Co-optex</h3>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug mb-2">E-commerce Platform</p>
+              </a>
+              <a href="#" class="text-sm font-medium text-accent nav-link">View project →</a>
+            </div>
+          </article>
+
+        </div>
+        <div class="text-center mt-8 md:hidden">
+          <a href="../../pages/projects/projects.html" class="text-sm font-medium text-accent">View all work →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CTA ═══ -->
+    <section class="py-24">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-10 md:p-14 text-center relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+          <div class="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
+          <div class="relative z-10">
+            <p class="text-xs font-medium text-accent tracking-widest uppercase mb-4">Let's work together</p>
+            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-4">Have a project in mind?</h2>
+            <p class="text-zinc-400 max-w-md mx-auto mb-8">I'm available for UI/UX design, enterprise applications and digital product work. Tell me what you're building and let's discuss how I can help.</p>
+            <a href="../../index.html#contact" class="inline-flex items-center gap-2 btn-primary bg-accent text-white font-medium px-8 py-3.5 rounded-full hover:bg-accent-light transition-colors">
+              Let's talk →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-zinc-100 dark:border-zinc-900">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-zinc-400">© <span id="yr"></span> Asir Durai Selvan. All rights reserved.</p>
+      <p class="text-xs text-zinc-500">Built with
+        <a href="https://www.w3schools.com/html/" rel="noopener noreferrer" target="_blank" class="hover:text-accent transition-colors">HTML,</a>
+        <a href="https://www.w3schools.com/Css/" rel="noopener noreferrer" target="_blank" class="hover:text-accent transition-colors">CSS</a>&amp;
+        <a href="https://www.w3schools.com/js/" rel="noopener noreferrer" target="_blank" class="hover:text-accent transition-colors">JavaScript</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Local portfolio JavaScript -->
+  <script src="../../assets/js/script.js"></script>
+  <script src="../../assets/js/case-study.js"></script>
+
+</body>
+</html>

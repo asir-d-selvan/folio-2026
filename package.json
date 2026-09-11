@@ -1,0 +1,13 @@
+{
+  "name": "asir-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Asir Durai Selvan — Senior UI/UX Designer Portfolio",
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/tailwind.generated.css --minify",
+    "watch:css": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/tailwind.generated.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}
