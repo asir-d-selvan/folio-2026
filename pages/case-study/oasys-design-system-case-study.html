@@ -1,0 +1,1519 @@
+<!doctype html>
+<html lang="en" x-data="{
+  dark: localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches),
+  scrolled: false,
+  mobileMenu: false,
+  progress: 0
+}" :class="{'dark':dark}" x-init="
+  $watch('dark', v => localStorage.setItem('theme', v ? 'dark' : 'light'));
+  window.addEventListener('scroll', () => {
+    scrolled = window.scrollY > 20;
+    const max = document.body.scrollHeight - window.innerHeight;
+    progress = max > 0 ? Math.min(100, Math.round((window.scrollY / max) * 100)) : 0;
+  }, { passive: true });
+" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description"
+    content="OASYS Design System & Component Library · UI/UX case study by Asir Durai Selvan covering design foundations, reusable components, patterns and responsive interface design." />
+
+  <meta name="author" content="Asir Durai Selvan" />
+
+  <meta property="og:title" content="OASYS Design System & Component Library | Asir Durai Selvan" />
+
+  <meta property="og:description" content="UI/UX case study covering the OASYS Design System & Component Library." />
+
+  <meta property="og:type" content="article" />
+
+  <title>OASYS Design System & Component Library | Asir Durai Selvan</title>
+
+  <!-- Local Tailwind CSS -->
+  <link rel="stylesheet" href="../../assets/css/tailwind.generated.css" />
+
+  <!-- Local case study styles -->
+  <link rel="stylesheet" href="../../assets/css/case-study.css" />
+
+  <!-- Local Alpine.js -->
+  <script defer src="../../assets/js/alpine.js"></script>
+</head>
+
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-body antialiased">
+  <!-- Reading progress bar -->
+  <div class="progress-bar" :style="`width:${progress}%`" role="progressbar" :aria-valuenow="progress" aria-valuemin="0"
+    aria-valuemax="100" aria-label="Reading progress"></div>
+
+  <!-- ═══ NAV ═══ -->
+
+  <header class="fixed top-0.5 left-0 right-0 z-50 transition-all duration-300" :class="scrolled
+      ? 'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5'
+      : 'bg-transparent'">
+    <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
+      <a href="../../index.html" class="font-display font-bold text-xl tracking-tight z-10">
+        <span class="text-zinc-900 dark:text-white">asir</span><span class="text-accent">.</span>
+      </a>
+
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium" role="list">
+        <li>
+          <a href="../../index.html#services"
+            class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
+            Expertise
+          </a>
+        </li>
+
+        <li>
+          <a href="oasys-design-system-case-study.html" class="nav-link text-accent font-medium">
+            Work
+          </a>
+        </li>
+
+        <li>
+          <a href="../../index.html#about"
+            class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="../../index.html#blog"
+            class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
+            Insights
+          </a>
+        </li>
+
+        <li>
+          <a href="../../index.html#contact"
+            class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
+            Contact
+          </a>
+        </li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <!-- Theme -->
+
+        <button @click="dark=!dark"
+          class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+          :aria-label="dark ? 'Light mode' : 'Dark mode'">
+          <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+          </svg>
+
+          <svg x-show="dark" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+          </svg>
+        </button>
+
+        <!-- CTA -->
+
+        <a href="../../index.html#contact"
+          class="hidden md:inline-flex items-center gap-2 btn-primary bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">
+          Let's talk →
+        </a>
+
+        <!-- Mobile menu -->
+
+        <button @click="mobileMenu=!mobileMenu"
+          class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800"
+          aria-label="Toggle menu">
+          <svg x-show="!mobileMenu" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+
+          <svg x-show="mobileMenu" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile navigation -->
+
+    <div x-show="mobileMenu" x-cloak x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 -translate-y-2"
+      class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
+      <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-medium" role="list">
+        <li>
+          <a href="../../index.html#services" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">
+            Expertise
+          </a>
+        </li>
+
+        <li>
+          <a href="oasys-design-system-case-study.html" @click="mobileMenu=false" class="block text-accent font-medium">
+            Work
+          </a>
+        </li>
+
+        <li>
+          <a href="../../index.html#about" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="../../index.html#blog" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">
+            Insights
+          </a>
+        </li>
+
+        <li>
+          <a href="../../index.html#contact" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <!-- ═══════════════════════════════════════
+           CASE STUDY HEADER
+      ═══════════════════════════════════════ -->
+
+      <header class="pt-32 pb-10 max-w-4xl mx-auto px-6">
+        <a href="../../pages/projects/projects.html"
+          class="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors mb-8">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+          </svg>
+
+          Back to projects
+        </a>
+
+        <!-- Tags -->
+
+        <div class="flex flex-wrap items-center gap-3 mb-6">
+          <span
+            class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">
+            Design System
+          </span>
+
+          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">
+            Component Library
+          </span>
+
+          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">
+            Enterprise UX
+          </span>
+
+          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">
+            UI/UX Design
+          </span>
+        </div>
+
+        <!-- Title -->
+
+        <h1
+          class="reveal font-display font-bold text-4xl md:text-5xl lg:text-6xl text-zinc-900 dark:text-white leading-tight mb-6">
+          OASYS Design System &amp; Component Library
+        </h1>
+
+        <p class="reveal d1 text-xl md:text-2xl text-zinc-400 dark:text-zinc-300 leading-relaxed mb-4 max-w-2xl">
+          Designing a reusable foundation for consistent enterprise interfaces.
+        </p>
+
+        <p class="reveal d1 text-md text-zinc-500 dark:text-zinc-400 leading-relaxed mb-10 max-w-2xl">
+          A design system and component library covering visual foundations, reusable interface
+          components, interaction patterns and responsive behaviour for product interfaces.
+        </p>
+
+        <!-- Meta -->
+
+        <div
+          class="reveal d2 grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-t border-b border-zinc-100 dark:border-zinc-900">
+          <div>
+            <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Client</p>
+
+            <p class="font-medium text-zinc-900 dark:text-white text-sm">OASYS</p>
+          </div>
+
+          <div>
+            <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Platform</p>
+
+            <p class="font-medium text-zinc-900 dark:text-white text-sm">Enterprise UI</p>
+          </div>
+
+          <div>
+            <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Role</p>
+
+            <p class="font-medium text-zinc-900 dark:text-white text-sm">UI/UX Design</p>
+          </div>
+
+          <div>
+            <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Focus</p>
+
+            <p class="font-medium text-zinc-900 dark:text-white text-sm">
+              Foundations · Components · Patterns
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <!-- ═══════════════════════════════════════
+           HERO IMAGE
+      ═══════════════════════════════════════ -->
+
+      <div class="max-w-6xl mx-auto px-6 mb-16">
+        <div class="reveal photo-frame w-full rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+          <img src="../../assets/images/projects/oasys-design-system/Overview/Getting Started.png"
+            alt="OASYS Design System getting started overview" loading="eager" />
+        </div>
+
+        <p class="img-caption">
+          OASYS Design System — overview and starting reference for the component library.
+        </p>
+      </div>
+
+      <!-- ═══════════════════════════════════════
+           PROJECT CHARACTERISTICS
+      ═══════════════════════════════════════ -->
+
+      <div class="max-w-4xl mx-auto px-6 mb-16">
+        <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
+            <p class="font-display font-bold text-2xl text-zinc-900 dark:text-white">Foundations</p>
+
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">
+              Colour, typography and theme references
+            </p>
+          </div>
+
+          <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
+            <p class="font-display font-bold text-2xl text-accent">Components</p>
+
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">
+              Reusable interface building blocks
+            </p>
+          </div>
+
+          <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
+            <p class="font-display font-bold text-2xl text-zinc-900 dark:text-white">Patterns</p>
+
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">
+              Repeatable interaction structures
+            </p>
+          </div>
+
+          <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
+            <p class="font-display font-bold text-2xl text-zinc-900 dark:text-white">Responsive</p>
+
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">
+              Interface behaviour across contexts
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════
+           THE SYSTEM
+      ═══════════════════════════════════════ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h2>The system</h2>
+
+        <p>
+          OASYS Design System &amp; Component Library is a reusable foundation for product interface
+          design. The work brings visual foundations, interface components and repeatable interaction
+          patterns into a structured design resource.
+        </p>
+
+        <p>
+          Rather than treating each screen as an isolated design problem, the system establishes reusable
+          decisions that can be applied across different product interfaces.
+        </p>
+
+        <h3>Foundations</h3>
+
+        <p>
+          Colour, typography and theme references establish the visual language used by the wider library.
+        </p>
+
+        <h3>Components</h3>
+
+        <p>
+          Buttons, inputs, navigation, data display, feedback and surfaces form the reusable component
+          layer.
+        </p>
+
+        <h3>Patterns</h3>
+
+        <p>Components are combined into larger interaction structures for recurring tasks and workflows.</p>
+      </div>
+
+      <!-- ═══════════════════════════════════════
+           THE CHALLENGE
+      ═══════════════════════════════════════ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h2>The challenge</h2>
+
+        <p>
+          Enterprise products often contain recurring interface needs: forms, actions, navigation, tables,
+          feedback, status information and responsive behaviour.
+        </p>
+
+        <p>
+          When these decisions are handled independently, maintaining a consistent experience becomes
+          harder as interfaces grow. The design system approach was to turn recurring interface decisions
+          into reusable references.
+        </p>
+
+        <h3>Designing for reuse</h3>
+
+        <p>
+          Components need enough structure to remain consistent while still being practical across
+          different interface situations.
+        </p>
+
+        <h3>Designing for context</h3>
+
+        <p>A component cannot be considered independently from the workflow and content surrounding it.</p>
+
+        <h3>Designing for responsive behaviour</h3>
+
+        <p>
+          Components and patterns also need to retain their purpose when the available interface space
+          changes.
+        </p>
+      </div>
+
+      <!-- ═══════════════════════════════════════
+           DESIGN STRATEGY
+      ═══════════════════════════════════════ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h2>Design strategy</h2>
+
+        <p>
+          The system was approached as a progression from foundational visual decisions to reusable
+          components, then to patterns and finally to product interfaces.
+        </p>
+
+        <p>
+          This creates a relationship between the smallest interface decisions and the larger experiences
+          they support.
+        </p>
+      </div>
+
+      <!-- PRINCIPLES -->
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid md:grid-cols-3 gap-4">
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge mb-4">01</div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">Consistency</h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Establish repeatable interface decisions across related product experiences.
+            </p>
+          </div>
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge mb-4">02</div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">Reuse</h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Turn recurring interface needs into reusable components and patterns.
+            </p>
+          </div>
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge mb-4">03</div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">Context</h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Preserve flexibility so reusable elements can support different workflows.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════
+           SYSTEM ARCHITECTURE
+      ═══════════════════════════════════════ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h2>Design system architecture</h2>
+
+        <p>
+          The library follows a clear progression from foundational decisions to reusable interface
+          elements and larger interaction patterns.
+        </p>
+
+        <h3>Foundations → Components → Patterns → Product UI</h3>
+
+        <p>
+          Foundations establish the visual language. Components provide reusable building blocks. Patterns
+          combine those components around recurring tasks. Product interfaces bring the system into real
+          workflow contexts.
+        </p>
+      </div>
+
+      <!-- ═══════════════════════════════════════
+           FOUNDATIONS
+      ═══════════════════════════════════════ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h2>Foundations</h2>
+
+        <p>
+          The foundation layer establishes the visual references from which the component library is
+          composed.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid md:grid-cols-2 gap-4">
+          <div>
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Overview/Theme/Colors Styles (light).png"
+                alt="OASYS colour styles" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Colour styles — shared visual reference.</p>
+          </div>
+
+          <div>
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Overview/Theme/Typography.png"
+                alt="OASYS typography styles" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Typography — type hierarchy and visual reference.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h3>Colour</h3>
+
+        <p>
+          Colour references create a shared visual language for hierarchy, emphasis and interface states.
+        </p>
+
+        <h3>Typography</h3>
+
+        <p>
+          Typography establishes hierarchy and creates consistent relationships between headings,
+          supporting information and interface content.
+        </p>
+
+        <h3>Theme</h3>
+
+        <p>
+          The theme references bring the foundational decisions together as a practical resource during
+          interface design.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid md:grid-cols-2 gap-4">
+          <div>
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Theme/Cheatsheet.png"
+                alt="OASYS theme cheatsheet" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Theme cheatsheet.</p>
+          </div>
+
+          <div>
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Typography/Typography.png"
+                alt="OASYS typography reference" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Typography reference.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════
+           COMPONENT LIBRARY
+      ═══════════════════════════════════════ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h2>Component library</h2>
+
+        <p>
+          The component library turns recurring interface requirements into reusable building blocks. The
+          visual library covers actions, inputs, navigation, data display, feedback and surfaces.
+        </p>
+      </div>
+
+      <!-- COMPONENT OVERVIEW -->
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Overview/Components Overview/Inputs.png"
+                alt="OASYS inputs overview" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Inputs</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Overview/Components Overview/Data Display.png"
+                alt="OASYS data display overview" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Data display</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Overview/Components Overview/Feedback.png"
+                alt="OASYS feedback overview" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Feedback</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Overview/Components Overview/Layout.png"
+                alt="OASYS layout overview" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Layout</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Overview/Components Overview/Navigation.png"
+                alt="OASYS navigation overview" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Navigation</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Overview/Components Overview/Surfaces.png"
+                alt="OASYS surfaces overview" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Surfaces</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ ACTIONS ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h2>Actions and controls</h2>
+
+        <p>Action components provide consistent interaction points across product workflows.</p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid md:grid-cols-2 gap-4">
+          <div>
+            <div class="photo-frame rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Button/Button.png" alt="OASYS button component"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Button component.</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Button/Button_ full width.png"
+                alt="OASYS full width button" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Full-width button.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ INPUTS ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h2>Input components</h2>
+
+        <p>
+          Input components create repeatable interaction patterns for collecting, selecting and updating
+          information.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Text Field/Text Field.png"
+                alt="OASYS text field" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Text field</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Select/Select.png" alt="OASYS select component"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Select</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Autocomplete/Autocomplete.png"
+                alt="OASYS autocomplete component" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Autocomplete</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Checkbox/Checkbox.png" alt="OASYS checkbox"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Checkbox</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Radio Group/Radio.png" alt="OASYS radio group"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Radio group</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Switch/Switch.png" alt="OASYS switch"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Switch</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ NAVIGATION ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h2>Navigation</h2>
+
+        <p>Navigation components provide structure and orientation across application interfaces.</p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid md:grid-cols-2 gap-4">
+          <div>
+            <div class="photo-frame rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Navs/Navs_ custom components.png"
+                alt="OASYS navigation components" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Navigation components.</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Menu/Menu.png" alt="OASYS menu component"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Menu component.</p>
+          </div>
+        </div>
+
+        <div class="reveal grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Breadcrumbs/Breadcrumbs.png"
+                alt="OASYS breadcrumbs" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Breadcrumbs</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Tabs/Tab.png" alt="OASYS tabs"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Tabs</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Bottom Navigation/Bottom Navigation.png"
+                alt="OASYS bottom navigation" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Bottom navigation</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ DATA DISPLAY ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h2>Data display</h2>
+
+        <p>
+          Data-heavy interfaces require a clear relationship between information hierarchy, structure and
+          interaction.
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-6 mb-8">
+        <div class="reveal photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+          <img src="../../assets/images/projects/oasys-design-system/Table/Table.png" alt="OASYS table component"
+            loading="lazy" />
+        </div>
+
+        <p class="img-caption">Table — structured data display and interaction reference.</p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid md:grid-cols-2 gap-4">
+          <div>
+            <div class="photo-frame rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Table/Data table_ custom components.png"
+                alt="OASYS custom data table" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Custom data table.</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Table/Table_ expandable rows.png"
+                alt="OASYS expandable table rows" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Expandable rows.</p>
+          </div>
+        </div>
+
+        <div class="reveal grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Table/Table_ bulk actions 1.png"
+                alt="OASYS table bulk actions" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Bulk actions</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Table/Table_ row types.png"
+                alt="OASYS table row types" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Row types</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Pagination/Pagination_ table.png"
+                alt="OASYS table pagination" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Table pagination</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ FEEDBACK ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h2>Feedback and system states</h2>
+
+        <p>
+          Feedback components communicate responses around user actions and make system states visible
+          within workflows.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Alert/Alert.png" alt="OASYS alert"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Alert</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Snackbar/Snackbar.png" alt="OASYS snackbar"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Snackbar</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Progress/Progress.png" alt="OASYS progress"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Progress</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Tooltip/Tooltip.png" alt="OASYS tooltip"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Tooltip</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Dialog/Dialog.png" alt="OASYS dialog"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Dialog</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Badge/Badge.png" alt="OASYS badge"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Badge</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ SURFACES ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h2>Content and surfaces</h2>
+
+        <p>
+          Surfaces and supporting content components provide the containers and interface elements used to
+          compose larger experiences.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid md:grid-cols-3 gap-4">
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Card/Card.png" alt="OASYS card"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Card</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Avatar/Avatar.png" alt="OASYS avatar"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Avatar</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Chip/Chip.png" alt="OASYS chip"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Chip</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════
+           PATTERNS
+      ═══════════════════════════════════════ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h2>Patterns</h2>
+
+        <p>Components become more useful when combined into repeatable patterns around real tasks.</p>
+
+        <h3>Date and time</h3>
+
+        <p>
+          Date and time interactions demonstrate how controls, calendars and selection states can form a
+          larger interaction pattern.
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-6 mb-8">
+        <div class="reveal photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+          <img src="../../assets/images/projects/oasys-design-system/Date Time/Date Time Pickers.png"
+            alt="OASYS date and time pickers" loading="lazy" />
+        </div>
+
+        <p class="img-caption">Date &amp; Time Pickers — reusable interaction pattern.</p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid md:grid-cols-2 gap-4">
+          <div>
+            <div class="photo-frame rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Date Time/Time_ desktop inline date picker.png"
+                alt="OASYS desktop inline date picker" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Desktop inline date picker.</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img
+                src="../../assets/images/projects/oasys-design-system/Date Time/Time_ mobile date and time picker.png"
+                alt="OASYS mobile date and time picker" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Mobile date and time picker.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MULTI STEP -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h3>Multi-step workflows</h3>
+
+        <p>
+          Stepper patterns provide structure for workflows where users move through multiple stages while
+          maintaining context.
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-6 mb-8">
+        <div class="reveal photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+          <img src="../../assets/images/projects/oasys-design-system/Stepper/Stepper.png" alt="OASYS stepper component"
+            loading="lazy" />
+        </div>
+
+        <p class="img-caption">Stepper — reusable multi-stage workflow pattern.</p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid md:grid-cols-2 gap-4">
+          <div>
+            <div class="photo-frame rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Stepper/Stepper_ desktop multi form.png"
+                alt="OASYS desktop multi form" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Desktop multi-form workflow.</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Stepper/Stepper_ mobile multi form.png"
+                alt="OASYS mobile multi form" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Mobile multi-form workflow.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════
+           RESPONSIVE BEHAVIOUR
+      ═══════════════════════════════════════ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h2>Responsive behaviour</h2>
+
+        <p>
+          Responsive behaviour is part of the system rather than a separate visual exercise. Components
+          need to preserve their purpose and hierarchy as the available space changes.
+        </p>
+
+        <h3>Preserve hierarchy</h3>
+
+        <p>
+          Important information and actions should remain identifiable across different interface
+          contexts.
+        </p>
+
+        <h3>Adapt interaction</h3>
+
+        <p>
+          Some patterns change their presentation between desktop and mobile contexts while preserving the
+          underlying task.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid md:grid-cols-2 gap-4">
+          <div>
+            <div class="photo-frame rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Tabs/▶️ Tabs_ horizontal example.png"
+                alt="OASYS horizontal tabs" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Horizontal tab behaviour.</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Tabs/▶️ Tabs_ vertical example.png"
+                alt="OASYS vertical tabs" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Vertical tab behaviour.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════
+           FROM SYSTEM TO PRODUCT
+      ═══════════════════════════════════════ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h2>From system to product</h2>
+
+        <p>A design system becomes meaningful when its components and patterns reach real product work.</p>
+
+        <p>
+          The same foundations can support different product contexts while the product's information
+          architecture and workflow remain specific to its users and tasks.
+        </p>
+
+        <h3>Enterprise workflows</h3>
+
+        <p>
+          Forms, tables, navigation, status and workflow patterns can provide a common interaction
+          language across business applications.
+        </p>
+
+        <h3>Government interfaces</h3>
+
+        <p>
+          Service and administration interfaces can draw from shared UI foundations while retaining their
+          own workflow requirements.
+        </p>
+
+        <h3>Operational products</h3>
+
+        <p>
+          Data-heavy operational screens can use reusable patterns without forcing every product into the
+          same visual or information structure.
+        </p>
+      </div>
+
+      <!-- ═══════════════════════════════════════
+           DESIGN–DEVELOPMENT
+      ═══════════════════════════════════════ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h2>Design–development collaboration</h2>
+
+        <p>
+          A reusable system creates a shared reference between design and development. Components, states
+          and responsive behaviours can be discussed as repeatable interface decisions rather than
+          isolated screen details.
+        </p>
+
+        <ul>
+          <li>Reusable components create a shared UI vocabulary.</li>
+
+          <li>Component states make interaction behaviour easier to communicate.</li>
+
+          <li>Responsive references clarify behaviour across contexts.</li>
+
+          <li>Design documentation provides a reference during implementation.</li>
+        </ul>
+      </div>
+
+      <!-- ═══════════════════════════════════════
+           KEY DESIGN DECISIONS
+      ═══════════════════════════════════════ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h2>Key design decisions</h2>
+
+        <h3>Start with foundations</h3>
+
+        <p>Establish the visual language before composing reusable components.</p>
+
+        <h3>Design states, not only defaults</h3>
+
+        <p>Interaction states are part of a useful component definition.</p>
+
+        <h3>Build for reuse</h3>
+
+        <p>
+          Recurring interface needs should become reusable patterns where doing so creates meaningful
+          consistency.
+        </p>
+
+        <h3>Include responsive behaviour</h3>
+
+        <p>Responsive behaviour belongs within component and pattern thinking.</p>
+
+        <h3>Connect the system back to product work</h3>
+
+        <p>
+          The system should remain useful when applied to real workflows and different product contexts.
+        </p>
+      </div>
+
+      <!-- ═══════════════════════════════════════
+           VISUAL REFERENCE
+      ═══════════════════════════════════════ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h2>A visual reference built for reuse</h2>
+
+        <p>
+          The library brings visual foundations, components and patterns into a reusable reference that
+          can be revisited during product design.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Button/Button.png" alt="OASYS button reference"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Button</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Text Field/Text Field.png"
+                alt="OASYS text field reference" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Text field</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Table/Table.png" alt="OASYS table reference"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Table</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Alert/Alert.png" alt="OASYS alert reference"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Alert</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Tabs/Tab.png" alt="OASYS tabs reference"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Tabs</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/oasys-design-system/Card/Card.png" alt="OASYS card reference"
+                loading="lazy" />
+            </div>
+
+            <p class="img-caption">Card</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════
+           OUTCOME
+      ═══════════════════════════════════════ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h2>Outcome</h2>
+
+        <p>
+          The OASYS Design System &amp; Component Library brings visual foundations, reusable components
+          and interaction patterns into a structured design resource.
+        </p>
+
+        <p>
+          The work demonstrates a system-level approach to UI/UX design: moving from foundational
+          decisions to reusable components and then connecting those decisions to larger product
+          interfaces.
+        </p>
+      </div>
+
+      <!-- ═══════════════════════════════════════
+           REFLECTION
+      ═══════════════════════════════════════ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h2>Reflection</h2>
+
+        <p>
+          Designing a system changed the way I think about interface design. Instead of focusing only on
+          individual screens, the work requires thinking about relationships between components, patterns
+          and product contexts.
+        </p>
+
+        <p>
+          It reinforced the importance of deciding what should remain consistent, where variation is
+          necessary and how reusable patterns can support different workflows.
+        </p>
+
+        <p>
+          It also strengthened the connection between design and implementation: a useful system needs to
+          be understandable in design, practical in development and flexible enough for real product work.
+        </p>
+
+        <blockquote>
+          <p>
+            A design system becomes valuable when consistency and flexibility work together to support
+            real product experiences.
+          </p>
+        </blockquote>
+
+        <hr />
+
+        <p>
+          <em>
+            Interested in building a consistent digital product experience?
+            <a href="../../index.html#contact">Get in touch</a> — I'd be happy to discuss your product,
+            platform or design system.
+          </em>
+        </p>
+      </div>
+    </article>
+
+    <!-- ═══════════════════════════════════════
+         MORE PROJECTS
+    ═══════════════════════════════════════ -->
+
+    <section class="bg-zinc-50 dark:bg-zinc-900/50 py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="font-display font-bold text-2xl text-zinc-900 dark:text-white">More projects</h2>
+
+          <a href="../../pages/projects/projects.html" class="text-sm font-medium text-accent nav-link hidden md:block">
+            View all work →
+          </a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- TNPDS -->
+
+          <article
+            class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+            <div class="photo-frame w-full h-44">
+              <img src="../../assets/images/projects/tnpds/tnpds.png" alt="TNPDS" loading="lazy" />
+            </div>
+
+            <div class="p-5">
+              <div class="flex gap-2 mb-2">
+                <span
+                  class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">
+                  Government
+                </span>
+              </div>
+
+              <a href="tnpds-case-study.html">
+                <h3
+                  class="font-display font-bold text-base text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
+                  TNPDS
+                </h3>
+
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug mb-2">
+                  Public Distribution System
+                </p>
+              </a>
+
+              <a href="tnpds-case-study.html" class="text-sm font-medium text-accent nav-link">
+                View project →
+              </a>
+            </div>
+          </article>
+
+          <!-- PRIME TRIP -->
+
+          <article
+            class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+            <div class="photo-frame w-full h-44">
+              <img src="../../assets/images/projects/primetrip/primetrip.jpg" alt="PrimeTrip" loading="lazy" />
+            </div>
+
+            <div class="p-5">
+              <div class="flex gap-2 mb-2">
+                <span
+                  class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">
+                  Travel
+                </span>
+              </div>
+
+              <a href="primetrip-case-study.html">
+                <h3
+                  class="font-display font-bold text-base text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
+                  PrimeTrip
+                </h3>
+
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug mb-2">
+                  Travel Booking Platform
+                </p>
+              </a>
+
+              <a href="primetrip-case-study.html" class="text-sm font-medium text-accent nav-link">
+                View project →
+              </a>
+            </div>
+          </article>
+
+          <!-- CO-OPTEX -->
+
+          <article
+            class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+            <div class="photo-frame w-full h-44">
+              <img src="../../assets/images/projects/cooptex/cooptex.png" alt="Co-optex" loading="lazy" />
+            </div>
+
+            <div class="p-5">
+              <div class="flex gap-2 mb-2">
+                <span
+                  class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">
+                  Commerce
+                </span>
+              </div>
+
+              <a href="co-optex-case-study.html">
+                <h3
+                  class="font-display font-bold text-base text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
+                  Co-optex
+                </h3>
+
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug mb-2">
+                  Digital Commerce &amp; Retail POS
+                </p>
+              </a>
+
+              <a href="co-optex-case-study.html" class="text-sm font-medium text-accent nav-link">
+                View project →
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="text-center mt-8 md:hidden">
+          <a href="../../pages/projects/projects.html" class="text-sm font-medium text-accent">
+            View all work →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         CTA
+    ═══════════════════════════════════════ -->
+
+    <section class="py-24">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-10 md:p-14 text-center relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none"
+            aria-hidden="true"></div>
+
+          <div class="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-2xl pointer-events-none"
+            aria-hidden="true"></div>
+
+          <div class="relative z-10">
+            <p class="text-xs font-medium text-accent tracking-widest uppercase mb-4">
+              Let's work together
+            </p>
+
+            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-4">
+              Have a project in mind?
+            </h2>
+
+            <p class="text-zinc-400 max-w-md mx-auto mb-8">
+              I'm available for UI/UX design, enterprise applications, design systems and digital
+              product work.
+            </p>
+
+            <a href="../../index.html#contact"
+              class="inline-flex items-center gap-2 btn-primary bg-accent text-white font-medium px-8 py-3.5 rounded-full hover:bg-accent-light transition-colors">
+              Let's talk →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+
+  <footer class="border-t border-zinc-100 dark:border-zinc-900">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-zinc-400">© <span id="yr"></span> Asir Durai Selvan. All rights reserved.</p>
+
+      <p class="text-xs text-zinc-500">
+        Built with
+
+        <a href="https://www.w3schools.com/html/" rel="noopener noreferrer" target="_blank"
+          class="hover:text-accent transition-colors">
+          HTML,
+        </a>
+
+        <a href="https://www.w3schools.com/Css/" rel="noopener noreferrer" target="_blank"
+          class="hover:text-accent transition-colors">
+          CSS </a>&amp;
+
+        <a href="https://www.w3schools.com/js/" rel="noopener noreferrer" target="_blank"
+          class="hover:text-accent transition-colors">
+          JavaScript
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Local portfolio JavaScript -->
+
+  <script src="../../assets/js/script.js"></script>
+
+  <script src="../../assets/js/case-study.js"></script>
+</body>
+
+</html>

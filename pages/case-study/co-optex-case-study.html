@@ -1,0 +1,2862 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{
+  dark: localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches),
+  scrolled: false,
+  mobileMenu: false,
+  progress: 0
+}" :class="{'dark':dark}" x-init="
+  $watch('dark', v => localStorage.setItem('theme', v ? 'dark' : 'light'));
+  window.addEventListener('scroll', () => {
+    scrolled = window.scrollY > 20;
+    progress = Math.min(100, Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100));
+  }, { passive: true });
+" class="scroll-smooth">
+
+<head>
+
+  <meta name="description"
+    content="Co-optex — Digital Commerce & Retail POS · UI/UX case study by Asir Durai Selvan covering e-commerce and retail operations." />
+
+  <meta name="author" content="Asir Durai Selvan" />
+
+  <meta property="og:title" content="Co-optex — Digital Commerce & Retail POS | Asir Durai Selvan" />
+
+  <meta property="og:description"
+    content="UI/UX case study covering Co-optex digital commerce and Infotex POS retail operations." />
+
+  <meta property="og:type" content="article" />
+
+  <title>Co-optex — Digital Commerce & Retail POS | Asir Durai Selvan</title>
+
+  <!-- Local Tailwind CSS -->
+  <link rel="stylesheet" href="../../assets/css/tailwind.generated.css">
+
+  <!-- Local case study styles -->
+  <link rel="stylesheet" href="../../assets/css/case-study.css">
+
+  <!-- Local Alpine.js -->
+  <script defer src="../../assets/js/alpine.js"></script>
+
+</head>
+
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-body antialiased">
+
+  <!-- Reading progress bar -->
+  <div class="progress-bar" :style="`width:${progress}%`" role="progressbar" :aria-valuenow="progress" aria-valuemin="0"
+    aria-valuemax="100" aria-label="Reading progress">
+  </div>
+
+  <!-- ═══ NAV ═══ -->
+
+  <header class="fixed top-0.5 left-0 right-0 z-50 transition-all duration-300" :class="scrolled
+      ? 'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5'
+      : 'bg-transparent'">
+
+    <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
+
+      <a href="../../index.html" class="font-display font-bold text-xl tracking-tight z-10">
+
+        <span class="text-zinc-900 dark:text-white">asir</span><span class="text-accent">.</span>
+
+      </a>
+
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium" role="list">
+
+        <li>
+          <a href="../../index.html#services"
+            class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
+            Expertise
+          </a>
+        </li>
+
+        <li>
+          <a href="co-optex-case-study.html" class="nav-link text-accent font-medium">
+            Work
+          </a>
+        </li>
+
+        <li>
+          <a href="../../index.html#about"
+            class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="../../index.html#blog"
+            class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
+            Insights
+          </a>
+        </li>
+
+        <li>
+          <a href="../../index.html#contact"
+            class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
+            Contact
+          </a>
+        </li>
+
+      </ul>
+
+
+      <div class="flex items-center gap-3">
+
+        <button @click="dark=!dark"
+          class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+          :aria-label="dark ? 'Light mode' : 'Dark mode'">
+
+          <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+
+          </svg>
+
+          <svg x-show="dark" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+
+          </svg>
+
+        </button>
+
+        <a href="../../index.html#contact"
+          class="hidden md:inline-flex items-center gap-2 btn-primary bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">
+          Let's talk →
+        </a>
+
+        <button @click="mobileMenu=!mobileMenu"
+          class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800"
+          aria-label="Toggle menu">
+
+          <svg x-show="!mobileMenu" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+
+          </svg>
+
+          <svg x-show="mobileMenu" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+
+          </svg>
+
+        </button>
+
+      </div>
+
+    </nav>
+
+
+    <div x-show="mobileMenu" x-cloak x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 -translate-y-2"
+      class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
+
+      <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-medium" role="list">
+
+        <li>
+          <a href="../../index.html#services" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">
+            Expertise
+          </a>
+        </li>
+
+        <li>
+          <a href="co-optex-case-study.html" @click="mobileMenu=false" class="block text-accent font-medium">
+            Work
+          </a>
+        </li>
+
+        <li>
+          <a href="../../index.html#about" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="../../index.html#blog" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">
+            Insights
+          </a>
+        </li>
+
+        <li>
+          <a href="../../index.html#contact" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">
+            Contact
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+
+    <!-- ═══ CASE STUDY ═══ -->
+
+    <article>
+
+
+      <!-- ═══ CASE STUDY HEADER ═══ -->
+
+      <header class="pt-32 pb-10 max-w-4xl mx-auto px-6">
+
+        <a href="../../pages/projects/projects.html"
+          class="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors mb-8">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            aria-hidden="true">
+
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+
+          </svg>
+
+          Back to projects
+
+        </a>
+
+
+        <!-- Tags -->
+
+        <div class="flex flex-wrap items-center gap-3 mb-6">
+
+          <span
+            class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">
+            E-commerce
+          </span>
+
+          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">
+            Retail POS
+          </span>
+
+          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">
+            Enterprise
+          </span>
+
+          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">
+            UI/UX Design
+          </span>
+
+        </div>
+
+
+        <!-- Title -->
+
+        <h1
+          class="reveal font-display font-bold text-4xl md:text-5xl lg:text-6xl text-zinc-900 dark:text-white leading-tight mb-6">
+
+          Co-optex — Digital Commerce &amp; Retail POS
+
+        </h1>
+
+
+        <p class="reveal d1 text-xl md:text-2xl text-zinc-400 dark:text-zinc-300 leading-relaxed mb-4 max-w-2xl">
+
+          Designing connected experiences across digital commerce and retail operations.
+
+        </p>
+
+
+        <p class="reveal d1 text-md text-zinc-500 dark:text-zinc-400 leading-relaxed mb-10 max-w-2xl">
+
+          A UI/UX design project spanning the Co-optex e-commerce experience
+          and Infotex POS interface, covering customer-facing shopping journeys,
+          retail operations, inventory, sales, customer workflows and reporting.
+
+        </p>
+
+
+        <!-- Meta row -->
+
+        <div
+          class="reveal d2 grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-t border-b border-zinc-100 dark:border-zinc-900">
+
+          <div>
+            <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">
+              Client
+            </p>
+            <p class="font-medium text-zinc-900 dark:text-white text-sm">
+              Co-optex
+            </p>
+          </div>
+
+          <div>
+            <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">
+              Platforms
+            </p>
+            <p class="font-medium text-zinc-900 dark:text-white text-sm">
+              E-commerce · POS
+            </p>
+          </div>
+
+          <div>
+            <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">
+              Role
+            </p>
+            <p class="font-medium text-zinc-900 dark:text-white text-sm">
+              UI/UX Design
+            </p>
+          </div>
+
+          <div>
+            <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">
+              Focus
+            </p>
+            <p class="font-medium text-zinc-900 dark:text-white text-sm">
+              Commerce · Retail Operations
+            </p>
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <!-- ═══ HERO IMAGE ═══ -->
+
+      <div class="max-w-6xl mx-auto px-6 mb-16">
+
+        <div class="reveal photo-frame w-full rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+          <img src="../../assets/images/projects/cooptex/cooptex-cover.png" alt="Co-optex digital commerce experience"
+            loading="eager" />
+
+        </div>
+
+        <p class="img-caption">
+          Co-optex — digital commerce experience for discovering and exploring textile products.
+        </p>
+
+      </div>
+
+
+      <!-- ═══ PROJECT CHARACTERISTICS ═══ -->
+
+      <div class="max-w-4xl mx-auto px-6 mb-16">
+
+        <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-4">
+
+
+          <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
+
+            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">
+              E-commerce
+            </p>
+
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">
+              Product discovery and digital shopping experience
+            </p>
+
+          </div>
+
+
+          <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
+
+            <p class="font-display font-bold text-3xl text-accent">
+              Retail
+            </p>
+
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">
+              Connected with day-to-day retail operations
+            </p>
+
+          </div>
+
+
+          <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
+
+            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">
+              POS
+            </p>
+
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">
+              Operational interface for retail transactions
+            </p>
+
+          </div>
+
+
+          <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
+
+            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">
+              Enterprise
+            </p>
+
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">
+              Complex workflows, data and operational interfaces
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- ═══ PROJECT OVERVIEW ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+
+        <h2>The project</h2>
+
+        <p>
+          The Co-optex work covered two connected digital experiences:
+          the customer-facing e-commerce platform and the Infotex POS interface
+          supporting retail operations.
+        </p>
+
+        <p>
+          My UI/UX contribution spanned product-focused web experiences as well as
+          operational screens for sales, inventory, customer workflows, collections
+          and reporting.
+        </p>
+
+        <p>
+          The two environments required different approaches to information hierarchy,
+          interaction patterns and visual density while keeping each experience clear
+          and consistent for its intended users.
+        </p>
+
+
+        <h3>Customer-facing experience</h3>
+
+        <ul>
+          <li>Product discovery and browsing</li>
+          <li>Catalogue and product presentation</li>
+          <li>Product information and shopping actions</li>
+          <li>Responsive digital commerce interfaces</li>
+        </ul>
+
+
+        <h3>Retail operations</h3>
+
+        <ul>
+          <li>Sales and transaction workflows</li>
+          <li>Customer-related operations</li>
+          <li>Inventory and stock workflows</li>
+          <li>Collections and reporting interfaces</li>
+        </ul>
+
+      </div>
+
+
+      <!-- ═══ THE CHALLENGE ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+
+        <h2>The challenge</h2>
+
+        <p>
+          Co-optex involved two very different interaction environments.
+          The e-commerce experience needed to support product discovery and
+          purchase decisions, while Infotex POS needed to support detailed
+          retail operations and transaction-heavy workflows.
+        </p>
+
+        <p>
+          The design challenge was to provide the right level of information
+          and interaction for each context without making either experience
+          harder to understand.
+        </p>
+
+
+        <h3>Different users. Different priorities.</h3>
+
+        <ul>
+          <li>Help shoppers discover and understand textile products.</li>
+          <li>Organise product categories and information clearly.</li>
+          <li>Support transaction-oriented retail workflows.</li>
+          <li>Structure inventory and customer operations.</li>
+          <li>Present operational records and reports clearly.</li>
+        </ul>
+
+      </div>
+
+
+      <!-- ═══ DESIGN STRATEGY ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+
+        <h2>Design strategy</h2>
+
+        <p>
+          Rather than applying the same interface approach to every screen,
+          the work was shaped around the context of each experience.
+        </p>
+
+        <p>
+          The e-commerce side prioritised product visibility, discovery and
+          shopping actions. The POS side required stronger information hierarchy,
+          operational clarity and support for complex workflows.
+        </p>
+
+      </div>
+
+
+      <!-- ═══ PRINCIPLES ═══ -->
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+
+        <div class="reveal grid md:grid-cols-3 gap-4">
+
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+
+            <div class="step-badge mb-4">
+              01
+            </div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">
+              Clarity
+            </h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Make important information and actions easy to identify within
+              each workflow.
+            </p>
+
+          </div>
+
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+
+            <div class="step-badge mb-4">
+              02
+            </div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">
+              Context
+            </h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Design differently for customer-facing discovery and
+              operational retail tasks.
+            </p>
+
+          </div>
+
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+
+            <div class="step-badge mb-4">
+              03
+            </div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">
+              Consistency
+            </h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Use familiar patterns across related screens and workflows
+              to reduce unnecessary complexity.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- ═══════════════════════════════════════
+           CO-OPTEX E-COMMERCE
+      ═══════════════════════════════════════ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+
+        <h2>Co-optex e-commerce experience</h2>
+
+        <p>
+          The customer-facing experience focused on helping users discover
+          textile products, browse the catalogue and evaluate products before
+          moving toward a purchase.
+        </p>
+
+        <p>
+          The interface places the product experience at the centre while
+          keeping navigation, supporting information and shopping actions
+          clear throughout the journey.
+        </p>
+
+      </div>
+
+
+      <!-- E-commerce primary visual -->
+
+      <div class="max-w-6xl mx-auto px-6 mb-16">
+
+        <div class="reveal photo-frame w-full rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+          <img src="../../assets/images/projects/cooptex/Co-optex.png" alt="Co-optex e-commerce interface"
+            loading="lazy" />
+
+        </div>
+
+        <p class="img-caption">
+          Co-optex — customer-facing digital commerce interface.
+        </p>
+
+      </div>
+
+
+      <!-- ═══ E-COMMERCE JOURNEY ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+
+        <h2>E-commerce journey</h2>
+
+        <h3>Discover → Browse → Evaluate → Purchase</h3>
+
+        <p>
+          The shopping experience can be viewed as a connected journey,
+          with each stage helping users understand the available products
+          and decide what to do next.
+        </p>
+
+      </div>
+
+
+      <div class="max-w-5xl mx-auto px-6 mb-12">
+
+        <div class="reveal grid md:grid-cols-4 gap-4">
+
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+
+            <div class="step-badge mb-4">
+              1
+            </div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">
+              Discover
+            </h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Reach products through navigation, categories and visual presentation.
+            </p>
+
+          </div>
+
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+
+            <div class="step-badge mb-4">
+              2
+            </div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">
+              Browse
+            </h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Explore available products through structured catalogue content.
+            </p>
+
+          </div>
+
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+
+            <div class="step-badge mb-4">
+              3
+            </div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">
+              Evaluate
+            </h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Review product information before choosing the next action.
+            </p>
+
+          </div>
+
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+
+            <div class="step-badge mb-4">
+              4
+            </div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">
+              Purchase
+            </h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Keep relevant shopping actions visible as the user progresses.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- ═══ E-COMMERCE DESIGN FOCUS ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+
+        <h3>Product-first hierarchy</h3>
+
+        <p>
+          Product imagery and information receive visual priority so users
+          can understand what is available before deciding how to proceed.
+        </p>
+
+        <h3>Clear discovery</h3>
+
+        <p>
+          Catalogue structure and navigation help users move from broad
+          product discovery toward more focused product exploration.
+        </p>
+
+        <h3>Visible shopping actions</h3>
+
+        <p>
+          Important actions remain understandable at the points where
+          users need to make a shopping decision.
+        </p>
+
+      </div>
+
+
+      <!-- ═══════════════════════════════════════
+           INFOTEX POS INTRO
+      ═══════════════════════════════════════ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+
+        <h2>Infotex POS</h2>
+
+        <p>
+          The project also covered the broader Infotex POS interface used
+          for retail operations.
+        </p>
+
+        <p>
+          Unlike the customer-facing commerce experience, POS users work
+          with transactions, customer records, inventory, collections and
+          reports. The interface therefore needed to support information-dense
+          workflows and frequent operational actions.
+        </p>
+
+      </div>
+
+
+      <!-- ═══ POS DASHBOARD ═══ -->
+
+      <div class="max-w-6xl mx-auto px-6 mb-8">
+
+        <div class="reveal photo-frame w-full rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+          <img src="../../assets/images/projects/cooptex/Infotex POS/dashboard/dashboardPos.png"
+            alt="Infotex POS dashboard" loading="lazy" />
+
+        </div>
+
+        <p class="img-caption">
+          Infotex POS — dashboard providing a structured entry point to retail operations.
+        </p>
+
+      </div>
+
+
+      <!-- ═══ POS WORKFLOW ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+
+        <h2>POS workflow</h2>
+
+        <h3>Access → Operate → Review → Report</h3>
+
+        <p>
+          The POS environment brings together multiple operational areas.
+          The interface needs to let users reach the relevant function,
+          complete a task, review information and work with operational reports.
+        </p>
+
+      </div>
+
+
+      <div class="max-w-5xl mx-auto px-6 mb-12">
+
+        <div class="reveal grid md:grid-cols-4 gap-4">
+
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+
+            <div class="step-badge mb-4">
+              1
+            </div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">
+              Access
+            </h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Reach the required operational area through the system structure.
+            </p>
+
+          </div>
+
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+
+            <div class="step-badge mb-4">
+              2
+            </div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">
+              Operate
+            </h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Complete sales, customer, inventory and related retail tasks.
+            </p>
+
+          </div>
+
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+
+            <div class="step-badge mb-4">
+              3
+            </div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">
+              Review
+            </h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Work with transaction records, forms, lists and operational details.
+            </p>
+
+          </div>
+
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+
+            <div class="step-badge mb-4">
+              4
+            </div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">
+              Report
+            </h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Review operational information through reporting interfaces.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- ═══ POS NAVIGATION ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+
+        <h2>Navigation and operational structure</h2>
+
+        <p>
+          The POS system contains multiple functional areas and workflows.
+          A structured menu provides the starting point for moving through
+          these operational functions.
+        </p>
+
+      </div>
+
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+
+        <div class="reveal photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+          <img src="../../assets/images/projects/cooptex/Infotex POS/menus/menu.png" alt="Infotex POS navigation menu"
+            loading="lazy" />
+
+        </div>
+
+        <p class="img-caption">
+          Infotex POS — navigation structure for the wider retail operations system.
+        </p>
+
+      </div>
+
+
+      <!-- ═══ SALES ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+
+        <h2>Sales workflow</h2>
+
+        <p>
+          Sales represents one of the primary operational workflows within
+          the POS interface. The screen needs to bring transaction information
+          and available actions together in a usable working area.
+        </p>
+
+      </div>
+
+
+      <div class="max-w-6xl mx-auto px-6 mb-16">
+
+        <div class="reveal photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+          <img src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/1.New Sales/1.Sales With Hold.png"
+            alt="Infotex POS new sales screen" loading="lazy" />
+
+        </div>
+
+        <p class="img-caption">
+          New Sales — transaction-focused retail workflow.
+        </p>
+
+      </div>
+
+
+      <!-- ═══ SALES RETURN + BILL SEARCH ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+
+        <h2>Transaction management</h2>
+
+        <p>
+          Retail operations extend beyond creating a sale. Return processing
+          and bill search introduce additional workflows where users need
+          to work with existing transaction information.
+        </p>
+
+      </div>
+
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+
+        <div class="reveal grid md:grid-cols-2 gap-4">
+
+
+          <div>
+
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/2.Sales Return/Create Sales Return.png"
+                alt="Infotex POS sales return workflow" loading="lazy" />
+
+            </div>
+
+            <p class="img-caption">
+              Sales Return — transaction workflow.
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/3.Bill Search/Bill Search List.png"
+                alt="Infotex POS bill search" loading="lazy" />
+
+            </div>
+
+            <p class="img-caption">
+              Bill Search — operational record lookup.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- ═══ CUSTOMER + INVENTORY ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+
+        <h2>Customer and inventory operations</h2>
+
+        <p>
+          The POS experience extends into customer and inventory workflows,
+          adding another layer of operational information beyond the immediate
+          transaction.
+        </p>
+
+      </div>
+
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+
+        <div class="reveal grid md:grid-cols-2 gap-4">
+
+
+          <div>
+
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+              <img src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/5.KNT/List KNT Customer.png"
+                alt="Infotex POS customer workflow" loading="lazy" />
+
+            </div>
+
+            <p class="img-caption">
+              Customer workflow — structured customer information.
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/dashboard/3.Current Stock Status/Create Current Stock Status.png"
+                alt="Infotex POS current stock workflow" loading="lazy" />
+
+            </div>
+
+            <p class="img-caption">
+              Current Stock Status — inventory-related operational workflow.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- ═══ ADDITIONAL POS WORKFLOWS ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+
+        <h2>Beyond the core transaction</h2>
+
+        <p>
+          The wider POS interface also includes supporting operational
+          workflows such as stock inward, inventory closing, gift coupon
+          entry and customer-related activities.
+        </p>
+
+      </div>
+
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+
+        <div class="reveal grid md:grid-cols-2 gap-4">
+
+
+          <div>
+
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+              <img src="../../assets/images/projects/cooptex/Infotex POS/dashboard/1.Stock Inward/Stock Inward.png"
+                alt="Infotex POS stock inward" loading="lazy" />
+
+            </div>
+
+            <p class="img-caption">
+              Stock Inward — inventory workflow.
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+              <img src="../../assets/images/projects/cooptex/Infotex POS/dashboard/4.Inventory Closing/1.png"
+                alt="Infotex POS inventory closing" loading="lazy" />
+
+            </div>
+
+            <p class="img-caption">
+              Inventory Closing — operational stock workflow.
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/dashboard/5.Gift Coupon Entry/Gift Coupon Entry.png"
+                alt="Infotex POS gift coupon entry" loading="lazy" />
+
+            </div>
+
+            <p class="img-caption">
+              Gift Coupon Entry — supporting retail workflow.
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/5.KNT/1.Create Customer/1.KNT Customer Details - 1.png"
+                alt="Infotex POS customer details" loading="lazy" />
+
+            </div>
+
+            <p class="img-caption">
+              Customer Details — structured customer information.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- ═══ REPORTING ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+
+        <h2>Operational reporting</h2>
+
+        <p>
+          Reporting screens introduce a higher level of information density.
+          The interface needs to organise records and business information
+          in a way that supports review and interpretation.
+        </p>
+
+      </div>
+
+
+      <div class="max-w-6xl mx-auto px-6 mb-16">
+
+        <div class="reveal photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+          <img src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/9.Reports/1.report.png"
+            alt="Infotex POS reporting interface" loading="lazy" />
+
+        </div>
+
+        <p class="img-caption">
+          Reporting interface — structured operational information.
+        </p>
+
+      </div>
+
+
+      <!-- ═══ MORE REPORTING VISUALS ═══ -->
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+
+        <div class="reveal grid md:grid-cols-2 gap-4">
+
+
+          <div>
+
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/9.Reports/3.salesReportsBillNumberwise.png"
+                alt="Infotex POS sales report" loading="lazy" />
+
+            </div>
+
+            <p class="img-caption">
+              Sales reporting — transaction-oriented information.
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+              <img src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/9.Reports/4.salesReport.png"
+                alt="Infotex POS sales report" loading="lazy" />
+
+            </div>
+
+            <p class="img-caption">
+              Sales report — operational review interface.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- ═══ DESIGN PROCESS ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+
+        <h2>Design process</h2>
+
+        <p>
+          Across the e-commerce and POS experiences, the interface work followed
+          a workflow-first approach: understand the task, structure the information,
+          establish the interaction pattern and then refine the visual interface.
+        </p>
+
+      </div>
+
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+
+        <div class="reveal grid md:grid-cols-3 gap-4">
+
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+
+            <div class="step-badge mb-4">
+              01
+            </div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">
+              Understand
+            </h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Understand the business workflow, information and task requirements.
+            </p>
+
+          </div>
+
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+
+            <div class="step-badge mb-4">
+              02
+            </div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">
+              Structure
+            </h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Organise navigation, information, fields and actions around the workflow.
+            </p>
+
+          </div>
+
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+
+            <div class="step-badge mb-4">
+              03
+            </div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">
+              Design &amp; refine
+            </h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Translate the structure into consistent, responsive and implementation-ready UI.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- ═══ KEY DESIGN DECISIONS ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+
+        <h2>Key design decisions</h2>
+
+        <h3>Information hierarchy</h3>
+
+        <p>
+          Customer-facing screens prioritise products and shopping actions,
+          while POS screens place stronger emphasis on transaction information,
+          forms, records and operational actions.
+        </p>
+
+        <h3>Data-dense interfaces</h3>
+
+        <p>
+          Operational screens contain more information than a typical consumer
+          shopping interface. Grouping related information and maintaining
+          familiar structures helps users work through these screens.
+        </p>
+
+        <h3>Task-oriented interaction</h3>
+
+        <p>
+          Each operational screen is organised around the task being completed,
+          keeping relevant information and actions together.
+        </p>
+
+        <h3>Consistent patterns</h3>
+
+        <p>
+          Familiar navigation, forms, lists, tables, filters and action areas
+          provide a consistent interaction language across related workflows.
+        </p>
+
+      </div>
+
+
+      <!-- ═══ FULL POS SHOWCASE ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+
+        <h2>Inside the Infotex POS interface</h2>
+
+        <p>
+          The POS work extended across a broad collection of operational screens.
+          The following selection represents different areas of the interface and
+          demonstrates the range of workflows covered.
+        </p>
+
+      </div>
+
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+
+        <div class="reveal grid grid-cols-2 md:grid-cols-3 gap-4">
+
+
+          <div>
+
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/dashboard/2.Consignment Inward/Stock Inward List.png"
+                alt="Infotex POS stock inward list" loading="lazy" />
+
+            </div>
+
+            <p class="img-caption">
+              Stock Inward List
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/dashboard/6.RO Contract Collection/RO Contract Collection.png"
+                alt="Infotex POS RO contract collection" loading="lazy" />
+
+            </div>
+
+            <p class="img-caption">
+              RO Contract Collection
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/dashboard/7.Discount Certification/1.Create Discount Certification/Discount Certification.png"
+                alt="Infotex POS discount certification" loading="lazy" />
+
+            </div>
+
+            <p class="img-caption">
+              Discount Certification
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/6.Credit/Credit Customer Registration List.png"
+                alt="Infotex POS credit customer registration" loading="lazy" />
+
+            </div>
+
+            <p class="img-caption">
+              Credit Customer Registration
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/6.Credit/3.Create Credit Customer Registration/1.png"
+                alt="Infotex POS credit customer registration form" loading="lazy" />
+
+            </div>
+
+            <p class="img-caption">
+              Credit Customer Registration Form
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/4.Close Sales/1.Daily Transaction Statement (DTS)/1.Daily Transaction Statement (DTS) - Sales.png"
+                alt="Infotex POS daily transaction statement" loading="lazy" />
+
+            </div>
+
+            <p class="img-caption">
+              Daily Transaction Statement
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- ═══ UI LANGUAGE ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+
+        <h2>Interface language</h2>
+
+        <p>
+          Across the operational interface, repeated patterns help establish
+          familiarity between related workflows. Navigation, forms, tables,
+          status information and actions follow a structured visual language
+          so users can focus on the task rather than relearning the interface.
+        </p>
+
+      </div>
+
+
+      <!-- ═══ OUTCOME ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+
+        <h2>Outcome</h2>
+
+        <p>
+          The Co-optex work brought together two complementary retail experiences:
+          a customer-facing digital commerce platform and a broad operational
+          POS interface.
+        </p>
+
+        <p>
+          The work demonstrates my ability to design across different users,
+          workflows and levels of information density — from product discovery
+          and shopping interfaces to transaction, inventory and reporting workflows.
+        </p>
+
+        <p>
+          The focus throughout was on making information easier to understand,
+          actions easier to identify and workflows easier to navigate.
+        </p>
+
+      </div>
+
+      <!-- ═══ REFLECTION ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+
+        <h2>Reflection</h2>
+
+        <p>
+          Working across e-commerce and POS strengthened my understanding of
+          how strongly UX depends on user context.
+        </p>
+
+        <p>
+          A shopper needs visual clarity, product information and straightforward
+          decisions, while a retail operator needs fast access to detailed
+          information and frequent operational actions.
+        </p>
+
+        <p>
+          This project reinforced my approach to information hierarchy,
+          transactional workflows, data-dense interfaces and reusable UI patterns.
+        </p>
+
+        <blockquote>
+
+          <p>
+            Good enterprise UX is about creating clear structure around
+            the user's task while respecting the complexity of the workflow.
+          </p>
+
+        </blockquote>
+
+        <hr />
+
+        <p>
+          <em>
+            Interested in simplifying a complex digital or operational experience?
+            <a href="../../index.html#contact">Get in touch</a> —
+            I'd be happy to discuss your product, platform or workflow.
+          </em>
+        </p>
+
+      </div>
+    </article>
+
+    <!-- ═══ MORE PROJECTS ═══ -->
+    <section class="bg-zinc-50 dark:bg-zinc-900/50 py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="font-display font-bold text-2xl text-zinc-900 dark:text-white">More projects</h2>
+          <a href="../../pages/projects/projects.html"
+            class="text-sm font-medium text-accent nav-link hidden md:block">View all work →</a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+
+          <article
+            class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+            <div class="photo-frame w-full h-44">
+              <img src="../../assets/images/projects/tnpds/tnpds.png" alt="TNPDS" loading="lazy" />
+            </div>
+            <div class="p-5">
+              <div class="flex gap-2 mb-2">
+                <span
+                  class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Government</span>
+              </div>
+              <a href="../../pages/case-study/tnpds-case-study.html">
+                <h3
+                  class="font-display font-bold text-base text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
+                  TNPDS</h3>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug mb-2">Public Distribution System
+                </p>
+              </a>
+              <a href="../../pages/case-study/tnpds-case-study.html"
+                class="text-sm font-medium text-accent nav-link">View project →</a>
+            </div>
+          </article>
+
+          <article
+            class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+            <div class="photo-frame w-full h-44">
+              <img src="../../assets/images/projects/primetrip/primetrip.jpg" alt="PrimeTrip" loading="lazy" />
+            </div>
+            <div class="p-5">
+              <div class="flex gap-2 mb-2">
+                <span
+                  class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">Travel</span>
+              </div>
+              <a href="#">
+                <h3
+                  class="font-display font-bold text-base text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
+                  PrimeTrip</h3>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug mb-2">Travel Booking Platform</p>
+              </a>
+              <a href="#" class="text-sm font-medium text-accent nav-link">View project →</a>
+            </div>
+          </article>
+
+          <article
+            class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+            <div class="photo-frame w-full h-44">
+              <img src="../../assets/images/projects/cooptex/cooptex.png" alt="Co-optex" loading="lazy" />
+            </div>
+            <div class="p-5">
+              <div class="flex gap-2 mb-2">
+                <span
+                  class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">E-commerce</span>
+              </div>
+              <a href="#">
+                <h3
+                  class="font-display font-bold text-base text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
+                  Co-optex</h3>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug mb-2">E-commerce Platform</p>
+              </a>
+              <a href="#" class="text-sm font-medium text-accent nav-link">View project →</a>
+            </div>
+          </article>
+
+        </div>
+        <div class="text-center mt-8 md:hidden">
+          <a href="../../pages/projects/projects.html" class="text-sm font-medium text-accent">View all work →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CTA ═══ -->
+    <section class="py-24">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-10 md:p-14 text-center relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none"
+            aria-hidden="true"></div>
+          <div class="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-2xl pointer-events-none"
+            aria-hidden="true"></div>
+          <div class="relative z-10">
+            <p class="text-xs font-medium text-accent tracking-widest uppercase mb-4">Let's work together</p>
+            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-4">Have a project in mind?</h2>
+            <p class="text-zinc-400 max-w-md mx-auto mb-8">I'm available for UI/UX design, enterprise applications and
+              digital product work. Tell me what you're building and let's discuss how I can help.</p>
+            <a href="../../index.html#contact"
+              class="inline-flex items-center gap-2 btn-primary bg-accent text-white font-medium px-8 py-3.5 rounded-full hover:bg-accent-light transition-colors">
+              Let's talk →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="border-t border-zinc-100 dark:border-zinc-900">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-zinc-400">© <span id="yr"></span> Asir Durai Selvan. All rights reserved.</p>
+      <p class="text-xs text-zinc-500">Built with
+        <a href="https://www.w3schools.com/html/" rel="noopener noreferrer" target="_blank"
+          class="hover:text-accent transition-colors">HTML,</a>
+        <a href="https://www.w3schools.com/Css/" rel="noopener noreferrer" target="_blank"
+          class="hover:text-accent transition-colors">CSS</a>&amp;
+        <a href="https://www.w3schools.com/js/" rel="noopener noreferrer" target="_blank"
+          class="hover:text-accent transition-colors">JavaScript</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Local portfolio JavaScript -->
+  <script src="../../assets/js/script.js"></script>
+  <script src="../../assets/js/case-study.js"></script>
+
+</body>
+
+</html>
+<!doctype html>
+<html lang="en" x-data="{
+  dark: localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches),
+  scrolled: false,
+  mobileMenu: false,
+  progress: 0
+}" :class="{'dark':dark}" x-init="
+  $watch('dark', v => localStorage.setItem('theme', v ? 'dark' : 'light'));
+  window.addEventListener('scroll', () => {
+    scrolled = window.scrollY > 20;
+    progress = Math.min(100, Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100));
+  }, { passive: true });
+" class="scroll-smooth">
+
+<head>
+  <meta name="description"
+    content="Co-optex — Digital Commerce & Retail POS · UI/UX case study by Asir Durai Selvan covering e-commerce and retail operations." />
+
+  <meta name="author" content="Asir Durai Selvan" />
+
+  <meta property="og:title" content="Co-optex — Digital Commerce & Retail POS | Asir Durai Selvan" />
+
+  <meta property="og:description"
+    content="UI/UX case study covering Co-optex digital commerce and Infotex POS retail operations." />
+
+  <meta property="og:type" content="article" />
+
+  <title>Co-optex — Digital Commerce & Retail POS | Asir Durai Selvan</title>
+
+  <!-- Local Tailwind CSS -->
+  <link rel="stylesheet" href="../../assets/css/tailwind.generated.css" />
+
+  <!-- Local case study styles -->
+  <link rel="stylesheet" href="../../assets/css/case-study.css" />
+
+  <!-- Local Alpine.js -->
+  <script defer src="../../assets/js/alpine.js"></script>
+</head>
+
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-body antialiased">
+  <!-- Reading progress bar -->
+  <div class="progress-bar" :style="`width:${progress}%`" role="progressbar" :aria-valuenow="progress" aria-valuemin="0"
+    aria-valuemax="100" aria-label="Reading progress"></div>
+
+  <!-- ═══ NAV ═══ -->
+
+  <header class="fixed top-0.5 left-0 right-0 z-50 transition-all duration-300" :class="scrolled
+      ? 'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5'
+      : 'bg-transparent'">
+    <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
+      <a href="../../index.html" class="font-display font-bold text-xl tracking-tight z-10">
+        <span class="text-zinc-900 dark:text-white">asir</span><span class="text-accent">.</span>
+      </a>
+
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium" role="list">
+        <li>
+          <a href="../../index.html#services"
+            class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
+            Expertise
+          </a>
+        </li>
+
+        <li>
+          <a href="co-optex-case-study.html" class="nav-link text-accent font-medium"> Work </a>
+        </li>
+
+        <li>
+          <a href="../../index.html#about"
+            class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="../../index.html#blog"
+            class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
+            Insights
+          </a>
+        </li>
+
+        <li>
+          <a href="../../index.html#contact"
+            class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
+            Contact
+          </a>
+        </li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <button @click="dark=!dark"
+          class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+          :aria-label="dark ? 'Light mode' : 'Dark mode'">
+          <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+          </svg>
+
+          <svg x-show="dark" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+          </svg>
+        </button>
+
+        <a href="../../index.html#contact"
+          class="hidden md:inline-flex items-center gap-2 btn-primary bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">
+          Let's talk →
+        </a>
+
+        <button @click="mobileMenu=!mobileMenu"
+          class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800"
+          aria-label="Toggle menu">
+          <svg x-show="!mobileMenu" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+
+          <svg x-show="mobileMenu" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div x-show="mobileMenu" x-cloak x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 -translate-y-2"
+      class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
+      <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-medium" role="list">
+        <li>
+          <a href="../../index.html#services" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">
+            Expertise
+          </a>
+        </li>
+
+        <li>
+          <a href="co-optex-case-study.html" @click="mobileMenu=false" class="block text-accent font-medium">
+            Work
+          </a>
+        </li>
+
+        <li>
+          <a href="../../index.html#about" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="../../index.html#blog" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">
+            Insights
+          </a>
+        </li>
+
+        <li>
+          <a href="../../index.html#contact" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ═══ CASE STUDY ═══ -->
+
+    <article>
+      <!-- ═══ CASE STUDY HEADER ═══ -->
+
+      <header class="pt-32 pb-10 max-w-4xl mx-auto px-6">
+        <a href="../../pages/projects/projects.html"
+          class="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors mb-8">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+          </svg>
+
+          Back to projects
+        </a>
+
+        <!-- Tags -->
+
+        <div class="flex flex-wrap items-center gap-3 mb-6">
+          <span
+            class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">
+            E-commerce
+          </span>
+
+          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">
+            Retail POS
+          </span>
+
+          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">
+            Enterprise
+          </span>
+
+          <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">
+            UI/UX Design
+          </span>
+        </div>
+
+        <!-- Title -->
+
+        <h1
+          class="reveal font-display font-bold text-4xl md:text-5xl lg:text-6xl text-zinc-900 dark:text-white leading-tight mb-6">
+          Co-optex — Digital Commerce &amp; Retail POS
+        </h1>
+
+        <p class="reveal d1 text-xl md:text-2xl text-zinc-400 dark:text-zinc-300 leading-relaxed mb-4 max-w-2xl">
+          Designing connected experiences across digital commerce and retail operations.
+        </p>
+
+        <p class="reveal d1 text-md text-zinc-500 dark:text-zinc-400 leading-relaxed mb-10 max-w-2xl">
+          A UI/UX design project spanning the Co-optex e-commerce experience and Infotex POS interface,
+          covering customer-facing shopping journeys, retail operations, inventory, sales, customer
+          workflows and reporting.
+        </p>
+
+        <!-- Meta row -->
+
+        <div
+          class="reveal d2 grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-t border-b border-zinc-100 dark:border-zinc-900">
+          <div>
+            <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Client</p>
+            <p class="font-medium text-zinc-900 dark:text-white text-sm">Co-optex</p>
+          </div>
+
+          <div>
+            <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Platforms</p>
+            <p class="font-medium text-zinc-900 dark:text-white text-sm">E-commerce · POS</p>
+          </div>
+
+          <div>
+            <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Role</p>
+            <p class="font-medium text-zinc-900 dark:text-white text-sm">UI/UX Design</p>
+          </div>
+
+          <div>
+            <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Focus</p>
+            <p class="font-medium text-zinc-900 dark:text-white text-sm">
+              Commerce · Retail Operations
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <!-- ═══ HERO IMAGE ═══ -->
+
+      <div class="max-w-6xl mx-auto px-6 mb-16">
+        <div class="reveal photo-frame w-full rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+          <img src="../../assets/images/projects/cooptex/cooptex-cover.png" alt="Co-optex digital commerce experience"
+            loading="eager" />
+        </div>
+
+        <p class="img-caption">
+          Co-optex — digital commerce experience for discovering and exploring textile products.
+        </p>
+      </div>
+
+      <!-- ═══ PROJECT CHARACTERISTICS ═══ -->
+
+      <div class="max-w-4xl mx-auto px-6 mb-16">
+        <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
+            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">E-commerce</p>
+
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">
+              Product discovery and digital shopping experience
+            </p>
+          </div>
+
+          <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
+            <p class="font-display font-bold text-3xl text-accent">Retail</p>
+
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">
+              Connected with day-to-day retail operations
+            </p>
+          </div>
+
+          <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
+            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">POS</p>
+
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">
+              Operational interface for retail transactions
+            </p>
+          </div>
+
+          <div class="stat-card bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-5 pl-6">
+            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">Enterprise</p>
+
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">
+              Complex workflows, data and operational interfaces
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ PROJECT OVERVIEW ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h2>The project</h2>
+
+        <p>
+          The Co-optex work covered two connected digital experiences: the customer-facing e-commerce
+          platform and the Infotex POS interface supporting retail operations.
+        </p>
+
+        <p>
+          My UI/UX contribution spanned product-focused web experiences as well as operational screens for
+          sales, inventory, customer workflows, collections and reporting.
+        </p>
+
+        <p>
+          The two environments required different approaches to information hierarchy, interaction
+          patterns and visual density while keeping each experience clear and consistent for its intended
+          users.
+        </p>
+
+        <h3>Customer-facing experience</h3>
+
+        <ul>
+          <li>Product discovery and browsing</li>
+          <li>Catalogue and product presentation</li>
+          <li>Product information and shopping actions</li>
+          <li>Responsive digital commerce interfaces</li>
+        </ul>
+
+        <h3>Retail operations</h3>
+
+        <ul>
+          <li>Sales and transaction workflows</li>
+          <li>Customer-related operations</li>
+          <li>Inventory and stock workflows</li>
+          <li>Collections and reporting interfaces</li>
+        </ul>
+      </div>
+
+      <!-- ═══ THE CHALLENGE ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h2>The challenge</h2>
+
+        <p>
+          Co-optex involved two very different interaction environments. The e-commerce experience needed
+          to support product discovery and purchase decisions, while Infotex POS needed to support
+          detailed retail operations and transaction-heavy workflows.
+        </p>
+
+        <p>
+          The design challenge was to provide the right level of information and interaction for each
+          context without making either experience harder to understand.
+        </p>
+
+        <h3>Different users. Different priorities.</h3>
+
+        <ul>
+          <li>Help shoppers discover and understand textile products.</li>
+          <li>Organise product categories and information clearly.</li>
+          <li>Support transaction-oriented retail workflows.</li>
+          <li>Structure inventory and customer operations.</li>
+          <li>Present operational records and reports clearly.</li>
+        </ul>
+      </div>
+
+      <!-- ═══ DESIGN STRATEGY ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h2>Design strategy</h2>
+
+        <p>
+          Rather than applying the same interface approach to every screen, the work was shaped around the
+          context of each experience.
+        </p>
+
+        <p>
+          The e-commerce side prioritised product visibility, discovery and shopping actions. The POS side
+          required stronger information hierarchy, operational clarity and support for complex workflows.
+        </p>
+      </div>
+
+      <!-- ═══ PRINCIPLES ═══ -->
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid md:grid-cols-3 gap-4">
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge mb-4">01</div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">Clarity</h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Make important information and actions easy to identify within each workflow.
+            </p>
+          </div>
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge mb-4">02</div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">Context</h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Design differently for customer-facing discovery and operational retail tasks.
+            </p>
+          </div>
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge mb-4">03</div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">Consistency</h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Use familiar patterns across related screens and workflows to reduce unnecessary
+              complexity.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════
+           CO-OPTEX E-COMMERCE
+      ═══════════════════════════════════════ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h2>Co-optex e-commerce experience</h2>
+
+        <p>
+          The customer-facing experience focused on helping users discover textile products, browse the
+          catalogue and evaluate products before moving toward a purchase.
+        </p>
+
+        <p>
+          The interface places the product experience at the centre while keeping navigation, supporting
+          information and shopping actions clear throughout the journey.
+        </p>
+      </div>
+
+      <!-- E-commerce primary visual -->
+
+      <div class="max-w-6xl mx-auto px-6 mb-16">
+        <div class="reveal photo-frame w-full rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+          <img src="../../assets/images/projects/cooptex/Co-optex.png" alt="Co-optex e-commerce interface"
+            loading="lazy" />
+        </div>
+
+        <p class="img-caption">Co-optex — customer-facing digital commerce interface.</p>
+      </div>
+
+      <!-- ═══ E-COMMERCE JOURNEY ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h2>E-commerce journey</h2>
+
+        <h3>Discover → Browse → Evaluate → Purchase</h3>
+
+        <p>
+          The shopping experience can be viewed as a connected journey, with each stage helping users
+          understand the available products and decide what to do next.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 mb-12">
+        <div class="reveal grid md:grid-cols-4 gap-4">
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge mb-4">1</div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">Discover</h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Reach products through navigation, categories and visual presentation.
+            </p>
+          </div>
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge mb-4">2</div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">Browse</h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Explore available products through structured catalogue content.
+            </p>
+          </div>
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge mb-4">3</div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">Evaluate</h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Review product information before choosing the next action.
+            </p>
+          </div>
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge mb-4">4</div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">Purchase</h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Keep relevant shopping actions visible as the user progresses.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ E-COMMERCE DESIGN FOCUS ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h3>Product-first hierarchy</h3>
+
+        <p>
+          Product imagery and information receive visual priority so users can understand what is
+          available before deciding how to proceed.
+        </p>
+
+        <h3>Clear discovery</h3>
+
+        <p>
+          Catalogue structure and navigation help users move from broad product discovery toward more
+          focused product exploration.
+        </p>
+
+        <h3>Visible shopping actions</h3>
+
+        <p>
+          Important actions remain understandable at the points where users need to make a shopping
+          decision.
+        </p>
+      </div>
+
+      <!-- ═══════════════════════════════════════
+           INFOTEX POS INTRO
+      ═══════════════════════════════════════ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h2>Infotex POS</h2>
+
+        <p>The project also covered the broader Infotex POS interface used for retail operations.</p>
+
+        <p>
+          Unlike the customer-facing commerce experience, POS users work with transactions, customer
+          records, inventory, collections and reports. The interface therefore needed to support
+          information-dense workflows and frequent operational actions.
+        </p>
+      </div>
+
+      <!-- ═══ POS DASHBOARD ═══ -->
+
+      <div class="max-w-6xl mx-auto px-6 mb-8">
+        <div class="reveal photo-frame w-full rounded-3xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+          <img src="../../assets/images/projects/cooptex/Infotex POS/dashboard/dashboardPos.png"
+            alt="Infotex POS dashboard" loading="lazy" />
+        </div>
+
+        <p class="img-caption">
+          Infotex POS — dashboard providing a structured entry point to retail operations.
+        </p>
+      </div>
+
+      <!-- ═══ POS WORKFLOW ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h2>POS workflow</h2>
+
+        <h3>Access → Operate → Review → Report</h3>
+
+        <p>
+          The POS environment brings together multiple operational areas. The interface needs to let users
+          reach the relevant function, complete a task, review information and work with operational
+          reports.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 mb-12">
+        <div class="reveal grid md:grid-cols-4 gap-4">
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge mb-4">1</div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">Access</h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Reach the required operational area through the system structure.
+            </p>
+          </div>
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge mb-4">2</div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">Operate</h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Complete sales, customer, inventory and related retail tasks.
+            </p>
+          </div>
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge mb-4">3</div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">Review</h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Work with transaction records, forms, lists and operational details.
+            </p>
+          </div>
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge mb-4">4</div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">Report</h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Review operational information through reporting interfaces.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ POS NAVIGATION ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h2>Navigation and operational structure</h2>
+
+        <p>
+          The POS system contains multiple functional areas and workflows. A structured menu provides the
+          starting point for moving through these operational functions.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+          <img src="../../assets/images/projects/cooptex/Infotex POS/menus/menu.png" alt="Infotex POS navigation menu"
+            loading="lazy" />
+        </div>
+
+        <p class="img-caption">
+          Infotex POS — navigation structure for the wider retail operations system.
+        </p>
+      </div>
+
+      <!-- ═══ SALES ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h2>Sales workflow</h2>
+
+        <p>
+          Sales represents one of the primary operational workflows within the POS interface. The screen
+          needs to bring transaction information and available actions together in a usable working area.
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-6 mb-16">
+        <div class="reveal photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+          <img src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/1.New Sales/1.Sales With Hold.png"
+            alt="Infotex POS new sales screen" loading="lazy" />
+        </div>
+
+        <p class="img-caption">New Sales — transaction-focused retail workflow.</p>
+      </div>
+
+      <!-- ═══ SALES RETURN + BILL SEARCH ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h2>Transaction management</h2>
+
+        <p>
+          Retail operations extend beyond creating a sale. Return processing and bill search introduce
+          additional workflows where users need to work with existing transaction information.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid md:grid-cols-2 gap-4">
+          <div>
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/2.Sales Return/Create Sales Return.png"
+                alt="Infotex POS sales return workflow" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Sales Return — transaction workflow.</p>
+          </div>
+
+          <div>
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/3.Bill Search/Bill Search List.png"
+                alt="Infotex POS bill search" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Bill Search — operational record lookup.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ CUSTOMER + INVENTORY ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h2>Customer and inventory operations</h2>
+
+        <p>
+          The POS experience extends into customer and inventory workflows, adding another layer of
+          operational information beyond the immediate transaction.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid md:grid-cols-2 gap-4">
+          <div>
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/5.KNT/List KNT Customer.png"
+                alt="Infotex POS customer workflow" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Customer workflow — structured customer information.</p>
+          </div>
+
+          <div>
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/dashboard/3.Current Stock Status/Create Current Stock Status.png"
+                alt="Infotex POS current stock workflow" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Current Stock Status — inventory-related operational workflow.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ ADDITIONAL POS WORKFLOWS ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h2>Beyond the core transaction</h2>
+
+        <p>
+          The wider POS interface also includes supporting operational workflows such as stock inward,
+          inventory closing, gift coupon entry and customer-related activities.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid md:grid-cols-2 gap-4">
+          <div>
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/cooptex/Infotex POS/dashboard/1.Stock Inward/Stock Inward.png"
+                alt="Infotex POS stock inward" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Stock Inward — inventory workflow.</p>
+          </div>
+
+          <div>
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/cooptex/Infotex POS/dashboard/4.Inventory Closing/1.png"
+                alt="Infotex POS inventory closing" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Inventory Closing — operational stock workflow.</p>
+          </div>
+
+          <div>
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/dashboard/5.Gift Coupon Entry/Gift Coupon Entry.png"
+                alt="Infotex POS gift coupon entry" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Gift Coupon Entry — supporting retail workflow.</p>
+          </div>
+
+          <div>
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/5.KNT/1.Create Customer/1.KNT Customer Details - 1.png"
+                alt="Infotex POS customer details" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Customer Details — structured customer information.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ REPORTING ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h2>Operational reporting</h2>
+
+        <p>
+          Reporting screens introduce a higher level of information density. The interface needs to
+          organise records and business information in a way that supports review and interpretation.
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-6 mb-16">
+        <div class="reveal photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+          <img src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/9.Reports/1.report.png"
+            alt="Infotex POS reporting interface" loading="lazy" />
+        </div>
+
+        <p class="img-caption">Reporting interface — structured operational information.</p>
+      </div>
+
+      <!-- ═══ MORE REPORTING VISUALS ═══ -->
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid md:grid-cols-2 gap-4">
+          <div>
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/9.Reports/3.salesReportsBillNumberwise.png"
+                alt="Infotex POS sales report" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Sales reporting — transaction-oriented information.</p>
+          </div>
+
+          <div>
+            <div class="photo-frame w-full rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/9.Reports/4.salesReport.png"
+                alt="Infotex POS sales report" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Sales report — operational review interface.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ DESIGN PROCESS ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h2>Design process</h2>
+
+        <p>
+          Across the e-commerce and POS experiences, the interface work followed a workflow-first
+          approach: understand the task, structure the information, establish the interaction pattern and
+          then refine the visual interface.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid md:grid-cols-3 gap-4">
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge mb-4">01</div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">Understand</h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Understand the business workflow, information and task requirements.
+            </p>
+          </div>
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge mb-4">02</div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">Structure</h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Organise navigation, information, fields and actions around the workflow.
+            </p>
+          </div>
+
+          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
+            <div class="step-badge mb-4">03</div>
+
+            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2">
+              Design &amp; refine
+            </h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Translate the structure into consistent, responsive and implementation-ready UI.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ KEY DESIGN DECISIONS ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h2>Key design decisions</h2>
+
+        <h3>Information hierarchy</h3>
+
+        <p>
+          Customer-facing screens prioritise products and shopping actions, while POS screens place
+          stronger emphasis on transaction information, forms, records and operational actions.
+        </p>
+
+        <h3>Data-dense interfaces</h3>
+
+        <p>
+          Operational screens contain more information than a typical consumer shopping interface.
+          Grouping related information and maintaining familiar structures helps users work through these
+          screens.
+        </p>
+
+        <h3>Task-oriented interaction</h3>
+
+        <p>
+          Each operational screen is organised around the task being completed, keeping relevant
+          information and actions together.
+        </p>
+
+        <h3>Consistent patterns</h3>
+
+        <p>
+          Familiar navigation, forms, lists, tables, filters and action areas provide a consistent
+          interaction language across related workflows.
+        </p>
+      </div>
+
+      <!-- ═══ FULL POS SHOWCASE ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+        <h2>Inside the Infotex POS interface</h2>
+
+        <p>
+          The POS work extended across a broad collection of operational screens. The following selection
+          represents different areas of the interface and demonstrates the range of workflows covered.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <div class="reveal grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/dashboard/2.Consignment Inward/Stock Inward List.png"
+                alt="Infotex POS stock inward list" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Stock Inward List</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/dashboard/6.RO Contract Collection/RO Contract Collection.png"
+                alt="Infotex POS RO contract collection" loading="lazy" />
+            </div>
+
+            <p class="img-caption">RO Contract Collection</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/dashboard/7.Discount Certification/1.Create Discount Certification/Discount Certification.png"
+                alt="Infotex POS discount certification" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Discount Certification</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/6.Credit/Credit Customer Registration List.png"
+                alt="Infotex POS credit customer registration" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Credit Customer Registration</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/6.Credit/3.Create Credit Customer Registration/1.png"
+                alt="Infotex POS credit customer registration form" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Credit Customer Registration Form</p>
+          </div>
+
+          <div>
+            <div class="photo-frame rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+              <img
+                src="../../assets/images/projects/cooptex/Infotex POS/menus/Sub Pages/4.Close Sales/1.Daily Transaction Statement (DTS)/1.Daily Transaction Statement (DTS) - Sales.png"
+                alt="Infotex POS daily transaction statement" loading="lazy" />
+            </div>
+
+            <p class="img-caption">Daily Transaction Statement</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ UI LANGUAGE ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h2>Interface language</h2>
+
+        <p>
+          Across the operational interface, repeated patterns help establish familiarity between related
+          workflows. Navigation, forms, tables, status information and actions follow a structured visual
+          language so users can focus on the task rather than relearning the interface.
+        </p>
+      </div>
+
+      <!-- ═══ OUTCOME ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h2>Outcome</h2>
+
+        <p>
+          The Co-optex work brought together two complementary retail experiences: a customer-facing
+          digital commerce platform and a broad operational POS interface.
+        </p>
+
+        <p>
+          The work demonstrates my ability to design across different users, workflows and levels of
+          information density — from product discovery and shopping interfaces to transaction, inventory
+          and reporting workflows.
+        </p>
+
+        <p>
+          The focus throughout was on making information easier to understand, actions easier to identify
+          and workflows easier to navigate.
+        </p>
+      </div>
+
+      <!-- ═══ REFLECTION ═══ -->
+
+      <div class="max-w-3xl mx-auto px-6 pb-6 prose-cs">
+        <h2>Reflection</h2>
+
+        <p>
+          Working across e-commerce and POS strengthened my understanding of how strongly UX depends on
+          user context.
+        </p>
+
+        <p>
+          A shopper needs visual clarity, product information and straightforward decisions, while a
+          retail operator needs fast access to detailed information and frequent operational actions.
+        </p>
+
+        <p>
+          This project reinforced my approach to information hierarchy, transactional workflows,
+          data-dense interfaces and reusable UI patterns.
+        </p>
+
+        <blockquote>
+          <p>
+            Good enterprise UX is about creating clear structure around the user's task while respecting
+            the complexity of the workflow.
+          </p>
+        </blockquote>
+
+        <hr />
+
+        <p>
+          <em>
+            Interested in simplifying a complex digital or operational experience?
+            <a href="../../index.html#contact">Get in touch</a> — I'd be happy to discuss your product,
+            platform or workflow.
+          </em>
+        </p>
+      </div>
+    </article>
+
+    <!-- ═══ MORE PROJECTS ═══ -->
+    <section class="bg-zinc-50 dark:bg-zinc-900/50 py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="font-display font-bold text-2xl text-zinc-900 dark:text-white">More projects</h2>
+          <a href="../../pages/projects/projects.html"
+            class="text-sm font-medium text-accent nav-link hidden md:block">View all work →</a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <article
+            class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+            <div class="photo-frame w-full h-44">
+              <img src="../../assets/images/projects/tnpds/tnpds.png" alt="TNPDS" loading="lazy" />
+            </div>
+            <div class="p-5">
+              <div class="flex gap-2 mb-2">
+                <span
+                  class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Government</span>
+              </div>
+              <a href="../../pages/case-study/tnpds-case-study.html">
+                <h3
+                  class="font-display font-bold text-base text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
+                  TNPDS
+                </h3>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug mb-2">
+                  Public Distribution System
+                </p>
+              </a>
+              <a href="../../pages/case-study/tnpds-case-study.html"
+                class="text-sm font-medium text-accent nav-link">View project →</a>
+            </div>
+          </article>
+
+          <article
+            class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+            <div class="photo-frame w-full h-44">
+              <img src="../../assets/images/projects/primetrip/primetrip.jpg" alt="PrimeTrip" loading="lazy" />
+            </div>
+            <div class="p-5">
+              <div class="flex gap-2 mb-2">
+                <span
+                  class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">Travel</span>
+              </div>
+              <a href="#">
+                <h3
+                  class="font-display font-bold text-base text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
+                  PrimeTrip
+                </h3>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug mb-2">
+                  Travel Booking Platform
+                </p>
+              </a>
+              <a href="#" class="text-sm font-medium text-accent nav-link">View project →</a>
+            </div>
+          </article>
+
+          <article
+            class="reveal card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+            <div class="photo-frame w-full h-44">
+              <img src="../../assets/images/projects/cooptex/cooptex.png" alt="Co-optex" loading="lazy" />
+            </div>
+            <div class="p-5">
+              <div class="flex gap-2 mb-2">
+                <span
+                  class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">E-commerce</span>
+              </div>
+              <a href="#">
+                <h3
+                  class="font-display font-bold text-base text-zinc-900 dark:text-white group-hover:text-accent transition-colors">
+                  Co-optex
+                </h3>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-snug mb-2">
+                  E-commerce Platform
+                </p>
+              </a>
+              <a href="#" class="text-sm font-medium text-accent nav-link">View project →</a>
+            </div>
+          </article>
+        </div>
+        <div class="text-center mt-8 md:hidden">
+          <a href="../../pages/projects/projects.html" class="text-sm font-medium text-accent">View all work →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CTA ═══ -->
+    <section class="py-24">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-10 md:p-14 text-center relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none"
+            aria-hidden="true"></div>
+          <div class="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-2xl pointer-events-none"
+            aria-hidden="true"></div>
+          <div class="relative z-10">
+            <p class="text-xs font-medium text-accent tracking-widest uppercase mb-4">
+              Let's work together
+            </p>
+            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-4">
+              Have a project in mind?
+            </h2>
+            <p class="text-zinc-400 max-w-md mx-auto mb-8">
+              I'm available for UI/UX design, enterprise applications and digital product work. Tell
+              me what you're building and let's discuss how I can help.
+            </p>
+            <a href="../../index.html#contact"
+              class="inline-flex items-center gap-2 btn-primary bg-accent text-white font-medium px-8 py-3.5 rounded-full hover:bg-accent-light transition-colors">
+              Let's talk →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="border-t border-zinc-100 dark:border-zinc-900">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-zinc-400">© <span id="yr"></span> Asir Durai Selvan. All rights reserved.</p>
+      <p class="text-xs text-zinc-500">
+        Built with
+        <a href="https://www.w3schools.com/html/" rel="noopener noreferrer" target="_blank"
+          class="hover:text-accent transition-colors">HTML,</a>
+        <a href="https://www.w3schools.com/Css/" rel="noopener noreferrer" target="_blank"
+          class="hover:text-accent transition-colors">CSS</a>&amp;
+        <a href="https://www.w3schools.com/js/" rel="noopener noreferrer" target="_blank"
+          class="hover:text-accent transition-colors">JavaScript</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Local portfolio JavaScript -->
+  <script src="../../assets/js/script.js"></script>
+  <script src="../../assets/js/case-study.js"></script>
+</body>
+
+</html>

@@ -1,68 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" x-data="app()" :class="{'dark':dark}" class="scroll-smooth">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <meta name="description"
-    content="Asir Durai Selvan — Senior UI/UX Designer focused on enterprise UX, design systems, responsive interfaces, and UI development.">
+    content="Asir Durai Selvan — Senior UI/UX Designer focused on enterprise UX, design systems, responsive interfaces, and UI development." />
+
   <meta name="keywords"
-    content="Asir Durai Selvan, Senior UI/UX Designer, UI Developer, UX Design, Design Systems, Figma, Angular, HTML, CSS, JavaScript">
-  <meta name="author" content="Asir Durai Selvan">
-  <meta property="og:title" content="Asir Durai Selvan — Senior UI/UX Designer">
+    content="Asir Durai Selvan, Senior UI/UX Designer, UI Developer, UX Design, Design Systems, Figma, Angular, HTML, CSS, JavaScript" />
+
+  <meta name="author" content="Asir Durai Selvan" />
+
+  <meta property="og:title" content="Asir Durai Selvan — Senior UI/UX Designer" />
+
   <meta property="og:description"
-    content="Senior UI/UX Designer focused on enterprise products, design systems, responsive interfaces, and UI development.">
-  <meta property="og:type" content="website">
+    content="Senior UI/UX Designer focused on enterprise products, design systems, responsive interfaces, and UI development." />
+
+  <meta property="og:type" content="website" />
+
   <title>Asir Durai Selvan — Senior UI/UX Designer</title>
 
   <!-- Local Tailwind CSS -->
-  <link rel="stylesheet" href="./assets/css/tailwind.generated.css">
+  <link rel="stylesheet" href="./assets/css/tailwind.generated.css" />
 
   <!-- Local project styles -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/style.css" />
 
   <!-- Local portfolio JavaScript -->
   <script src="./assets/js/script.js"></script>
 
   <!-- Local Alpine.js -->
   <script defer src="./assets/js/alpine.js"></script>
-
 </head>
 
 <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased">
+  <!-- ═══════════════════════════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════════════════════════ -->
 
-  <!-- ═══ NAV ═══ -->
   <header class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
     :class="sc?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':''">
     <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
-
+      <!-- Logo -->
       <a href="#hero" class="font-display font-bold text-xl tracking-tight relative z-10">
         <span class="text-zinc-900 dark:text-white">asir</span><span class="text-accent">.</span>
       </a>
 
+      <!-- Desktop navigation -->
       <ul class="hidden md:flex items-center gap-8 text-sm" role="list">
-        <li><a href="#services"
+        <li>
+          <a href="#services"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='services'?'on !text-zinc-900 dark:!text-white':''">Expertise</a></li>
-        <li><a href="#work"
+            :class="s==='services'?'on !text-zinc-900 dark:!text-white':''">
+            Expertise
+          </a>
+        </li>
+
+        <li>
+          <a href="#work"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='work'?'on !text-zinc-900 dark:!text-white':''">Work</a></li>
-        <li><a href="#about"
+            :class="s==='work'?'on !text-zinc-900 dark:!text-white':''">
+            Work
+          </a>
+        </li>
+
+        <li>
+          <a href="#about"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='about'?'on !text-zinc-900 dark:!text-white':''">About</a></li>
-        <li><a href="#reviews"
+            :class="s==='about'?'on !text-zinc-900 dark:!text-white':''">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="#reviews"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='reviews'?'on !text-zinc-900 dark:!text-white':''">Approach</a></li>
-        <li><a href="#blog"
+            :class="s==='reviews'?'on !text-zinc-900 dark:!text-white':''">
+            Approach
+          </a>
+        </li>
+
+        <li>
+          <a href="#blog"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='blog'?'on !text-zinc-900 dark:!text-white':''">Insights</a></li>
-        <li><a href="#contact"
+            :class="s==='blog'?'on !text-zinc-900 dark:!text-white':''">
+            Insights
+          </a>
+        </li>
+
+        <li>
+          <a href="#contact"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='contact'?'on !text-zinc-900 dark:!text-white':''">Contact</a></li>
+            :class="s==='contact'?'on !text-zinc-900 dark:!text-white':''">
+            Contact
+          </a>
+        </li>
       </ul>
 
+      <!-- Right controls -->
       <div class="flex items-center gap-3">
-        <!-- dark toggle -->
+        <!-- Dark mode toggle -->
         <button @click="dark=!dark"
           class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
           :aria-label="dark?'Light mode':'Dark mode'">
@@ -70,25 +109,31 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
           </svg>
+
           <svg x-show="dark" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
           </svg>
         </button>
-        <!-- hire me -->
+
+        <!-- Hire / contact -->
         <a href="#contact"
           class="hidden md:inline-flex items-center gap-2 shimmer bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">
-          Let's talk <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          Let's talk
+
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>
-        <!-- hamburger -->
+
+        <!-- Mobile hamburger -->
         <button @click="mm=!mm"
           class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800"
           :aria-expanded="mm" aria-label="Toggle menu">
           <svg x-show="!mm" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
+
           <svg x-show="mm" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
@@ -96,82 +141,134 @@
       </div>
     </nav>
 
-    <!-- mobile menu -->
+    <!-- Mobile menu -->
     <div x-show="mm" x-cloak x-transition:enter="transition ease-out duration-200"
       x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
       x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
       x-transition:leave-end="opacity-0 -translate-y-2"
       class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
       <ul class="flex flex-col px-6 py-5 gap-4 text-sm font-medium" role="list">
-        <li><a href="#services" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Expertise</a></li>
-        <li><a href="#work" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Work</a></li>
-        <li><a href="#about" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">About</a></li>
-        <li><a href="#reviews" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Approach</a></li>
-        <li><a href="#blog" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Insights</a></li>
-        <li><a href="#contact" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Contact</a></li>
+        <li>
+          <a href="#services" @click="mm=false"
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">
+            Expertise
+          </a>
+        </li>
+
+        <li>
+          <a href="#work" @click="mm=false"
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">
+            Work
+          </a>
+        </li>
+
+        <li>
+          <a href="#about" @click="mm=false"
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="#reviews" @click="mm=false"
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">
+            Approach
+          </a>
+        </li>
+
+        <li>
+          <a href="#blog" @click="mm=false"
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">
+            Insights
+          </a>
+        </li>
+
+        <li>
+          <a href="#contact" @click="mm=false"
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">
+            Contact
+          </a>
+        </li>
+
         <li class="pt-2 border-t border-zinc-100 dark:border-zinc-900">
           <a href="#contact" @click="mm=false"
-            class="inline-flex shimmer bg-accent text-white font-medium text-sm px-5 py-2.5 rounded-full">Let's talk →</a>
+            class="inline-flex shimmer bg-accent text-white font-medium text-sm px-5 py-2.5 rounded-full">
+            Let's talk →
+          </a>
         </li>
       </ul>
     </div>
   </header>
 
   <main>
+    <!-- ═══════════════════════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════════════════════ -->
 
-    <!-- ═══ HERO ═══ -->
     <section id="hero" class="relative min-h-screen flex items-center pt-16 overflow-hidden">
       <div class="absolute top-1/4 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none"
         aria-hidden="true"></div>
+
       <div
         class="absolute bottom-1/4 left-0 w-64 h-64 bg-zinc-200/50 dark:bg-zinc-800/30 rounded-full blur-3xl pointer-events-none"
         aria-hidden="true"></div>
 
       <div class="relative z-10 max-w-6xl mx-auto px-6 py-24 w-full">
         <div class="grid md:grid-cols-2 gap-12 items-center">
-
+          <!-- Hero copy -->
           <div>
-            <p class="reveal text-sm font-medium text-accent tracking-widest uppercase mb-4">Senior UI/UX Designer · UI Developer</p>
-            <h1 class="reveal d1 font-display font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-zinc-900 dark:text-white mb-6">
+            <p class="reveal text-sm font-medium text-accent tracking-widest uppercase mb-4">
+              Senior UI/UX Designer · UI Developer
+            </p>
+
+            <h1
+              class="reveal d1 font-display font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-zinc-900 dark:text-white mb-6">
               Hi, I'm <span class="text-accent">Asir</span>
             </h1>
-            <p class="reveal d2 text-lg md:text-xl text-zinc-500 dark:text-zinc-400 font-light leading-relaxed max-w-md mb-10">
+
+            <p
+              class="reveal d2 text-lg md:text-xl text-zinc-500 dark:text-zinc-400 font-light leading-relaxed max-w-md mb-10">
               Senior UI/UX Designer and UI Developer with
-              <strong class="font-medium text-zinc-700 dark:text-zinc-300">7.5+ years of experience</strong>.
-              I design enterprise applications, government platforms, responsive web products and scalable design
-              systems with a focus on clarity, usability and consistent digital experiences.
+              <strong class="font-medium text-zinc-700 dark:text-zinc-300">
+                7.5+ years of experience </strong>. I design enterprise applications, government platforms, responsive
+              web products and
+              scalable design systems with a focus on clarity, usability and consistent digital
+              experiences.
             </p>
+
             <div class="reveal d3 flex flex-wrap gap-4">
               <a href="#work"
                 class="shimmer inline-flex items-center gap-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-700 dark:hover:bg-zinc-200 transition-colors text-sm">
                 View selected work
+
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </a>
-              <a href="./assets/documents/Asir-Durai-Selvan-Senior-UI-UX-Designer-Resume.pdf" download="Asir-Durai-Selvan-Senior-UI-UX-Designer-Resume.pdf"
-              class="inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm">
-              Download resume
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v12m0 0l4-4m-4 4l-4-4M5 21h14" />
-              </svg>
+
+              <a href="./assets/documents/Asir-Durai-Selvan-Senior-UI-UX-Designer-Resume.pdf"
+                download="Asir-Durai-Selvan-Senior-UI-UX-Designer-Resume.pdf"
+                class="inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm">
+                Download resume
+
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 3v12m0 0l4-4m-4 4l-4-4M5 21h14" />
+                </svg>
               </a>
             </div>
+
             <div class="reveal d4 flex gap-8 mt-14 pt-8 border-t border-zinc-100 dark:border-zinc-900">
               <div>
                 <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">34+</p>
                 <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Projects done</p>
               </div>
+
               <div>
                 <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">21+</p>
                 <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Happy clients</p>
               </div>
+
               <div>
                 <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">7.5+</p>
                 <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Years of experience</p>
@@ -179,28 +276,40 @@
             </div>
           </div>
 
+          <!-- Hero image -->
           <div class="reveal d2 flex justify-center md:justify-end">
             <div class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
               <div class="pf w-full h-full rounded-3xl">
-                <img src="assets/images/profile/asir-durai-selvan-photo.jpg" alt="Asir Durai Selvan — Senior UI/UX Designer" loading="eager">
+                <img src="assets/images/profile/asir-durai-selvan-photo.jpg"
+                  alt="Asir Durai Selvan — Senior UI/UX Designer" loading="eager" />
               </div>
-              <div class="absolute -bottom-4 -left-4 bg-accent text-white font-display font-bold text-sm px-4 py-2.5 rounded-2xl shadow-lg">Open to opportunities</div>
+
+              <div
+                class="absolute -bottom-4 -left-4 bg-accent text-white font-display font-bold text-sm px-4 py-2.5 rounded-2xl shadow-lg">
+                Open to opportunities
+              </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- ═══ SERVICES ═══ -->
+    <!-- ═══════════════════════════════════════════════════════════════
+         SERVICES
+    ═══════════════════════════════════════════════════════════════ -->
+
     <section id="services" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
       <div class="max-w-6xl mx-auto px-6">
         <div class="mb-14">
           <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">What I do</p>
-          <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Services</h2>
-        </div>
-        <div class="grid md:grid-cols-3 gap-6">
 
+          <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">
+            Services
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- UI/UX -->
           <article
             class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
             <div
@@ -210,12 +319,18 @@
                   d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2" />
               </svg>
             </div>
-            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">UI/UX Design</h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">User-centred design for enterprise and
-              government applications, fromuser flows and wireframes to high-fidelity interfaces and responsive
-              experiences.</p>
+
+            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">
+              UI/UX Design
+            </h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              User-centred design for enterprise and government applications, from user flows and
+              wireframes to high-fidelity interfaces and responsive experiences.
+            </p>
           </article>
 
+          <!-- UI Development -->
           <article
             class="reveal d2 card-h group bg-zinc-900 dark:bg-zinc-800 rounded-2xl p-8 border border-zinc-800 hover:border-accent">
             <div
@@ -225,11 +340,16 @@
                   d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
               </svg>
             </div>
+
             <h3 class="font-display font-bold text-xl text-white mb-3">UI Development</h3>
-            <p class="text-sm text-zinc-400 leading-relaxed">Responsive UI implementation using HTML5, CSS3, Bootstrap
-              and Angular-based interfaces, with close collaboration between design and development teams.</p>
+
+            <p class="text-sm text-zinc-400 leading-relaxed">
+              Responsive UI implementation using HTML5, CSS3, Bootstrap and Angular-based interfaces,
+              with close collaboration between design and development teams.
+            </p>
           </article>
 
+          <!-- Design Systems -->
           <article
             class="reveal d3 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
             <div
@@ -237,434 +357,733 @@
               <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
               </svg>
             </div>
-            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Design Systems & Accessibility
-            </h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Reusable components, design patterns and
-              consistent UI foundations that improve scalability, accessibility and visual consistency across products
-              and modules.</p>
-          </article>
 
+            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">
+              Design Systems & Accessibility
+            </h3>
+
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Reusable components, design patterns and consistent UI foundations that improve
+              scalability, accessibility and visual consistency across products and modules.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ═══ WORK ═══ -->
+    <!-- ═══════════════════════════════════════════════════════════════
+         SELECTED WORK
+    ═══════════════════════════════════════════════════════════════ -->
+
     <section id="work" class="py-24">
       <div class="max-w-6xl mx-auto px-6">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
           <div>
-            <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Portfolio</p>
-            <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Selected work</h2>
+            <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">
+              Portfolio
+            </p>
+
+            <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">
+              Selected work
+            </h2>
           </div>
-          <a href="./pages/projects/projects.html" class="reveal d1 text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors self-start sm:self-auto nl">
+
+          <a href="./pages/projects/projects.html"
+            class="reveal d1 text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors self-start sm:self-auto nl">
             All projects →
           </a>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
+          <!-- ═══════════════════════════════════════════════════════
+               U.P. EXCISE
+          ═══════════════════════════════════════════════════════ -->
 
           <article
             class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-2">
             <div class="pf w-full h-64 md:h-80">
-              <img src="assets/images/projects/up-excise/up-excise-cover.png" alt="U.P. Excise Department Systems" loading="lazy">
+              <img src="assets/images/projects/up-excise/up-excise-cover.png" alt="U.P. Excise Department Systems"
+                loading="lazy" />
             </div>
+
             <div class="p-7">
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">
+                <span
+                  class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">
                   Enterprise UX
                 </span>
-                <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">UI/UX Design</span>
-                <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Government Systems</span>
+
+                <span
+                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">
+                  UI/UX Design
+                </span>
+
+                <span
+                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">
+                  Government Systems
+                </span>
               </div>
+
               <a href="pages/case-study/up-excise-case-study.html">
-                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">U.P. Excise Department Systems</h3>
+                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">
+                  U.P. Excise Department Systems
+                </h3>
               </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Designed and refined user
-                interfaces and end-to-end workflows for government enterprise systems supporting the U.P. Excise
-                Department. The work focused on simplifying complex administrative processes through clear information
-                architecture, task-oriented workflows, structured dashboards, responsive layouts, and reusable UI
-                patterns.<br><br> Particular attention was given to usability, accessibility, information hierarchy, and
-                consistency across multiple modules. Common patterns for navigation, forms, data presentation, status
-                information, and recurring interactions helped establish a unified and scalable experience across the
-                system.<br><br> The project focused on creating a structured UI foundation capable of supporting complex
-                administrative workflows while providing a consistent experience for future enhancements.</p>
-              <a href="pages/case-study/up-excise-case-study.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case study →</a>
+
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">
+                Designed and refined user interfaces and end-to-end workflows for government
+                enterprise systems supporting the U.P. Excise Department. The work focused on
+                simplifying complex administrative processes through clear information architecture,
+                task-oriented workflows, structured dashboards, responsive layouts, and reusable UI
+                patterns.
+
+                <br /><br />
+
+                Particular attention was given to usability, accessibility, information hierarchy,
+                and consistency across multiple modules. Common patterns for navigation, forms, data
+                presentation, status information, and recurring interactions helped establish a
+                unified and scalable experience across the system.
+
+                <br /><br />
+
+                The project focused on creating a structured UI foundation capable of supporting
+                complex administrative workflows while providing a consistent experience for future
+                enhancements.
+              </p>
+
+              <a href="pages/case-study/up-excise-case-study.html"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">
+                View case study →
+              </a>
             </div>
           </article>
+
+          <!-- ═══════════════════════════════════════════════════════
+               TNPDS
+          ═══════════════════════════════════════════════════════ -->
 
           <article
             class="card-h reveal d2 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
             <div class="pf w-full h-48">
-              <img src="assets/images/projects/tnpds/tnpds-cover.png" alt="Tamil Nadu Public Distribution System (TNPDS)" loading="lazy">
+              <img src="assets/images/projects/tnpds/tnpds-cover.png"
+                alt="Tamil Nadu Public Distribution System (TNPDS)" loading="lazy" />
             </div>
+
             <div class="p-6">
               <div class="flex flex-wrap gap-2 mb-3">
-                <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">
+                <span
+                  class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">
                   Government UX
                 </span>
-                <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">UI/UX Design</span>
-                <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Public Distribution</span>
+
+                <span
+                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">
+                  UI/UX Design
+                </span>
+
+                <span
+                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">
+                  Public Distribution
+                </span>
               </div>
+
               <a href="./pages/case-study/tnpds-case-study.html">
-                <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">Tamil Nadu Public Distribution System (TNPDS)</h3>
+                <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">
+                  Tamil Nadu Public Distribution System (TNPDS)
+                </h3>
               </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Designed clear and task-focused
-                interfaces for the Tamil Nadu Public Distribution System, simplifying complex public-service workflows
-                through structured layouts, responsive design and consistent interaction patterns.</p>
-              <a href="./pages/case-study/tnpds-case-study.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case study →</a>
+
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
+                Designed clear and task-focused interfaces for the Tamil Nadu Public Distribution
+                System, simplifying complex public-service workflows through structured layouts,
+                responsive design and consistent interaction patterns.
+              </p>
+
+              <a href="./pages/case-study/tnpds-case-study.html"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">
+                View case study →
+              </a>
             </div>
           </article>
+
+          <!-- ═══════════════════════════════════════════════════════
+               PRIMETRIP
+          ═══════════════════════════════════════════════════════ -->
 
           <article
             class="card-h reveal d3 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
             <div class="pf w-full h-48">
               <img src="assets/images/projects/primetrip/primetrip-cover.png" alt="PrimeTrip — Travel Booking Platform"
-                loading="lazy">
+                loading="lazy" />
             </div>
+
             <div class="p-6">
               <div class="flex flex-wrap gap-2 mb-3">
-                <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">
+                <span
+                  class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">
                   Travel UX
                 </span>
-                <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">UI/UX Design</span>
-                <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Booking Platform</span>
+
+                <span
+                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">
+                  UI/UX Design
+                </span>
+
+                <span
+                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">
+                  Booking Platform
+                </span>
               </div>
+
               <a href="pages/case-study/primetrip-case-study.html">
-                <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">PrimeTrip — Travel Booking Platform</h3>
+                <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">
+                  PrimeTrip — Travel Booking Platform
+                </h3>
               </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Designed a user-friendly travel
-                booking experience with clear information architecture, intuitive booking flows and responsive
-                interfaces across the platform.</p>
-              <a href="pages/case-study/primetrip-case-study.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case study →</a>
+
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
+                Designed a user-friendly travel booking experience with clear information
+                architecture, intuitive booking flows and responsive interfaces across the platform.
+              </p>
+
+              <a href="pages/case-study/primetrip-case-study.html"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">
+                View case study →
+              </a>
             </div>
           </article>
+
+          <!-- ═══════════════════════════════════════════════════════
+               CO-OPTEX
+          ═══════════════════════════════════════════════════════ -->
 
           <article
             class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
             <div class="pf w-full h-48">
-              <img src="assets/images/projects/cooptex/cooptex-cover.png" alt="Co-optex — E-commerce Platform"
-                loading="lazy">
+              <img src="assets/images/projects/cooptex/cooptex-cover.png" alt="Co-optex — Digital Commerce & Retail POS"
+                loading="lazy" />
             </div>
+
             <div class="p-6">
               <div class="flex flex-wrap gap-2 mb-3">
                 <span
-                  class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">E-commerce
-                  UX</span>
+                  class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">
+                  E-commerce UX
+                </span>
+
                 <span
-                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">UI/UX
-                  Design</span>
+                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">
+                  UI/UX Design
+                </span>
+
                 <span
-                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Responsive
-                  Web</span>
+                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">
+                  Retail Operations
+                </span>
               </div>
-              <a href="case-study.html">
-                <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">Co-optex — E-commerce
-                  Platform</h3>
+
+              <a href="pages/case-study/co-optex-case-study.html">
+                <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">
+                  Co-optex — Digital Commerce &amp; Retail POS
+                </h3>
               </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Designed a responsive e-commerce
-                experience for Co-optex, focusing on clear product discovery, intuitive navigation and consistent
-                interfaces across key shopping journeys.</p>
-              <a href="case-study.html"
-                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case study →</a>
+
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
+                Designed connected customer-facing and retail operational experiences across
+                Co-optex e-commerce and the Infotex POS interface, covering product discovery,
+                transactions, inventory, customer workflows and reporting.
+              </p>
+
+              <a href="pages/case-study/co-optex-case-study.html"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">
+                View case study →
+              </a>
             </div>
           </article>
+
+          <!-- ═══════════════════════════════════════════════════════
+               OASYS DESIGN SYSTEM
+          ═══════════════════════════════════════════════════════ -->
 
           <article
             class="card-h reveal d2 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
             <div class="pf w-full h-48">
               <img src="assets/images/projects/oasys-design-system/oasys-design-system-cover.png"
-                alt="OASYS Design System & Component Library" loading="lazy">
+                alt="OASYS Design System & Component Library" loading="lazy" />
             </div>
+
             <div class="p-6">
               <div class="flex flex-wrap gap-2 mb-3">
-                <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">
+                <span
+                  class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">
                   Design Systems
                 </span>
+
                 <span
                   class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">
                   UI/UX Design
                 </span>
-                <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">
+
+                <span
+                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">
                   Component Library
                 </span>
               </div>
-              <a href="case-study.html">
-                <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">OASYS Design System & Component Library</h3>
+
+              <a href="pages/case-study/oasys-design-system-case-study.html">
+                <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">
+                  OASYS Design System &amp; Component Library
+                </h3>
               </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Developed and maintained a
-                reusable design system and component library to improve UI consistency, scalability and collaboration
-                across digital products and interfaces.</p>
-              <a href="case-study.html"
-                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case study →</a>
+
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
+                Designed and maintained a reusable design system and component library to support
+                consistent, scalable interfaces and closer collaboration across digital products and
+                modules.
+              </p>
+
+              <a href="pages/case-study/oasys-design-system-case-study.html"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">
+                View case study →
+              </a>
             </div>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- ═══ ABOUT ═══ -->
+    <!-- ═══════════════════════════════════════════════════════════════
+         ABOUT
+    ═══════════════════════════════════════════════════════════════ -->
+
     <section id="about" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
       <div class="max-w-6xl mx-auto px-6">
         <div class="grid md:grid-cols-2 gap-16 items-center">
-
           <div class="reveal order-2 md:order-1">
             <div class="pf w-full aspect-square max-w-sm mx-auto rounded-3xl">
-              <img src="assets/images/profile/asir-durai-selvan-photo.jpg" alt="Asir Durai Selvan — Senior UI/UX Designer" loading="lazy">
+              <img src="assets/images/profile/asir-durai-selvan-photo.jpg"
+                alt="Asir Durai Selvan — Senior UI/UX Designer" loading="lazy" />
             </div>
           </div>
 
           <div class="order-1 md:order-2">
-            <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">About me</p>
-            <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white leading-tight mb-6">A bit about<br>who I am</h2>
+            <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">
+              About me
+            </p>
+
+            <h2
+              class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white leading-tight mb-6">
+              A bit about<br />who I am
+            </h2>
+
             <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
-              I'm a Senior UI/UX Designer with 7+ years of experience designing digital products, enterprise
-              applications, and large-scale platforms. My work focuses on transforming complex requirements into clear,
-              intuitive, and scalable user experiences.
+              I'm a Senior UI/UX Designer with 7+ years of experience designing digital products,
+              enterprise applications, and large-scale platforms. My work focuses on transforming
+              complex requirements into clear, intuitive, and scalable user experiences.
             </p>
+
             <p class="reveal d3 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
-              My experience spans enterprise and government systems, responsive web applications, e-commerce and travel
-              platforms, design systems, and UI development. I work across the design process from understanding
-              requirements and structuring workflows to creating high-fidelity interfaces and collaborating closely with
-              development teams.
+              My experience spans enterprise and government systems, responsive web applications,
+              e-commerce and travel platforms, design systems, and UI development. I work across the
+              design process from understanding requirements and structuring workflows to creating
+              high-fidelity interfaces and collaborating closely with development teams.
             </p>
+
             <p class="reveal d4 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-8">
-              I also bring hands-on experience with HTML, CSS, Bootstrap, JavaScript, and Angular-based UI development,
-              allowing me to understand both design and implementation. This helps me create interfaces that are not
-              only visually consistent, but also practical, responsive, accessible, and ready for development.
+              I also bring hands-on experience with HTML, CSS, Bootstrap, JavaScript, and
+              Angular-based UI development, allowing me to understand both design and implementation.
+              This helps me create interfaces that are not only visually consistent, but also
+              practical, responsive, accessible, and ready for development.
             </p>
+
             <div class="reveal d4">
-              <p class="text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-3">Stack &amp;
-                tools</p>
+              <p class="text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-3">
+                Stack &amp; tools
+              </p>
+
               <div class="flex flex-wrap gap-2" role="list" aria-label="Skills">
-                <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Figma</span>
-                <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">UI/UX
-                  Design</span>
-                <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Design
-                  Systems</span>
-                <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">HTML
-                  / CSS</span>
-                <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Bootstrap</span>
-                <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">JavaScript</span>
-                <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Angular</span>
-                <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Git</span>
-                <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">WordPress</span>
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">
+                  Figma
+                </span>
+
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">
+                  UI/UX Design
+                </span>
+
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">
+                  Design Systems
+                </span>
+
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">
+                  HTML / CSS
+                </span>
+
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">
+                  Bootstrap
+                </span>
+
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">
+                  JavaScript
+                </span>
+
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">
+                  Angular
+                </span>
+
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">
+                  Git
+                </span>
+
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">
+                  WordPress
+                </span>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- ═══ TESTIMONIALS ═══ -->
+    <!-- ═══════════════════════════════════════════════════════════════
+         APPROACH
+    ═══════════════════════════════════════════════════════════════ -->
+
     <section id="reviews" class="py-24">
       <div class="max-w-6xl mx-auto px-6">
         <div class="mb-14">
           <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">My Approach</p>
-          <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">What I bring
+
+          <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">
+            What I bring
           </h2>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
-
+          <!-- Enterprise UX -->
           <blockquote
             class="reveal d1 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
             <div class="flex gap-0.5 mb-5" aria-label="5 stars">
               <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
+
               <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
+
               <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
+
               <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
+
               <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
             </div>
-            <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6 italic">"Designing clear,
-              task-focused experiences for complex enterprise and government workflows, with a strong focus on
-              usability, information hierarchy and practical user journeys."</p>
+
+            <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6 italic">
+              "Designing clear, task-focused experiences for complex enterprise and government
+              workflows, with a strong focus on usability, information hierarchy and practical user
+              journeys."
+            </p>
+
             <footer class="flex items-center gap-3">
               <div class="step-badge shrink-0 mt-0.5">1</div>
+
               <div>
                 <p class="font-medium text-sm text-zinc-900 dark:text-white">Enterprise UX</p>
+
                 <p class="text-xs text-zinc-500">Workflow · Info Architecture · Usability</p>
               </div>
             </footer>
           </blockquote>
 
+          <!-- Design Systems -->
           <blockquote class="reveal d2 bg-zinc-900 dark:bg-zinc-800 rounded-2xl p-7 border border-zinc-800">
             <div class="flex gap-0.5 mb-5" aria-label="5 stars">
               <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
+
               <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
+
               <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
+
               <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
+
               <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
             </div>
-            <p class="text-zinc-400 text-sm leading-relaxed mb-6 italic">"Creating reusable components, patterns and UI
-              foundations that improve consistency, scalability and collaboration across products and modules."</p>
+
+            <p class="text-zinc-400 text-sm leading-relaxed mb-6 italic">
+              "Creating reusable components, patterns and UI foundations that improve consistency,
+              scalability and collaboration across products and modules."
+            </p>
+
             <footer class="flex items-center gap-3">
               <div class="step-badge shrink-0 mt-0.5">2</div>
+
               <div>
                 <p class="font-medium text-sm text-white">Design Systems</p>
+
                 <p class="text-xs text-zinc-500">Component · Patterns · Consistency</p>
               </div>
             </footer>
           </blockquote>
 
+          <!-- UI Development -->
           <blockquote
             class="reveal d3 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
             <div class="flex gap-0.5 mb-5" aria-label="5 stars">
               <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
+
               <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
+
               <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00-.951-.69l1.07-3.292z" />
               </svg>
+
               <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
+
               <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
             </div>
-            <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6 italic">"Translating design concepts
-              into responsive and accessible interfaces with hands-on knowledge of HTML, CSS, Bootstrap, JavaScript and
-              Angular."</p>
+
+            <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6 italic">
+              "Translating design concepts into responsive and accessible interfaces with hands-on
+              knowledge of HTML, CSS, Bootstrap, JavaScript and Angular."
+            </p>
+
             <footer class="flex items-center gap-3">
               <div class="step-badge shrink-0 mt-0.5">3</div>
+
               <div>
                 <p class="font-medium text-sm text-zinc-900 dark:text-white">UI Development</p>
-                <p class="text-xs text-zinc-500">Html / Css · Bootstrap · JavaScript · Angular</p>
+
+                <p class="text-xs text-zinc-500">HTML / CSS · Bootstrap · JavaScript · Angular</p>
               </div>
             </footer>
           </blockquote>
-
         </div>
       </div>
     </section>
 
-    <!-- ═══ BLOG ═══ -->
+    <!-- ═══════════════════════════════════════════════════════════════
+         INSIGHTS
+    ═══════════════════════════════════════════════════════════════ -->
+
     <section id="blog" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
       <div class="max-w-6xl mx-auto px-6">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
           <div>
-            <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Design Thoughts</p>
-            <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">What I think about</h2>
+            <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">
+              Design Thoughts
+            </p>
+
+            <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">
+              What I think about
+            </h2>
           </div>
-          <a href="blog.html" class="reveal d1 text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors self-start sm:self-auto nl">View all →</a>
+
+          <a href="blog.html"
+            class="reveal d1 text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors self-start sm:self-auto nl">
+            View all →
+          </a>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
-
+          <!-- Enterprise UX -->
           <article
             class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
             <div class="pf w-full h-44">
-              <img src="assets/images/common/enterprise-ux.png" alt="Enterprise UX" loading="lazy">
+              <img src="assets/images/common/enterprise-ux.png" alt="Enterprise UX" loading="lazy" />
             </div>
+
             <div class="p-6">
               <div class="flex items-center gap-3 mb-3">
-                <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Enterprise UX</span>
-                <span class="text-xs text-zinc-400">Updated · Sep 2026</span>
+                <span
+                  class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">
+                  Enterprise UX
+                </span>
+
+                <span class="text-xs text-zinc-400"> Updated · Sep 2026 </span>
               </div>
+
               <a href="blog-article.html">
-                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Designing for complex enterprise workflows</h3>
+                <h3
+                  class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">
+                  Designing for complex enterprise workflows
+                </h3>
               </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Complex systems need more than
-                attractive interfaces. Clear information architecture, structured workflows, meaningful hierarchy, and
-                predictable interactions can make information-heavy products easier to understand and use.</p>
-              <a href="blog-article.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">Read more →</a>
+
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
+                Complex systems need more than attractive interfaces. Clear information
+                architecture, structured workflows, meaningful hierarchy, and predictable
+                interactions can make information-heavy products easier to understand and use.
+              </p>
+
+              <a href="blog-article.html"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">
+                Read more →
+              </a>
             </div>
           </article>
 
+          <!-- Design Systems -->
           <article
             class="reveal d2 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
             <div class="pf w-full h-44">
-              <img src="assets/images/common/design-system.png" alt="Design systems" loading="lazy">
+              <img src="assets/images/common/design-system.png" alt="Design systems" loading="lazy" />
             </div>
+
             <div class="p-6">
               <div class="flex items-center gap-3 mb-3">
-                <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Design Systems</span>
-                <span class="text-xs text-zinc-400">Updated · Aug 2026</span>
+                <span
+                  class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">
+                  Design Systems
+                </span>
+
+                <span class="text-xs text-zinc-400"> Updated · Aug 2026 </span>
               </div>
+
               <a href="blog-article.html">
-                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Building consistency through design systems</h3>
+                <h3
+                  class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">
+                  Building consistency through design systems
+                </h3>
               </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">A strong design system creates a
-                shared foundation for products and teams. Reusable components, clear patterns, and consistent standards
-                help designers and developers build interfaces with greater clarity and scalability.</p>
-              <a href="blog-article.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">Read more →</a>
+
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
+                A strong design system creates a shared foundation for products and teams. Reusable
+                components, clear patterns, and consistent standards help designers and developers
+                build interfaces with greater clarity and scalability.
+              </p>
+
+              <a href="blog-article.html"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">
+                Read more →
+              </a>
             </div>
           </article>
 
+          <!-- UX + UI Development -->
           <article
             class="reveal d3 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
             <div class="pf w-full h-44">
-              <img src="assets/images/common/ux-ui-development.png" alt="UX + UI Development" loading="lazy">
+              <img src="assets/images/common/ux-ui-development.png" alt="UX + UI Development" loading="lazy" />
             </div>
+
             <div class="p-6">
               <div class="flex items-center gap-3 mb-3">
-                <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">UX + UI Development</span>
-                <span class="text-xs text-zinc-400">Updated · Jul 2026</span>
+                <span
+                  class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">
+                  UX + UI Development
+                </span>
+
+                <span class="text-xs text-zinc-400"> Updated · Jul 2026 </span>
               </div>
+
               <a href="blog-article.html">
-                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Bridging design and front-end development</h3>
+                <h3
+                  class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">
+                  Bridging design and front-end development
+                </h3>
               </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Understanding how interfaces are
-                built helps create more practical designs. Knowledge of HTML, CSS, Bootstrap, JavaScript, and Angular
-                supports closer collaboration between design and development and helps turn concepts into responsive
-                interfaces.</p>
-              <a href="blog-article.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">Read more →</a>
+
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
+                Understanding how interfaces are built helps create more practical designs.
+                Knowledge of HTML, CSS, Bootstrap, JavaScript, and Angular supports closer
+                collaboration between design and development and helps turn concepts into responsive
+                interfaces.
+              </p>
+
+              <a href="blog-article.html"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">
+                Read more →
+              </a>
             </div>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- ═══ CONTACT ═══ -->
+    <!-- ═══════════════════════════════════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════════════════════════════════ -->
+
     <section id="contact" class="py-24">
       <div class="max-w-6xl mx-auto px-6">
         <div class="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-10 md:p-16 relative overflow-hidden">
           <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none"
             aria-hidden="true"></div>
+
           <div class="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-2xl pointer-events-none"
             aria-hidden="true"></div>
 
           <div class="relative z-10 grid md:grid-cols-2 gap-12 items-start">
-
+            <!-- Contact information -->
             <div>
-              <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Get in touch</p>
-              <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-white leading-tight mb-5">Let's
-                work<br>together</h2>
-              <p class="reveal d2 text-zinc-400 leading-relaxed mb-8">Have a project, product, or opportunity in mind?
-                I'm open to discussing UI/UX design, enterprise applications, design systems, and UI development
-                opportunities.</p>
+              <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">
+                Get in touch
+              </p>
+
+              <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-white leading-tight mb-5">
+                Let's<br />work together
+              </h2>
+
+              <p class="reveal d2 text-zinc-400 leading-relaxed mb-8">
+                Have a project, product, or opportunity in mind? I'm open to discussing UI/UX
+                design, enterprise applications, design systems, and UI development opportunities.
+              </p>
 
               <div class="reveal d3 flex flex-col gap-4">
+                <!-- Email -->
                 <a href="mailto:asir.d.selvan@gmail.com"
                   class="group flex items-center gap-3 text-zinc-400 hover:text-white transition-colors">
                   <span
@@ -674,19 +1093,25 @@
                         d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </span>
-                  <span class="text-sm">asir.d.selvan@gmail.com</span>
+
+                  <span class="text-sm"> asir.d.selvan@gmail.com </span>
                 </a>
+
+                <!-- LinkedIn -->
                 <a href="https://in.linkedin.com/in/asirduraiselvan" rel="noopener noreferrer" target="_blank"
                   class="group flex items-center gap-3 text-zinc-400 hover:text-white transition-colors">
                   <span
                     class="w-9 h-9 flex items-center justify-center bg-zinc-800 rounded-lg group-hover:bg-accent/20 transition-colors shrink-0">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path
-                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                     </svg>
                   </span>
-                  <span class="text-sm">linkedin.com/in/asir.d.selvan</span>
+
+                  <span class="text-sm"> linkedin.com/in/asirduraiselvan </span>
                 </a>
+
+                <!-- GitHub -->
                 <a href="https://github.com/asir-d-selvan" rel="noopener noreferrer" target="_blank"
                   class="group flex items-center gap-3 text-zinc-400 hover:text-white transition-colors">
                   <span
@@ -696,57 +1121,114 @@
                         d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                     </svg>
                   </span>
-                  <span class="text-sm">github.com/asir.d.selvan</span>
+
+                  <span class="text-sm"> github.com/asir-d-selvan </span>
                 </a>
               </div>
             </div>
 
+            <!-- Contact form -->
             <div class="reveal d2">
-              <form action="https://script.google.com/macros/s/AKfycbyyWYkTNTubn6OvmvKqhOya33iAfYJrrYEYxfw2oArvO9Jt3oSH6Mw3NIWCElQ_QnuR/exec" method="POST" target="contact-form-frame" onsubmit="handleContactSubmit(event)" novalidate>
+              <form
+                action="https://script.google.com/macros/s/AKfycbyyWYkTNTubn6OvmvKqhOya33iAfYJrrYEYxfw2oArvO9Jt3oSH6Mw3NIWCElQ_QnuR/exec"
+                method="POST" target="contact-form-frame" onsubmit="handleContactSubmit(event)" novalidate>
                 <div class="flex flex-col gap-4">
+                  <!-- Name + email -->
                   <div class="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label for="fname" class="block text-xs font-medium text-zinc-400 mb-1.5">Name <span aria-hidden="true">*</span></label>
-                      <input type="text" id="fname" name="name" placeholder="Your name" required autocomplete="name" class="w-full bg-zinc-800 border border-zinc-700 text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors">
+                      <label for="fname" class="block text-xs font-medium text-zinc-400 mb-1.5">
+                        Name
+                        <span aria-hidden="true">*</span>
+                      </label>
+
+                      <input type="text" id="fname" name="name" placeholder="Your name" required autocomplete="name"
+                        class="w-full bg-zinc-800 border border-zinc-700 text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors" />
                     </div>
+
                     <div>
-                      <label for="femail" class="block text-xs font-medium text-zinc-400 mb-1.5">Email <span aria-hidden="true">*</span></label>
-                      <input type="email" id="femail" name="email" placeholder="Your email" required autocomplete="email" class="w-full bg-zinc-800 border border-zinc-700 text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors">
+                      <label for="femail" class="block text-xs font-medium text-zinc-400 mb-1.5">
+                        Email
+                        <span aria-hidden="true">*</span>
+                      </label>
+
+                      <input type="email" id="femail" name="email" placeholder="Your email" required
+                        autocomplete="email"
+                        class="w-full bg-zinc-800 border border-zinc-700 text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors" />
                     </div>
                   </div>
+
+                  <!-- Subject -->
                   <div>
-                    <label for="fsubject" class="block text-xs font-medium text-zinc-400 mb-1.5">Subject</label>
-                    <input type="text" id="fsubject" name="subject" placeholder="How can I help?" class="w-full bg-zinc-800 border border-zinc-700 text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors">
+                    <label for="fsubject" class="block text-xs font-medium text-zinc-400 mb-1.5">
+                      Subject
+                    </label>
+
+                    <input type="text" id="fsubject" name="subject" placeholder="How can I help?"
+                      class="w-full bg-zinc-800 border border-zinc-700 text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors" />
                   </div>
+
+                  <!-- Message -->
                   <div>
-                    <label for="fmessage" class="block text-xs font-medium text-zinc-400 mb-1.5">Message <span aria-hidden="true">*</span></label>
-                    <textarea id="fmessage" name="message" rows="4" placeholder="Tell me about your project or opportunity..." required class="w-full bg-zinc-800 border border-zinc-700 text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors resize-none"></textarea>
+                    <label for="fmessage" class="block text-xs font-medium text-zinc-400 mb-1.5">
+                      Message
+                      <span aria-hidden="true">*</span>
+                    </label>
+
+                    <textarea id="fmessage" name="message" rows="4"
+                      placeholder="Tell me about your project or opportunity..." required
+                      class="w-full bg-zinc-800 border border-zinc-700 text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors resize-none"></textarea>
                   </div>
-                  <button id="contact-submit" type="submit" class="shimmer w-full bg-accent text-white font-display font-bold text-sm py-3.5 rounded-xl hover:bg-accent-light transition-colors">Send message →</button>
+
+                  <!-- Submit -->
+                  <button id="contact-submit" type="submit"
+                    class="shimmer w-full bg-accent text-white font-display font-bold text-sm py-3.5 rounded-xl hover:bg-accent-light transition-colors">
+                    Send message →
+                  </button>
+
                   <p id="contact-status" class="text-xs text-center hidden" aria-live="polite"></p>
                 </div>
               </form>
-              <iframe name="contact-form-frame" id="contact-form-frame" class="hidden" title="Contact form submission" onload="handleContactResponse()"></iframe>
-            </div>
 
+              <iframe name="contact-form-frame" id="contact-form-frame" class="hidden" title="Contact form submission"
+                onload="handleContactResponse()">
+              </iframe>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
   </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════════════ -->
 
   <footer class="border-t border-zinc-100 dark:border-zinc-900">
     <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
       <p class="text-sm text-zinc-400">© <span id="yr"></span> Asir Durai Selvan. All rights reserved.</p>
-      <p class="text-xs text-zinc-500">Built with
-        <a href="https://www.w3schools.com/html/" rel="noopener noreferrer" target="_blank" class="hover:text-accent transition-colors">HTML,</a>
-        <a href="https://www.w3schools.com/Css/" rel="noopener noreferrer" target="_blank" class="hover:text-accent transition-colors">CSS</a>&amp;
-        <a href="https://www.w3schools.com/js/" rel="noopener noreferrer" target="_blank" class="hover:text-accent transition-colors">JavaScript</a>
+
+      <p class="text-xs text-zinc-500">
+        Built with
+
+        <a href="https://www.w3schools.com/html/" rel="noopener noreferrer" target="_blank"
+          class="hover:text-accent transition-colors">
+          HTML,
+        </a>
+
+        <a href="https://www.w3schools.com/Css/" rel="noopener noreferrer" target="_blank"
+          class="hover:text-accent transition-colors">
+          CSS
+        </a>
+
+        &amp;
+
+        <a href="https://www.w3schools.com/js/" rel="noopener noreferrer" target="_blank"
+          class="hover:text-accent transition-colors">
+          JavaScript
+        </a>
       </p>
     </div>
   </footer>
-
 </body>
 
 </html>
