@@ -1,0 +1,1083 @@
+﻿assets\images\projects\carsmart\dashboard.jpg
+assets\images\projects\carsmart\Dealer-My Vehicle-1.jpg
+assets\images\projects\carsmart\Dealer-My Vehicle.jpg
+assets\images\projects\carsmart\Dealer.jpg
+assets\images\projects\carsmart\Filter.jpg
+assets\images\projects\carsmart\Forget Password.jpg
+assets\images\projects\carsmart\Login screen.jpg
+assets\images\projects\carsmart\logo.jpg
+assets\images\projects\carsmart\Product Details.jpg
+assets\images\projects\carsmart\Signup.jpg
+assets\images\projects\carsmart\splash screen 7.jpg
+assets\images\projects\carsmart\splash screen 8.jpg
+assets\images\projects\carsmart\splash screen 9.jpg
+assets\images\projects\cig-india\cig-india.png
+assets\images\projects\community-app\community member detail-1.png
+assets\images\projects\community-app\community member detail-2.png
+assets\images\projects\community-app\community member detail.png
+assets\images\projects\community-app\community member list-1.png
+assets\images\projects\community-app\community member list.png
+assets\images\projects\community-app\Community.png
+assets\images\projects\community-app\list delete.png
+assets\images\projects\community-app\list edit.png
+assets\images\projects\community-app\Search-1.png
+assets\images\projects\community-app\Search.png
+assets\images\projects\community-app\Splash Screen.jpg
+assets\images\projects\cooptex\co-optex-logo-bg.png
+assets\images\projects\cooptex\co-optex-logo.png
+assets\images\projects\cooptex\Co-optex.png
+assets\images\projects\cooptex\cooptex-cover.png
+assets\images\projects\cooptex\cooptex.png
+assets\images\projects\cooptex\infotex-logo.png
+assets\images\projects\cooptex\OIP.webp
+assets\images\projects\cooptex\infotex-pos\Login.png
+assets\images\projects\cooptex\infotex-pos\dashboard\dashboardPos.png
+assets\images\projects\cooptex\infotex-pos\dashboard\1.Stock Inward\Stock Inward.png
+assets\images\projects\cooptex\infotex-pos\dashboard\2.Consignment Inward\Stock Inward List.png
+assets\images\projects\cooptex\infotex-pos\dashboard\2.Consignment Inward\1.Create Stock Inward\1.png
+assets\images\projects\cooptex\infotex-pos\dashboard\2.Consignment Inward\1.Create Stock Inward\2.png
+assets\images\projects\cooptex\infotex-pos\dashboard\2.Consignment Inward\2.View Stock Inward\1.View Stock Inward.png
+assets\images\projects\cooptex\infotex-pos\dashboard\2.Consignment Inward\2.View Stock Inward\2.QR Number Wise Product Details.png
+assets\images\projects\cooptex\infotex-pos\dashboard\3.Current Stock Status\Create Current Stock Status.png
+assets\images\projects\cooptex\infotex-pos\dashboard\4.Inventory Closing\1.png
+assets\images\projects\cooptex\infotex-pos\dashboard\4.Inventory Closing\2.png
+assets\images\projects\cooptex\infotex-pos\dashboard\4.Inventory Closing\3.png
+assets\images\projects\cooptex\infotex-pos\dashboard\5.Gift Coupon Entry\Gift Coupon Entry.png
+assets\images\projects\cooptex\infotex-pos\dashboard\5.Gift Coupon Entry\Gift Coupon Entry List\Gift Coupon Entry List.png
+assets\images\projects\cooptex\infotex-pos\dashboard\6.RO Contract Collection\RO Contract Collection.png
+assets\images\projects\cooptex\infotex-pos\dashboard\6.RO Contract Collection\RO Contract Collection List\RO Contract Collection List.png
+assets\images\projects\cooptex\infotex-pos\dashboard\7.Discount Certification\Discount Certification List.png
+assets\images\projects\cooptex\infotex-pos\dashboard\7.Discount Certification\1.Create Discount Certification\Discount Certification.png
+assets\images\projects\cooptex\infotex-pos\dashboard\7.Discount Certification\2.Discount Certification Details\1.png
+assets\images\projects\cooptex\infotex-pos\dashboard\7.Discount Certification\2.Discount Certification Details\2.png
+assets\images\projects\cooptex\infotex-pos\dashboard\8.Age Updation\Age Updation List.png
+assets\images\projects\cooptex\infotex-pos\dashboard\8.Age Updation\1.Create Age Updation\Create Age Updation.png
+assets\images\projects\cooptex\infotex-pos\dashboard\8.Age Updation\2.Age Updation Details\1.png
+assets\images\projects\cooptex\infotex-pos\dashboard\8.Age Updation\2.Age Updation Details\2.png
+assets\images\projects\cooptex\infotex-pos\dashboard\8.Age Updation\2.Age Updation Details\view-note-ageupdation.png
+assets\images\projects\cooptex\infotex-pos\menus\menu.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\1.New Sales\1.Sales With Hold.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\1.New Sales\2.Add Customer.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\1.New Sales\3.Sale Type\1.KNT Details.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\1.New Sales\3.Sale Type\10.Create Bulk Sales.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\1.New Sales\3.Sale Type\11.Create Gift Voucher.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\1.New Sales\3.Sale Type\12.Buy 2 Get 1.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\1.New Sales\3.Sale Type\2.Credit Sales Details.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\1.New Sales\3.Sale Type\3.PP Sales.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\1.New Sales\3.Sale Type\4.Ret Comp PP.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\1.New Sales\3.Sale Type\5.Marriage PP.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\1.New Sales\3.Sale Type\6.Buy 2 Get 1 Scheme.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\1.New Sales\3.Sale Type\7.VIP.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\1.New Sales\3.Sale Type\8.VIP Compliment.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\1.New Sales\3.Sale Type\9.Create Contract Sales.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\10.Petty Cash\1.Petty Cash Expense List.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\10.Petty Cash\2.Create Petty Cash Expense.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\2.Sales Return\Create Sales Return.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\3.Bill Search\Bill Search List.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\3.Bill Search\View Bill Details\View Bill Details.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\4.Close Sales\1.Daily Transaction Statement (DTS)\1.Daily Transaction Statement (DTS) - Sales.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\4.Close Sales\1.Daily Transaction Statement (DTS)\2.KNT Collection.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\4.Close Sales\1.Daily Transaction Statement (DTS)\3.Credit Collection.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\4.Close Sales\1.Daily Transaction Statement (DTS)\4.Petty Cash Expense.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\4.Close Sales\1.Daily Transaction Statement (DTS)\5.Amount Deposited.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\4.Close Sales\1.Daily Transaction Statement (DTS)\6.Card Amount Deposited\6.Card Amount Deposited.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\4.Close Sales\1.Daily Transaction Statement (DTS)\6.Card Amount Deposited\Card Amount Deposited (Confirmation).png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\4.Close Sales\2.Card Collection\Card Collection.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\5.KNT\List KNT Customer.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\5.KNT\1.Create Customer\1.KNT Customer Details - 1.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\5.KNT\1.Create Customer\KNT Customer Details - 2.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\5.KNT\2.Create KNT\KNT Scheme.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\5.KNT\3.KNT Collection\KNT - Installment Collection.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\6.Credit\Credit Customer Registration List.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\6.Credit\1.Create Manual Demand\Create Manual Demand.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\6.Credit\1.Create Manual Demand\Add Customer\Add Customer.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\6.Credit\2.Create Credit Sales Collection Data - Manual\Create Credit Sales Collection Data - Manual.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\6.Credit\3.Create Credit Customer Registration\1.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\6.Credit\3.Create Credit Customer Registration\2.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\6.Credit\4.Create Recovery Collection\1.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\6.Credit\4.Create Recovery Collection\2.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\6.Credit\5.RO Contract Collection\RO Contract Collection.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\6.Credit\5.RO Contract Collection\RO Contract Collection List\RO Contract Collection List.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\6.Credit\6.View Credit Customer Registration\1.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\6.Credit\6.View Credit Customer Registration\2.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\6.Credit\6.View Credit Customer Registration\3.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\9.Reports\1.report.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\9.Reports\10.KNT Registration Report.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\9.Reports\11.KNT OB Upload Report.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\9.Reports\12.Stock Transfer Detail Report.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\9.Reports\13.Credit Collection Report.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\9.Reports\14.Bill Wise Cash Position Details Report.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\9.Reports\15.Card Sales Statement Report.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\9.Reports\16.Sales Abstract - Category and Sales Type Wise Report.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\9.Reports\17.Sales Abstract - Sales Type Wise Report.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\9.Reports\18.Cash Position Statement.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\9.Reports\19.Date Wise Sales and GST Amount.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\9.Reports\2.report.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\9.Reports\20.Sales Tax Details Particulars.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\9.Reports\3.salesReportsBillNumberwise.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\9.Reports\4.salesReport.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\9.Reports\5.Product Category Wise Sales Report.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\9.Reports\6.Cash Position Report.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\9.Reports\7.KNT Collection Report.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\9.Reports\8.Petty Cash Expense Report.png
+assets\images\projects\cooptex\infotex-pos\menus\Sub Pages\9.Reports\9.Month Wise & Sales Type Wise Sales Report.png
+assets\images\projects\dlk-tech\dlk-tech.png
+assets\images\projects\dlk-tech\uv-gullas.png
+assets\images\projects\election-app\candidate details-manifesto-1.png
+assets\images\projects\election-app\candidate details-manifesto.png
+assets\images\projects\election-app\candidate details-profile-1.png
+assets\images\projects\election-app\candidate details-profile.png
+assets\images\projects\election-app\candidates-1.png
+assets\images\projects\election-app\candidates.png
+assets\images\projects\election-app\complaint form-1.png
+assets\images\projects\election-app\complaint form.png
+assets\images\projects\election-app\complaint popup-1.png
+assets\images\projects\election-app\complaint popup.png
+assets\images\projects\election-app\Complaints list-1.png
+assets\images\projects\election-app\Complaints list.png
+assets\images\projects\election-app\constituency-1.png
+assets\images\projects\election-app\constituency.png
+assets\images\projects\election-app\Dashboard-1.png
+assets\images\projects\election-app\Dashboard.png
+assets\images\projects\election-app\forgot password-1.png
+assets\images\projects\election-app\forgot password-otp-1.png
+assets\images\projects\election-app\forgot password-otp.png
+assets\images\projects\election-app\forgot password.png
+assets\images\projects\election-app\login-1.png
+assets\images\projects\election-app\login.png
+assets\images\projects\election-app\Profile-1.png
+assets\images\projects\election-app\Profile-2.png
+assets\images\projects\election-app\Profile-3.png
+assets\images\projects\election-app\Profile.png
+assets\images\projects\election-app\Registration-1.png
+assets\images\projects\election-app\registration-OTP-1.png
+assets\images\projects\election-app\registration-OTP.png
+assets\images\projects\election-app\Registration.png
+assets\images\projects\election-app\reset password-1.png
+assets\images\projects\election-app\reset password.png
+assets\images\projects\election-app\splash screen-1.png
+assets\images\projects\election-app\splash screen.png
+assets\images\projects\election-app\survey-1.png
+assets\images\projects\election-app\survey.png
+assets\images\projects\election-app\voting popup-1.png
+assets\images\projects\election-app\voting popup.png
+assets\images\projects\national-citizen-database-system-republic-of-vanuatu\Address  Details Screen -5.png
+assets\images\projects\national-citizen-database-system-republic-of-vanuatu\Address  Details View Screen-9.png
+assets\images\projects\national-citizen-database-system-republic-of-vanuatu\Dashboard Screen-3.png
+assets\images\projects\national-citizen-database-system-republic-of-vanuatu\Family head Details Screen-4.png
+assets\images\projects\national-citizen-database-system-republic-of-vanuatu\Family head Details View Screen-8.png
+assets\images\projects\national-citizen-database-system-republic-of-vanuatu\Family Member Details View Screen-10.png
+assets\images\projects\national-citizen-database-system-republic-of-vanuatu\Family Member Details View Screen-11.png
+assets\images\projects\national-citizen-database-system-republic-of-vanuatu\Family member details-6.png
+assets\images\projects\national-citizen-database-system-republic-of-vanuatu\Family Member’s Details Screen-7.png
+assets\images\projects\national-citizen-database-system-republic-of-vanuatu\Login screen 3.png
+assets\images\projects\national-citizen-database-system-republic-of-vanuatu\Splash Screen-1.png
+assets\images\projects\national-citizen-database-system-republic-of-vanuatu\Splash Screen1.png
+assets\images\projects\national-citizen-database-system-republic-of-vanuatu\Successful Screen-12.png
+assets\images\projects\nessa-charity\nessa-charity.png
+assets\images\projects\oasys-design-system\oasys-design-system-cover.png
+assets\images\projects\oasys-design-system\Accordion\Accordion.png
+assets\images\projects\oasys-design-system\Accordion\Accordion_ detached instances.png
+assets\images\projects\oasys-design-system\Accordion\▶️ Accordion_ without detaching instances.png
+assets\images\projects\oasys-design-system\Alert\Alert-1.png
+assets\images\projects\oasys-design-system\Alert\Alert.png
+assets\images\projects\oasys-design-system\Alert\Alert_ error.png
+assets\images\projects\oasys-design-system\Alert\_Alert_.png
+assets\images\projects\oasys-design-system\Autocomplete\Autocomplete.png
+assets\images\projects\oasys-design-system\Autocomplete\▶️ Autocomplete_ example.png
+assets\images\projects\oasys-design-system\Avatar\Avatar.png
+assets\images\projects\oasys-design-system\Avatar\Avatar_ avatar change.png
+assets\images\projects\oasys-design-system\Avatar\Avatar_ friends list.png
+assets\images\projects\oasys-design-system\Avatar\Avatar_ group.png
+assets\images\projects\oasys-design-system\Badge\Badge.png
+assets\images\projects\oasys-design-system\Badge\Badge_ example.png
+assets\images\projects\oasys-design-system\Bottom Navigation\Bottom Navigation.png
+assets\images\projects\oasys-design-system\Bottom Navigation\BottomNavigation_ example.png
+assets\images\projects\oasys-design-system\Breadcrumbs\Breadcrumbs.png
+assets\images\projects\oasys-design-system\Breadcrumbs\Breadcrumbs_ custom separator.png
+assets\images\projects\oasys-design-system\Breadcrumbs\Breadcrumbs_ simple.png
+assets\images\projects\oasys-design-system\Button\Button.png
+assets\images\projects\oasys-design-system\Button\Button_ full width.png
+assets\images\projects\oasys-design-system\Button\_Menu_.png
+assets\images\projects\oasys-design-system\Button\▶️ Button_ loading.png
+assets\images\projects\oasys-design-system\Button\▶️ IconButton_ account menu.png
+assets\images\projects\oasys-design-system\Card\Card.png
+assets\images\projects\oasys-design-system\Card\Card_ detached blog posts example.png
+assets\images\projects\oasys-design-system\Card\Card_ undetached blog posts example.png
+assets\images\projects\oasys-design-system\Card\Card_ undetached integration example.png
+assets\images\projects\oasys-design-system\Card\_Custom Components.png
+assets\images\projects\oasys-design-system\Checkbox\Checkbox.png
+assets\images\projects\oasys-design-system\Checkbox\Checkbox_ filter.png
+assets\images\projects\oasys-design-system\Checkbox\Checkbox_ forms.png
+assets\images\projects\oasys-design-system\Checkbox\Checkbox_ orientation.png
+assets\images\projects\oasys-design-system\Chip\Chip.png
+assets\images\projects\oasys-design-system\Chip\Chip_ contacts.png
+assets\images\projects\oasys-design-system\Chip\Chip_ filter.png
+assets\images\projects\oasys-design-system\Data Grid\Data Grid.png
+assets\images\projects\oasys-design-system\Data Grid\Data Grid_ basics.png
+assets\images\projects\oasys-design-system\Data Grid\Data Grid_ columns.png
+assets\images\projects\oasys-design-system\Data Grid\Data Grid_ inline editing.png
+assets\images\projects\oasys-design-system\Data Grid\Data Grid_ quick filter.png
+assets\images\projects\oasys-design-system\Data Grid\Data Grid_ rows.png
+assets\images\projects\oasys-design-system\Date Time\Date Pickers.png
+assets\images\projects\oasys-design-system\Date Time\Date Range Pickers.png
+assets\images\projects\oasys-design-system\Date Time\Date Time Pickers.png
+assets\images\projects\oasys-design-system\Date Time\Time Pickers.png
+assets\images\projects\oasys-design-system\Date Time\Time_ desktop inline date picker.png
+assets\images\projects\oasys-design-system\Date Time\Time_ mobile date and time picker.png
+assets\images\projects\oasys-design-system\Date Time\_Elements.png
+assets\images\projects\oasys-design-system\Dialog\Dialog.png
+assets\images\projects\oasys-design-system\Dialog\Dialog_ open as screen.png
+assets\images\projects\oasys-design-system\Dialog\NiDialog.png
+assets\images\projects\oasys-design-system\Dialog\▶️ Dialog_ open on interaction.png
+assets\images\projects\oasys-design-system\Floating Action Button\FAB.png
+assets\images\projects\oasys-design-system\Floating Action Button\Fab_ fixed position.png
+assets\images\projects\oasys-design-system\Forms\Form Elements.png
+assets\images\projects\oasys-design-system\Icons\Icon.png
+assets\images\projects\oasys-design-system\Link\Link.png
+assets\images\projects\oasys-design-system\Link\Link_ inline link.png
+assets\images\projects\oasys-design-system\List\ListItem.png
+assets\images\projects\oasys-design-system\List\List_ friends list.png
+assets\images\projects\oasys-design-system\List\List_ navigation list.png
+assets\images\projects\oasys-design-system\Menu\Menu.png
+assets\images\projects\oasys-design-system\Menu\Menu_ always open.png
+assets\images\projects\oasys-design-system\Menu\_Custom Components.png
+assets\images\projects\oasys-design-system\Menu\_Menu_.png
+assets\images\projects\oasys-design-system\Menu\▶️ Menu_ Autocomplete interaction.png
+assets\images\projects\oasys-design-system\Menu\▶️ Menu_ open on click interaction.png
+assets\images\projects\oasys-design-system\Menu\▶️ Menu_ Select interaction.png
+assets\images\projects\oasys-design-system\Navs\Navs_ custom components.png
+assets\images\projects\oasys-design-system\Navs\▶️ Navs_ extra large layout.png
+assets\images\projects\oasys-design-system\Overview\Getting Started.png
+assets\images\projects\oasys-design-system\Overview\Components Overview\Data Display.png
+assets\images\projects\oasys-design-system\Overview\Components Overview\Feedback.png
+assets\images\projects\oasys-design-system\Overview\Components Overview\Inputs.png
+assets\images\projects\oasys-design-system\Overview\Components Overview\Layout.png
+assets\images\projects\oasys-design-system\Overview\Components Overview\Navigation.png
+assets\images\projects\oasys-design-system\Overview\Components Overview\Surfaces.png
+assets\images\projects\oasys-design-system\Overview\Theme\Colors Styles (light).png
+assets\images\projects\oasys-design-system\Overview\Theme\Typography.png
+assets\images\projects\oasys-design-system\Pagination\Pagination.png
+assets\images\projects\oasys-design-system\Pagination\Pagination_ table.png
+assets\images\projects\oasys-design-system\Progress\Progress.png
+assets\images\projects\oasys-design-system\Progress\Progress_ buffer.png
+assets\images\projects\oasys-design-system\Radio Group\Radio.png
+assets\images\projects\oasys-design-system\Radio Group\Radio_ filter.png
+assets\images\projects\oasys-design-system\Radio Group\Radio_ orientation.png
+assets\images\projects\oasys-design-system\Select\Select.png
+assets\images\projects\oasys-design-system\Select\▶️ Select_ menu interaction.png
+assets\images\projects\oasys-design-system\Snackbar\Snackbar.png
+assets\images\projects\oasys-design-system\Snackbar\Snackbar_ fixed position.png
+assets\images\projects\oasys-design-system\Snackbar\Snackbar_ with alert.png
+assets\images\projects\oasys-design-system\Stepper\Stepper.png
+assets\images\projects\oasys-design-system\Stepper\Stepper_ desktop multi form.png
+assets\images\projects\oasys-design-system\Stepper\Stepper_ mobile multi form.png
+assets\images\projects\oasys-design-system\Switch\Switch.png
+assets\images\projects\oasys-design-system\Switch\Switch_ detached instances.png
+assets\images\projects\oasys-design-system\Switch\Switch_ notifications control.png
+assets\images\projects\oasys-design-system\Table\Data table_ custom components.png
+assets\images\projects\oasys-design-system\Table\Table.png
+assets\images\projects\oasys-design-system\Table\Table_ bulk actions 1.png
+assets\images\projects\oasys-design-system\Table\Table_ bulk actions 2.png
+assets\images\projects\oasys-design-system\Table\Table_ detached instances.png
+assets\images\projects\oasys-design-system\Table\Table_ expandable rows.png
+assets\images\projects\oasys-design-system\Table\Table_ row types.png
+assets\images\projects\oasys-design-system\Table\Table_ size.png
+assets\images\projects\oasys-design-system\Table\Table_ subcomponents.png
+assets\images\projects\oasys-design-system\Table\_Custom Components.png
+assets\images\projects\oasys-design-system\Tabs\Tab.png
+assets\images\projects\oasys-design-system\Tabs\▶️ Tabs_ horizontal example.png
+assets\images\projects\oasys-design-system\Tabs\▶️ Tabs_ small screen.png
+assets\images\projects\oasys-design-system\Tabs\▶️ Tabs_ vertical example.png
+assets\images\projects\oasys-design-system\Text Field\Multiline_ fixed height.png
+assets\images\projects\oasys-design-system\Text Field\Multiline_ flexible height.png
+assets\images\projects\oasys-design-system\Text Field\Text Field.png
+assets\images\projects\oasys-design-system\Theme\Cheatsheet.png
+assets\images\projects\oasys-design-system\Toggle Button\Toggle Button.png
+assets\images\projects\oasys-design-system\Toggle Button\ToggleButton_ detached instances.png
+assets\images\projects\oasys-design-system\Toggle Button\ToggleButton_ text editor.png
+assets\images\projects\oasys-design-system\Toggle Button\_Custom Components.png
+assets\images\projects\oasys-design-system\Tooltip\NiTooltip.png
+assets\images\projects\oasys-design-system\Tooltip\Tooltip.png
+assets\images\projects\oasys-design-system\Tooltip\Tooltip_ always open.png
+assets\images\projects\oasys-design-system\Tooltip\▶️ Tooltip_ open on hover interaction.png
+assets\images\projects\oasys-design-system\Typography\Typography.png
+assets\images\projects\oasys-employee-database\admin\Add Address.jpg
+assets\images\projects\oasys-employee-database\admin\Add Attendance Type.jpg
+assets\images\projects\oasys-employee-database\admin\Add City.jpg
+assets\images\projects\oasys-employee-database\admin\Add District.jpg
+assets\images\projects\oasys-employee-database\admin\Add Holiday.jpg
+assets\images\projects\oasys-employee-database\admin\Add Organization Branch.jpg
+assets\images\projects\oasys-employee-database\admin\Add Project Type.jpg
+assets\images\projects\oasys-employee-database\admin\Add Technology Category.jpg
+assets\images\projects\oasys-employee-database\admin\Add technology.jpg
+assets\images\projects\oasys-employee-database\admin\Add Vehicle Type.jpg
+assets\images\projects\oasys-employee-database\admin\Add Visiting Purpose.jpg
+assets\images\projects\oasys-employee-database\admin\Add Visitor Type.jpg
+assets\images\projects\oasys-employee-database\admin\Address Master List.jpg
+assets\images\projects\oasys-employee-database\admin\Address Master View.jpg
+assets\images\projects\oasys-employee-database\admin\Areamaster Add.jpg
+assets\images\projects\oasys-employee-database\admin\Areamaster List.jpg
+assets\images\projects\oasys-employee-database\admin\Areamaster View.jpg
+assets\images\projects\oasys-employee-database\admin\Attendance Type Master List.jpg
+assets\images\projects\oasys-employee-database\admin\Attendance Type View.jpg
+assets\images\projects\oasys-employee-database\admin\BloodGroup Add.jpg
+assets\images\projects\oasys-employee-database\admin\BloodGroup List.jpg
+assets\images\projects\oasys-employee-database\admin\BloodGroup View.jpg
+assets\images\projects\oasys-employee-database\admin\City Master List.jpg
+assets\images\projects\oasys-employee-database\admin\City Master View.jpg
+assets\images\projects\oasys-employee-database\admin\Client Add.jpg
+assets\images\projects\oasys-employee-database\admin\Client List.jpg
+assets\images\projects\oasys-employee-database\admin\Client view.jpg
+assets\images\projects\oasys-employee-database\admin\Country Add.jpg
+assets\images\projects\oasys-employee-database\admin\Country List.jpg
+assets\images\projects\oasys-employee-database\admin\Country View.jpg
+assets\images\projects\oasys-employee-database\admin\Course Add.jpg
+assets\images\projects\oasys-employee-database\admin\Course List.jpg
+assets\images\projects\oasys-employee-database\admin\Course Type Add-1.jpg
+assets\images\projects\oasys-employee-database\admin\Course Type Add.jpg
+assets\images\projects\oasys-employee-database\admin\Course Type List.jpg
+assets\images\projects\oasys-employee-database\admin\Course Type View-1.jpg
+assets\images\projects\oasys-employee-database\admin\Course Type View.jpg
+assets\images\projects\oasys-employee-database\admin\Course View.jpg
+assets\images\projects\oasys-employee-database\admin\Department Add.jpg
+assets\images\projects\oasys-employee-database\admin\Department List.jpg
+assets\images\projects\oasys-employee-database\admin\Department view.jpg
+assets\images\projects\oasys-employee-database\admin\Designation  Add.jpg
+assets\images\projects\oasys-employee-database\admin\Designation List.jpg
+assets\images\projects\oasys-employee-database\admin\Designation View.jpg
+assets\images\projects\oasys-employee-database\admin\District Master List.jpg
+assets\images\projects\oasys-employee-database\admin\District Master View.jpg
+assets\images\projects\oasys-employee-database\admin\Education Add.jpg
+assets\images\projects\oasys-employee-database\admin\Education List.jpg
+assets\images\projects\oasys-employee-database\admin\Education View.jpg
+assets\images\projects\oasys-employee-database\admin\Employee Category Add.jpg
+assets\images\projects\oasys-employee-database\admin\Employee Category List.jpg
+assets\images\projects\oasys-employee-database\admin\Employee Category View.jpg
+assets\images\projects\oasys-employee-database\admin\Employment Type Add.jpg
+assets\images\projects\oasys-employee-database\admin\Employment Type List.jpg
+assets\images\projects\oasys-employee-database\admin\Employment Type View.jpg
+assets\images\projects\oasys-employee-database\admin\Gender Add.jpg
+assets\images\projects\oasys-employee-database\admin\Gender List.jpg
+assets\images\projects\oasys-employee-database\admin\Gender View.jpg
+assets\images\projects\oasys-employee-database\admin\Holiday Master List.jpg
+assets\images\projects\oasys-employee-database\admin\Holiday Master View.jpg
+assets\images\projects\oasys-employee-database\admin\Jobtitle Add.jpg
+assets\images\projects\oasys-employee-database\admin\Jobtitle List.jpg
+assets\images\projects\oasys-employee-database\admin\Jobtitle View.jpg
+assets\images\projects\oasys-employee-database\admin\Laguage View.jpg
+assets\images\projects\oasys-employee-database\admin\Language Add.jpg
+assets\images\projects\oasys-employee-database\admin\Language List.jpg
+assets\images\projects\oasys-employee-database\admin\Leavetype Add.jpg
+assets\images\projects\oasys-employee-database\admin\Leavetype List.jpg
+assets\images\projects\oasys-employee-database\admin\Leavetype View.jpg
+assets\images\projects\oasys-employee-database\admin\Login.jpg
+assets\images\projects\oasys-employee-database\admin\Organization Branch List.jpg
+assets\images\projects\oasys-employee-database\admin\Project Master Add.jpg
+assets\images\projects\oasys-employee-database\admin\Project Master List.jpg
+assets\images\projects\oasys-employee-database\admin\Project Master View.jpg
+assets\images\projects\oasys-employee-database\admin\Project Type List.jpg
+assets\images\projects\oasys-employee-database\admin\Project Type View.jpg
+assets\images\projects\oasys-employee-database\admin\Rating Add.jpg
+assets\images\projects\oasys-employee-database\admin\Rating List.jpg
+assets\images\projects\oasys-employee-database\admin\Rating View-1.jpg
+assets\images\projects\oasys-employee-database\admin\Rating View.jpg
+assets\images\projects\oasys-employee-database\admin\Relation Add.jpg
+assets\images\projects\oasys-employee-database\admin\Relation List.jpg
+assets\images\projects\oasys-employee-database\admin\Rolemaster Add.jpg
+assets\images\projects\oasys-employee-database\admin\Rolemaster List.jpg
+assets\images\projects\oasys-employee-database\admin\Rolemaster View.jpg
+assets\images\projects\oasys-employee-database\admin\Shift  View.jpg
+assets\images\projects\oasys-employee-database\admin\Shift Add.jpg
+assets\images\projects\oasys-employee-database\admin\Shift List.jpg
+assets\images\projects\oasys-employee-database\admin\Specialization List.jpg
+assets\images\projects\oasys-employee-database\admin\Splash.jpg
+assets\images\projects\oasys-employee-database\admin\State Master Add.jpg
+assets\images\projects\oasys-employee-database\admin\State Master List.jpg
+assets\images\projects\oasys-employee-database\admin\State Master View.jpg
+assets\images\projects\oasys-employee-database\admin\Suepr Admin-1.jpg
+assets\images\projects\oasys-employee-database\admin\Suepr Admin.jpg
+assets\images\projects\oasys-employee-database\admin\Technology Category List.jpg
+assets\images\projects\oasys-employee-database\admin\Technology Category View.jpg
+assets\images\projects\oasys-employee-database\admin\Technology List.jpg
+assets\images\projects\oasys-employee-database\admin\Technology View.jpg
+assets\images\projects\oasys-employee-database\admin\University Add.jpg
+assets\images\projects\oasys-employee-database\admin\University List.jpg
+assets\images\projects\oasys-employee-database\admin\University View.jpg
+assets\images\projects\oasys-employee-database\admin\Vehicle Type List.jpg
+assets\images\projects\oasys-employee-database\admin\Vehicle Type View-1.jpg
+assets\images\projects\oasys-employee-database\admin\Vehicle Type View.jpg
+assets\images\projects\oasys-employee-database\admin\VisaCategory Add.jpg
+assets\images\projects\oasys-employee-database\admin\VisaCategory List.jpg
+assets\images\projects\oasys-employee-database\admin\VisaCategory View.jpg
+assets\images\projects\oasys-employee-database\admin\Visiting Purpose List.jpg
+assets\images\projects\oasys-employee-database\admin\Visitor Type List.jpg
+assets\images\projects\oasys-employee-database\admin\Visitor Type View.jpg
+assets\images\projects\oasys-employee-database\employee\31  Edu(Additional details)Popup(2).jpg
+assets\images\projects\oasys-employee-database\employee\Additional Languages Known.jpg
+assets\images\projects\oasys-employee-database\employee\Additional Languages(Popup1).jpg
+assets\images\projects\oasys-employee-database\employee\Additional Languages(Popup2).jpg
+assets\images\projects\oasys-employee-database\employee\Additional Languages-Added.png
+assets\images\projects\oasys-employee-database\employee\Address.jpg
+assets\images\projects\oasys-employee-database\employee\Bank.jpg
+assets\images\projects\oasys-employee-database\employee\Basic Details -Popup Page.jpg
+assets\images\projects\oasys-employee-database\employee\Basic Details.jpg
+assets\images\projects\oasys-employee-database\employee\Change Password(popup).jpg
+assets\images\projects\oasys-employee-database\employee\Change Password.jpg
+assets\images\projects\oasys-employee-database\employee\Edu(Additional details)-Popup(1).jpg
+assets\images\projects\oasys-employee-database\employee\Edu(Additional details).jpg
+assets\images\projects\oasys-employee-database\employee\Edu(Additional details)Added Page.jpg
+assets\images\projects\oasys-employee-database\employee\Education -Popup(1).jpg
+assets\images\projects\oasys-employee-database\employee\Education-Addedpage.png
+assets\images\projects\oasys-employee-database\employee\Education-popup(2).jpg
+assets\images\projects\oasys-employee-database\employee\Education.jpg
+assets\images\projects\oasys-employee-database\employee\eID-Error state.jpg
+assets\images\projects\oasys-employee-database\employee\eID-initial state.jpg
+assets\images\projects\oasys-employee-database\employee\eID-loading state.jpg
+assets\images\projects\oasys-employee-database\employee\eID-qr code generated.jpg
+assets\images\projects\oasys-employee-database\employee\eID-qr code view.jpg
+assets\images\projects\oasys-employee-database\employee\eID-settings.jpg
+assets\images\projects\oasys-employee-database\employee\Email_Login(OTP Verification)-1.jpg
+assets\images\projects\oasys-employee-database\employee\Email_Login(OTP Verification).jpg
+assets\images\projects\oasys-employee-database\employee\Email_login-1.jpg
+assets\images\projects\oasys-employee-database\employee\Email_login.jpg
+assets\images\projects\oasys-employee-database\employee\Emergency Contact.jpg
+assets\images\projects\oasys-employee-database\employee\Employee Dashboard.jpg
+assets\images\projects\oasys-employee-database\employee\Employment.jpg
+assets\images\projects\oasys-employee-database\employee\Family Details.jpg
+assets\images\projects\oasys-employee-database\employee\Forgot Password(OTP Verification).jpg
+assets\images\projects\oasys-employee-database\employee\Forgot Password.jpg
+assets\images\projects\oasys-employee-database\employee\Leave Application  List.png
+assets\images\projects\oasys-employee-database\employee\Leave Application Add.jpg
+assets\images\projects\oasys-employee-database\employee\Leave Application View.jpg
+assets\images\projects\oasys-employee-database\employee\Login.jpg
+assets\images\projects\oasys-employee-database\employee\On Duty Add.jpg
+assets\images\projects\oasys-employee-database\employee\On Duty List.jpg
+assets\images\projects\oasys-employee-database\employee\On Duty view.jpg
+assets\images\projects\oasys-employee-database\employee\OutPass Request Add.jpg
+assets\images\projects\oasys-employee-database\employee\Outpass request list.jpg
+assets\images\projects\oasys-employee-database\employee\OutPass Request view.jpg
+assets\images\projects\oasys-employee-database\employee\Passport Details.jpg
+assets\images\projects\oasys-employee-database\employee\QR Code Scan.jpg
+assets\images\projects\oasys-employee-database\employee\QR Login connection.jpg
+assets\images\projects\oasys-employee-database\employee\QR Login.jpg
+assets\images\projects\oasys-employee-database\employee\Register  (OTP Verification).jpg
+assets\images\projects\oasys-employee-database\employee\Register.jpg
+assets\images\projects\oasys-employee-database\employee\Security Dashboard.jpg
+assets\images\projects\oasys-employee-database\employee\Splash.jpg
+assets\images\projects\oasys-employee-database\employee\Team On Duty List.jpg
+assets\images\projects\oasys-employee-database\employee\Team On Duty view.jpg
+assets\images\projects\oasys-employee-database\employee\Team Out Pass List.jpg
+assets\images\projects\oasys-employee-database\employee\Team Out Pass View.jpg
+assets\images\projects\oasys-employee-database\employee\Team OutPass Request Add.jpg
+assets\images\projects\oasys-employee-database\employee\Ticket Create.jpg
+assets\images\projects\oasys-employee-database\employee\Ticket Lists.jpg
+assets\images\projects\oasys-employee-database\employee\ticket View-1.jpg
+assets\images\projects\oasys-employee-database\employee\ticket View.jpg
+assets\images\projects\oasys-employee-database\hr\candidate application Add.jpg
+assets\images\projects\oasys-employee-database\hr\candidate application list.jpg
+assets\images\projects\oasys-employee-database\hr\Candidate Application View.jpg
+assets\images\projects\oasys-employee-database\hr\Candidate Assessment  list.jpg
+assets\images\projects\oasys-employee-database\hr\Candidate Assessment Add.jpg
+assets\images\projects\oasys-employee-database\hr\Candidate Assessment View.jpg
+assets\images\projects\oasys-employee-database\hr\Employee Details-1.jpg
+assets\images\projects\oasys-employee-database\hr\Employee Details.jpg
+assets\images\projects\oasys-employee-database\hr\Employee List.png
+assets\images\projects\oasys-employee-database\hr\HR-Dashboard-1.jpg
+assets\images\projects\oasys-employee-database\hr\HR-Dashboard-2.jpg
+assets\images\projects\oasys-employee-database\hr\HR-Dashboard.jpg
+assets\images\projects\oasys-employee-database\hr\Login.jpg
+assets\images\projects\oasys-employee-database\hr\Manual attendance Add.jpg
+assets\images\projects\oasys-employee-database\hr\Manual attendance list.jpg
+assets\images\projects\oasys-employee-database\hr\Manual attendance View.jpg
+assets\images\projects\oasys-employee-database\hr\Notice Board Add.jpg
+assets\images\projects\oasys-employee-database\hr\Notice Board list.jpg
+assets\images\projects\oasys-employee-database\hr\Notice Board View.jpg
+assets\images\projects\oasys-employee-database\hr\Project Add.jpg
+assets\images\projects\oasys-employee-database\hr\Project list.jpg
+assets\images\projects\oasys-employee-database\hr\Project View.jpg
+assets\images\projects\oasys-employee-database\hr\Splash.jpg
+assets\images\projects\oasys-employee-database\md\MD-Dashboard-1.jpg
+assets\images\projects\oasys-employee-database\md\MD-Dashboard-2.jpg
+assets\images\projects\oasys-employee-database\md\MD-Dashboard-3.jpg
+assets\images\projects\oasys-employee-database\md\MD-Dashboard-4.jpg
+assets\images\projects\oasys-employee-database\md\MD-Dashboard-5.jpg
+assets\images\projects\oasys-employee-database\md\MD-Dashboard-6.jpg
+assets\images\projects\oasys-employee-database\md\MD-Dashboard-7.jpg
+assets\images\projects\oasys-employee-database\md\MD-Dashboard-8.jpg
+assets\images\projects\oasys-employee-database\md\MD-Dashboard.jpg
+assets\images\projects\oasys-employee-database\md\screen-1.jpg
+assets\images\projects\oasys-employee-database\security\Login.jpg
+assets\images\projects\oasys-employee-database\security\QR Code-1.jpg
+assets\images\projects\oasys-employee-database\security\QR Code.jpg
+assets\images\projects\oasys-employee-database\security\Security (Employee Gate Access).jpg
+assets\images\projects\oasys-employee-database\security\security Dashboard.jpg
+assets\images\projects\oasys-employee-database\security\Splash.jpg
+assets\images\projects\oasys-employee-database\security\Visitor Management Add.jpg
+assets\images\projects\oasys-employee-database\security\Visitor Management List.jpg
+assets\images\projects\oasys-employee-database\security\Visitor Management View.jpg
+assets\images\projects\oasys-employee-database\security\Add Vehicle Entry\Exit.jpg
+assets\images\projects\oasys-employee-database\security\Vehicle Entry\Exit List.jpg
+assets\images\projects\oasys-employee-database\security\Vehicle Entry\Exit View.jpg
+assets\images\projects\oasys-employee-portal\emp portal profile.png
+assets\images\projects\oasys-employee-portal\emp web dashboard.png
+assets\images\projects\oasys-employee-portal\emp web login.png
+assets\images\projects\oasys-mart\oasys-mart.jpg
+assets\images\projects\oasys-pharma-app\33_My Cart.png
+assets\images\projects\oasys-pharma-app\Announcement and notification.png
+assets\images\projects\oasys-pharma-app\cancel route.png
+assets\images\projects\oasys-pharma-app\Confirm location.png
+assets\images\projects\oasys-pharma-app\Create New Password.png
+assets\images\projects\oasys-pharma-app\Dashboard-1.png
+assets\images\projects\oasys-pharma-app\Dashboard-2.png
+assets\images\projects\oasys-pharma-app\Dashboard.png
+assets\images\projects\oasys-pharma-app\Doctor Detail-1.png
+assets\images\projects\oasys-pharma-app\Doctor Detail.png
+assets\images\projects\oasys-pharma-app\Doctor signature.png
+assets\images\projects\oasys-pharma-app\Doctors Directory.png
+assets\images\projects\oasys-pharma-app\end rooute.png
+assets\images\projects\oasys-pharma-app\feedback and rating-1.png
+assets\images\projects\oasys-pharma-app\feedback and rating-2.png
+assets\images\projects\oasys-pharma-app\feedback and rating.png
+assets\images\projects\oasys-pharma-app\forget Password - Phone.png
+assets\images\projects\oasys-pharma-app\forget Password - Verify Code.png
+assets\images\projects\oasys-pharma-app\Geo map location.png
+assets\images\projects\oasys-pharma-app\history.png
+assets\images\projects\oasys-pharma-app\Hospital Detail add.png
+assets\images\projects\oasys-pharma-app\Hospital Directory.png
+assets\images\projects\oasys-pharma-app\Incentive Tracker-1.png
+assets\images\projects\oasys-pharma-app\Incentive Tracker.png
+assets\images\projects\oasys-pharma-app\Leave Application.png
+assets\images\projects\oasys-pharma-app\Leave Approval.png
+assets\images\projects\oasys-pharma-app\notifications.png
+assets\images\projects\oasys-pharma-app\product catelogue 3.png
+assets\images\projects\oasys-pharma-app\product catelogue 4.png
+assets\images\projects\oasys-pharma-app\Reports.png
+assets\images\projects\oasys-pharma-app\sample product.png
+assets\images\projects\oasys-pharma-app\select sample.png
+assets\images\projects\oasys-pharma-app\shedule appointment.png
+assets\images\projects\oasys-pharma-app\Signin with email Id.png
+assets\images\projects\oasys-pharma-app\Signin with mobile number.png
+assets\images\projects\oasys-pharma-app\Splash Screen.png
+assets\images\projects\oasys-pharma-app\Start visit.png
+assets\images\projects\oasys-pharma-app\Target Dashboard.png
+assets\images\projects\oasys-pharma-app\Today Schedule-1.png
+assets\images\projects\oasys-pharma-app\Today Schedule.png
+assets\images\projects\oasys-pharma-app\tracking list.png
+assets\images\projects\oasys-pharma-app\visit completed.png
+assets\images\projects\oasys-pharma-app\Visit planner list-1.png
+assets\images\projects\oasys-pharma-app\Visit planner list.png
+assets\images\projects\oasys-pms-manager-login\add new-7.png
+assets\images\projects\oasys-pms-manager-login\approve-6.png
+assets\images\projects\oasys-pms-manager-login\createtask-8.png
+assets\images\projects\oasys-pms-manager-login\dashboard-2.png
+assets\images\projects\oasys-pms-manager-login\login-1.png
+assets\images\projects\oasys-pms-manager-login\submit-5.png
+assets\images\projects\oasys-pms-manager-login\tab-1.png
+assets\images\projects\oasys-pms-manager-login\tab-2.png
+assets\images\projects\oasys-pms-manager-login\tab-3.png
+assets\images\projects\oasys-pms-manager-login\task list-3.png
+assets\images\projects\oasys-pms-manager-login\timesheet-4.png
+assets\images\projects\oasys-point-of-sale-pos\1 Login.png
+assets\images\projects\oasys-point-of-sale-pos\2 OTP.png
+assets\images\projects\oasys-point-of-sale-pos\2 Reset.png
+assets\images\projects\oasys-point-of-sale-pos\Cash-Adjustment-Add.png
+assets\images\projects\oasys-point-of-sale-pos\Cash-Adjustment-Creditamount.png
+assets\images\projects\oasys-point-of-sale-pos\Cash-Adjustment-Search.png
+assets\images\projects\oasys-point-of-sale-pos\Cash-Adjustment-View.png
+assets\images\projects\oasys-point-of-sale-pos\Dashboard-1.png
+assets\images\projects\oasys-point-of-sale-pos\Dashboard.png
+assets\images\projects\oasys-point-of-sale-pos\Designation-Management-add.png
+assets\images\projects\oasys-point-of-sale-pos\Designation-Management-edit.png
+assets\images\projects\oasys-point-of-sale-pos\Designation-Management-List.png
+assets\images\projects\oasys-point-of-sale-pos\Designation-Management-view.png
+assets\images\projects\oasys-point-of-sale-pos\Entity-Management-Add.png
+assets\images\projects\oasys-point-of-sale-pos\Entity-Management-Edit.png
+assets\images\projects\oasys-point-of-sale-pos\Entity-Management-List.png
+assets\images\projects\oasys-point-of-sale-pos\Entity-Management-View.png
+assets\images\projects\oasys-point-of-sale-pos\Helpdesk-Add-1.png
+assets\images\projects\oasys-point-of-sale-pos\Helpdesk-Add-2.png
+assets\images\projects\oasys-point-of-sale-pos\Helpdesk-List-1.png
+assets\images\projects\oasys-point-of-sale-pos\Helpdesk-List-2.png
+assets\images\projects\oasys-point-of-sale-pos\Helpdesk-List-3.png
+assets\images\projects\oasys-point-of-sale-pos\Helpdesk-List-4.png
+assets\images\projects\oasys-point-of-sale-pos\Helpdesk-List-5.png
+assets\images\projects\oasys-point-of-sale-pos\Helpdesk-Search.png
+assets\images\projects\oasys-point-of-sale-pos\Helpdesk-View-1.png
+assets\images\projects\oasys-point-of-sale-pos\Helpdesk-View-2.png
+assets\images\projects\oasys-point-of-sale-pos\Helpdesk-View-3.png
+assets\images\projects\oasys-point-of-sale-pos\Layer 0-1.png
+assets\images\projects\oasys-point-of-sale-pos\Layer 0-2.png
+assets\images\projects\oasys-point-of-sale-pos\Layer 0.png
+assets\images\projects\oasys-point-of-sale-pos\Login - OTP.png
+assets\images\projects\oasys-point-of-sale-pos\Login - Password.png
+assets\images\projects\oasys-point-of-sale-pos\Main Menu.png
+assets\images\projects\oasys-point-of-sale-pos\Manager-user's-Add-1.png
+assets\images\projects\oasys-point-of-sale-pos\Manager-user's-Add-2.png
+assets\images\projects\oasys-point-of-sale-pos\Manager-user's-Add-3 1.png
+assets\images\projects\oasys-point-of-sale-pos\Manager-user's-List 1.png
+assets\images\projects\oasys-point-of-sale-pos\Manager-user's-View 1.png
+assets\images\projects\oasys-point-of-sale-pos\Premium-Subscription-2.png
+assets\images\projects\oasys-point-of-sale-pos\Premium-Subscription-3.png
+assets\images\projects\oasys-point-of-sale-pos\Profile Application Registration Tab 2.png
+assets\images\projects\oasys-point-of-sale-pos\Profile Application Registration Tab 3.png
+assets\images\projects\oasys-point-of-sale-pos\Profile Application Registration Tab 4.png
+assets\images\projects\oasys-point-of-sale-pos\Profile Application Registration Tab 5.png
+assets\images\projects\oasys-point-of-sale-pos\Reports-List-1.png
+assets\images\projects\oasys-point-of-sale-pos\Reports-list-cash-deposit.png
+assets\images\projects\oasys-point-of-sale-pos\Reports-List-stockin.png
+assets\images\projects\oasys-point-of-sale-pos\Reports-List.png
+assets\images\projects\oasys-point-of-sale-pos\Reports-search-cash-deposit.png
+assets\images\projects\oasys-point-of-sale-pos\Reports-search-stockin.png
+assets\images\projects\oasys-point-of-sale-pos\Reports-search.png
+assets\images\projects\oasys-point-of-sale-pos\Role-Management-Add 1.png
+assets\images\projects\oasys-point-of-sale-pos\Role-Management-Edit.png
+assets\images\projects\oasys-point-of-sale-pos\Role-Management-List 1.png
+assets\images\projects\oasys-point-of-sale-pos\Role-Management-View 1.png
+assets\images\projects\oasys-point-of-sale-pos\Sale-addpage-sale-Detail-1.png
+assets\images\projects\oasys-point-of-sale-pos\Sale-addpage-sale-Detail.png
+assets\images\projects\oasys-point-of-sale-pos\Sale-addpage.png
+assets\images\projects\oasys-point-of-sale-pos\sale-list.png
+assets\images\projects\oasys-point-of-sale-pos\Sale-Search.png
+assets\images\projects\oasys-point-of-sale-pos\Sale-View.png
+assets\images\projects\oasys-point-of-sale-pos\Signup-1.png
+assets\images\projects\oasys-point-of-sale-pos\Signup.png
+assets\images\projects\oasys-point-of-sale-pos\Staff-Attendance-Payroll-Add.png
+assets\images\projects\oasys-point-of-sale-pos\Staff-Attendance-Payroll-Search.png
+assets\images\projects\oasys-point-of-sale-pos\Staff-Attendance-Payroll-View.png
+assets\images\projects\oasys-point-of-sale-pos\Stock in Hand-List.png
+assets\images\projects\oasys-point-of-sale-pos\Stock in Hand-search.png
+assets\images\projects\oasys-point-of-sale-pos\Stock in Hand-View.png
+assets\images\projects\oasys-point-of-sale-pos\Stock in-addpage-1.png
+assets\images\projects\oasys-point-of-sale-pos\Stock in-addpage.png
+assets\images\projects\oasys-point-of-sale-pos\Stock-Adjustment-Add-1.png
+assets\images\projects\oasys-point-of-sale-pos\Stock-Adjustment-Add-2.png
+assets\images\projects\oasys-point-of-sale-pos\Stock-Adjustment-List.png
+assets\images\projects\oasys-point-of-sale-pos\Stock-Adjustment-Search.png
+assets\images\projects\oasys-point-of-sale-pos\Stock-Adjustment-Vieww 1.png
+assets\images\projects\oasys-point-of-sale-pos\Stockin-addpage-2.png
+assets\images\projects\oasys-point-of-sale-pos\Stockin-addpage-3.png
+assets\images\projects\oasys-point-of-sale-pos\Stockin-addpage-4.png
+assets\images\projects\oasys-point-of-sale-pos\Stockin-addpage-Popup-1.png
+assets\images\projects\oasys-point-of-sale-pos\Stockin-addpage-Popup-2.png
+assets\images\projects\oasys-point-of-sale-pos\Stockin-addpage-Popup-3.png
+assets\images\projects\oasys-point-of-sale-pos\Stockin-addpage-Popup-4.png
+assets\images\projects\oasys-point-of-sale-pos\Stockin-addpage-Popup-5.png
+assets\images\projects\oasys-point-of-sale-pos\Stockin-addpage-Popup-6.png
+assets\images\projects\oasys-point-of-sale-pos\Stockin-addpage-Popup-7.png
+assets\images\projects\oasys-point-of-sale-pos\stockin-list.png
+assets\images\projects\oasys-point-of-sale-pos\Stockin-Search.png
+assets\images\projects\oasys-point-of-sale-pos\Stockin-View.png
+assets\images\projects\oasys-point-of-sale-pos\View.png
+assets\images\projects\ocx-labs\OCX-Labs-1.png
+assets\images\projects\ocx-labs\OCX-Labs-2.png
+assets\images\projects\ocx-labs\OCX-Labs-3.png
+assets\images\projects\ocx-labs\ocx-labs.png
+assets\images\projects\ocx-labs\ocx-logo.png
+assets\images\projects\pothihai-mart\pothihai-mart.PNG
+assets\images\projects\primetrip\1.jpg
+assets\images\projects\primetrip\2.jpg
+assets\images\projects\primetrip\3.jpg
+assets\images\projects\primetrip\4.jpg
+assets\images\projects\primetrip\5.jpg
+assets\images\projects\primetrip\6.jpg
+assets\images\projects\primetrip\Boarding Point.png
+assets\images\projects\primetrip\Booking Detail.png
+assets\images\projects\primetrip\Cancel Ticket.png
+assets\images\projects\primetrip\cancellation-1.png
+assets\images\projects\primetrip\cancellation.png
+assets\images\projects\primetrip\cancelllation.png
+assets\images\projects\primetrip\Categories.png
+assets\images\projects\primetrip\Choose Date.png
+assets\images\projects\primetrip\Dropping Point.png
+assets\images\projects\primetrip\email verification.png
+assets\images\projects\primetrip\feedback.png
+assets\images\projects\primetrip\Filter.png
+assets\images\projects\primetrip\Forget password.png
+assets\images\projects\primetrip\Frame 313272.png
+assets\images\projects\primetrip\Home.png
+assets\images\projects\primetrip\image 2.png
+assets\images\projects\primetrip\My Bookings-1.png
+assets\images\projects\primetrip\My Bookings.png
+assets\images\projects\primetrip\Onboarding - 01.png
+assets\images\projects\primetrip\Onboarding - 02.png
+assets\images\projects\primetrip\Onboarding - 03.png
+assets\images\projects\primetrip\pana.png
+assets\images\projects\primetrip\Passenger Details.png
+assets\images\projects\primetrip\Payment Details.png
+assets\images\projects\primetrip\Payment Successful.png
+assets\images\projects\primetrip\prime-trip.png
+assets\images\projects\primetrip\primetrip-cover.png
+assets\images\projects\primetrip\primetrip.jpg
+assets\images\projects\primetrip\print details.png
+assets\images\projects\primetrip\profile.png
+assets\images\projects\primetrip\refer and earn.png
+assets\images\projects\primetrip\Search Result.png
+assets\images\projects\primetrip\Select Seat-1.png
+assets\images\projects\primetrip\Select Seat-2.png
+assets\images\projects\primetrip\Select Seat.png
+assets\images\projects\primetrip\Sign In.png
+assets\images\projects\primetrip\Sign Up.png
+assets\images\projects\primetrip\Splash Screen.png
+assets\images\projects\primetrip\Transaction Details.png
+assets\images\projects\primetrip\Wallet.png
+assets\images\projects\ruah-ministries\ruah-media.png
+assets\images\projects\ruah-ministries\ruah-ministries.png
+assets\images\projects\saivetha\saivetha.jpeg
+assets\images\projects\tnpds\Home-Public-Distribution-System-08-10-2026_02_17_PM.png
+assets\images\projects\tnpds\Home-Public-Distribution-System-08-10-2026_02_18_PM.png
+assets\images\projects\tnpds\Home-Public-Distribution-System.png
+assets\images\projects\tnpds\tamil-nadu-government.jpg
+assets\images\projects\tnpds\tamil-nadu-government.png
+assets\images\projects\tnpds\tamil-nadu-government.webp
+assets\images\projects\tnpds\tnpds-cover.png
+assets\images\projects\tnpds\tnpds-cover1.png
+assets\images\projects\tnpds\tnpds-cover2.png
+assets\images\projects\tnpds\tnpds-cover3.png
+assets\images\projects\tnpds\tnpds-logo.png
+assets\images\projects\tnpds\tnpds.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-auth-login.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-department-login.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-citizen-centric-details (2).png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-citizen-centric-details.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-consumer-awareness-video.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-duplicate-smartcard-payment-instruction.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-duplicate-smartcard.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-duplicate-status.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-feedback (2).png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-feedback (3).png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-feedback (4).png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-feedback.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-godown-report.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-home-chatbot.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-home.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-hostel (2).png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-hostel.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-modify-smart-card (2).png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-modify-smart-card-edit-member.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-modify-smart-card.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-newsmartcard.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-nfsa-off-report.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-nfsa-report-state-report.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-pds-report-state-report.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-profile (2).png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-profile (3).png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-profile (4).png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-profile (5).png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-profile (6).png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-profile (7).png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-profile.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-proxypersonservicerequest.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-resubmit-app.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-service-request (2).png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-service-request (3).png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-service-request (4).png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-service-request (5).png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-service-request (6).png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-service-request (7).png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-service-request-remove-request.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-service-request.png
+assets\images\projects\tnpds\TNPDS\Desktop\tnpds-pages-smartcard-status.png
+assets\images\projects\tnpds\TNPDS\Mobile\tnpds-pages-home-chatbot.png
+assets\images\projects\tnpds\TNPDS\Mobile\tnpds-pages-home.png
+assets\images\projects\tnpds\TNPDS\Mobile\tnpds-pages-newsmartcard.png
+assets\images\projects\tnpds\TNPDS\Mobile\tnpds-pages-profile.png
+assets\images\projects\tnpds\TNPDS\Mobile\tnpds-pages-service-request (2).png
+assets\images\projects\tnpds\TNPDS\Mobile\tnpds-pages-service-request-remove-reason.png
+assets\images\projects\tnpds\TNPDS\Mobile\tnpds-pages-service-request.png
+assets\images\projects\tnpds\TNPDS\Tablet\tnpds-pages-home-chatbot.png
+assets\images\projects\tnpds\TNPDS\Tablet\tnpds-pages-home.png
+assets\images\projects\tnpds\TNPDS\Tablet\tnpds-pages-newsmartcard.png
+assets\images\projects\tnpds\TNPDS\Tablet\tnpds-pages-profile.png
+assets\images\projects\tnpds\TNPDS\Tablet\tnpds-pages-service-request.png
+assets\images\projects\tnpds\tnpds-pos\666666.png
+assets\images\projects\tnpds\tnpds-pos\address-card.png
+assets\images\projects\tnpds\tnpds-pos\Advance-Stock-1.png
+assets\images\projects\tnpds\tnpds-pos\Advance-Stock-2.png
+assets\images\projects\tnpds\tnpds-pos\Advance-Stock-3.png
+assets\images\projects\tnpds\tnpds-pos\Advance-Stock.png
+assets\images\projects\tnpds\tnpds-pos\Authentication-1.png
+assets\images\projects\tnpds\tnpds-pos\Authentication-2.png
+assets\images\projects\tnpds\tnpds-pos\Authentication-3.png
+assets\images\projects\tnpds\tnpds-pos\Authentication-4.png
+assets\images\projects\tnpds\tnpds-pos\Authentication.png
+assets\images\projects\tnpds\tnpds-pos\Background Service History-1.png
+assets\images\projects\tnpds\tnpds-pos\Background Service History-2.png
+assets\images\projects\tnpds\tnpds-pos\Background Service History.png
+assets\images\projects\tnpds\tnpds-pos\Beneficiary Ration Card-1.png
+assets\images\projects\tnpds\tnpds-pos\Beneficiary Ration Card.png
+assets\images\projects\tnpds\tnpds-pos\Bill Search-1.png
+assets\images\projects\tnpds\tnpds-pos\Bill Search-2.png
+assets\images\projects\tnpds\tnpds-pos\Bill Search.png
+assets\images\projects\tnpds\tnpds-pos\Bill Summary-1.png
+assets\images\projects\tnpds\tnpds-pos\Bill Summary-2.png
+assets\images\projects\tnpds\tnpds-pos\Bill Summary.png
+assets\images\projects\tnpds\tnpds-pos\Bills-1.png
+assets\images\projects\tnpds\tnpds-pos\Bills-2.png
+assets\images\projects\tnpds\tnpds-pos\Bills.png
+assets\images\projects\tnpds\tnpds-pos\Biometrics Sale.png
+assets\images\projects\tnpds\tnpds-pos\Dashboard.png
+assets\images\projects\tnpds\tnpds-pos\Family Members.png
+assets\images\projects\tnpds\tnpds-pos\Home Sale.png
+assets\images\projects\tnpds\tnpds-pos\Inspection Report.png
+assets\images\projects\tnpds\tnpds-pos\Inspection reports.png
+assets\images\projects\tnpds\tnpds-pos\Iris Sale-1.png
+assets\images\projects\tnpds\tnpds-pos\Iris Sale.png
+assets\images\projects\tnpds\tnpds-pos\Login-1.png
+assets\images\projects\tnpds\tnpds-pos\Login-2.png
+assets\images\projects\tnpds\tnpds-pos\Login-3.png
+assets\images\projects\tnpds\tnpds-pos\Login.png
+assets\images\projects\tnpds\tnpds-pos\Miscellaneous.png
+assets\images\projects\tnpds\tnpds-pos\Portability Sales Summary Bill Search.png
+assets\images\projects\tnpds\tnpds-pos\Portable Sale Summary.png
+assets\images\projects\tnpds\tnpds-pos\Portable Sales Summary-1.png
+assets\images\projects\tnpds\tnpds-pos\Portable Sales Summary-2.png
+assets\images\projects\tnpds\tnpds-pos\Portable Sales Summary.png
+assets\images\projects\tnpds\tnpds-pos\Ration Cards-1.png
+assets\images\projects\tnpds\tnpds-pos\Ration Cards-2.png
+assets\images\projects\tnpds\tnpds-pos\Ration Cards.png
+assets\images\projects\tnpds\tnpds-pos\Sale Order-1.png
+assets\images\projects\tnpds\tnpds-pos\Sale Order.png
+assets\images\projects\tnpds\tnpds-pos\Sale-1.png
+assets\images\projects\tnpds\tnpds-pos\Sale.png
+assets\images\projects\tnpds\tnpds-pos\Sales Summary-1.png
+assets\images\projects\tnpds\tnpds-pos\Sales Summary-2.png
+assets\images\projects\tnpds\tnpds-pos\Sales Summary-3.png
+assets\images\projects\tnpds\tnpds-pos\Sales Summary.png
+assets\images\projects\tnpds\tnpds-pos\Splash.png
+assets\images\projects\tnpds\tnpds-pos\Stock Inward-History.png
+assets\images\projects\tnpds\tnpds-pos\Stock Inward-register-1.png
+assets\images\projects\tnpds\tnpds-pos\Stock Inward-Register.png
+assets\images\projects\tnpds\tnpds-pos\Stock Status Summary.png
+assets\images\projects\tnpds\tnpds-pos\Stock-History-1.png
+assets\images\projects\tnpds\tnpds-pos\Stock-History-2.png
+assets\images\projects\tnpds\tnpds-pos\Stock-History-3.png
+assets\images\projects\tnpds\tnpds-pos\Stock-History-4.png
+assets\images\projects\tnpds\tnpds-pos\Stock-History.png
+assets\images\projects\tnpds\tnpds-pos\Stock-Status Summary.png
+assets\images\projects\tnpds\tnpds-pos\Stock-Status.png
+assets\images\projects\tnpds\tnpds-pos\Stock-Transit-1.png
+assets\images\projects\tnpds\tnpds-pos\Stock-Transit.png
+assets\images\projects\tnpds\tnpds-pos\Transaction.png
+assets\images\projects\up-excise\overview.png
+assets\images\projects\up-excise\up-excise-.png
+assets\images\projects\up-excise\up-excise-cms.png
+assets\images\projects\up-excise\up-excise-cover.png
+assets\images\projects\up-excise\up-excise.png
+assets\images\projects\up-excise\up-list.png
+assets\images\projects\up-excise\up-small-list.png
+assets\images\projects\up-excise\up.png
+assets\images\projects\up-excise\brewery-indent-acceptance-list\Mobile.png
+assets\images\projects\up-excise\brewery-indent-acceptance-list\Tab.png
+assets\images\projects\up-excise\brewery-indent-acceptance-list\web.png
+assets\images\projects\up-excise\brewery-indent-acceptance-view\Mobile.png
+assets\images\projects\up-excise\brewery-indent-acceptance-view\Tab.png
+assets\images\projects\up-excise\brewery-indent-acceptance-view\Web.png
+assets\images\projects\up-excise\brewery-indent-request-approval-list\cancelled\Mobile.png
+assets\images\projects\up-excise\brewery-indent-request-approval-list\cancelled\tab.png
+assets\images\projects\up-excise\brewery-indent-request-approval-list\cancelled\web.png
+assets\images\projects\up-excise\brewery-indent-request-approval-list\tab-approved\Mobile.png
+assets\images\projects\up-excise\brewery-indent-request-approval-list\tab-approved\tab.png
+assets\images\projects\up-excise\brewery-indent-request-approval-list\tab-approved\web.png
+assets\images\projects\up-excise\brewery-indent-request-approval-list\tab-to-be-approved\Mobile.png
+assets\images\projects\up-excise\brewery-indent-request-approval-list\tab-to-be-approved\tab.png
+assets\images\projects\up-excise\brewery-indent-request-approval-list\tab-to-be-approved\web.png
+assets\images\projects\up-excise\brewery-indent-request-approval-view\approval\Mobile.png
+assets\images\projects\up-excise\brewery-indent-request-approval-view\approval\Tab.png
+assets\images\projects\up-excise\brewery-indent-request-approval-view\approval\Web.png
+assets\images\projects\up-excise\brewery-indent-request-approval-view\to-be-approved\Mobile.png
+assets\images\projects\up-excise\brewery-indent-request-approval-view\to-be-approved\Tab.png
+assets\images\projects\up-excise\brewery-indent-request-approval-view\to-be-approved\Web.png
+assets\images\projects\up-excise\custom-components\Accordion.png
+assets\images\projects\up-excise\custom-components\Banner Slider.png
+assets\images\projects\up-excise\custom-components\Breadcrumbs.png
+assets\images\projects\up-excise\custom-components\Button.png
+assets\images\projects\up-excise\custom-components\Button_ full width.png
+assets\images\projects\up-excise\custom-components\Custom Button.png
+assets\images\projects\up-excise\custom-components\Frame 67.png
+assets\images\projects\up-excise\custom-components\Login Pannel.png
+assets\images\projects\up-excise\custom-components\Marquee Slider.png
+assets\images\projects\up-excise\custom-components\search accordian mob.png
+assets\images\projects\up-excise\custom-components\search accordian tab.png
+assets\images\projects\up-excise\custom-components\search accordian-1.png
+assets\images\projects\up-excise\custom-components\search accordian.png
+assets\images\projects\up-excise\custom-components\tab bar.png
+assets\images\projects\up-excise\custom-components\_Menu_.png
+assets\images\projects\up-excise\custom-components\▶️ Button_ loading.png
+assets\images\projects\up-excise\custom-components\▶️ IconButton_ account menu.png
+assets\images\projects\up-excise\indent-request-approval-list-l1\tab-approved\Mobile.png
+assets\images\projects\up-excise\indent-request-approval-list-l1\tab-approved\tab.png
+assets\images\projects\up-excise\indent-request-approval-list-l1\tab-approved\web.png
+assets\images\projects\up-excise\indent-request-approval-list-l1\tab-to-be-approved\Mobile.png
+assets\images\projects\up-excise\indent-request-approval-list-l1\tab-to-be-approved\tab.png
+assets\images\projects\up-excise\indent-request-approval-list-l1\tab-to-be-approved\web.png
+assets\images\projects\up-excise\indent-request-approval-list-l2\tab-approved\Mobile.png
+assets\images\projects\up-excise\indent-request-approval-list-l2\tab-approved\tab.png
+assets\images\projects\up-excise\indent-request-approval-list-l2\tab-approved\web.png
+assets\images\projects\up-excise\indent-request-approval-list-l2\tab-to-be-approved\mobile.png
+assets\images\projects\up-excise\indent-request-approval-list-l2\tab-to-be-approved\tab.png
+assets\images\projects\up-excise\indent-request-approval-list-l2\tab-to-be-approved\web.png
+assets\images\projects\up-excise\indent-request-approval-view-l1\approval\Mobile.png
+assets\images\projects\up-excise\indent-request-approval-view-l1\approval\Tab.png
+assets\images\projects\up-excise\indent-request-approval-view-l1\approval\Web.png
+assets\images\projects\up-excise\indent-request-approval-view-l1\to-be-approved\Mobile.png
+assets\images\projects\up-excise\indent-request-approval-view-l1\to-be-approved\Tab.png
+assets\images\projects\up-excise\indent-request-approval-view-l1\to-be-approved\Web.png
+assets\images\projects\up-excise\indent-request-approval-view-l2\Mobile.png
+assets\images\projects\up-excise\indent-request-approval-view-l2\Tab.png
+assets\images\projects\up-excise\indent-request-approval-view-l2\Web.png
+assets\images\projects\up-excise\layout\Component 1.png
+assets\images\projects\up-excise\layout\MOB-TOP BAR.png
+assets\images\projects\up-excise\layout\Mobile.png
+assets\images\projects\up-excise\layout\sidebar.png
+assets\images\projects\up-excise\layout\Small Screen=False, Variant=Default.png
+assets\images\projects\up-excise\layout\Tab.png
+assets\images\projects\up-excise\layout\top bar.png
+assets\images\projects\up-excise\layout\Web.png
+assets\images\projects\up-excise\login\Mobille.jpg
+assets\images\projects\up-excise\login\Tab.jpg
+assets\images\projects\up-excise\login\Web.jpg
+assets\images\projects\up-excise\pop-up-notification\Mobile.png
+assets\images\projects\up-excise\pop-up-notification\Tab.png
+assets\images\projects\up-excise\pop-up-notification\Web.png
+assets\images\projects\up-excise\register\Mobile.png
+assets\images\projects\up-excise\register\Tab.png
+assets\images\projects\up-excise\register\Web.png
+assets\images\projects\up-excise\resetpassword\Reset Password Mobile-1.png
+assets\images\projects\up-excise\resetpassword\Reset Password Mobile.png
+assets\images\projects\up-excise\resetpassword\Reset Password.png
+assets\images\projects\up-excise\splash-screen\Mobile.png
+assets\images\projects\up-excise\splash-screen\Tab.png
+assets\images\projects\up-excise\splash-screen\Web.png
+assets\images\projects\up-excise\submit-successfully\Mobile.png
+assets\images\projects\up-excise\submit-successfully\Tab.png
+assets\images\projects\up-excise\submit-successfully\Web.png
+assets\images\projects\up-excise\wholesale-beer-paid-indent-add\Mobile.png
+assets\images\projects\up-excise\wholesale-beer-paid-indent-add\Tab.png
+assets\images\projects\up-excise\wholesale-beer-paid-indent-add\Web.png
+assets\images\projects\up-excise\wholesale-beer-paid-indent-list\Mobile.png
+assets\images\projects\up-excise\wholesale-beer-paid-indent-list\Tab.png
+assets\images\projects\up-excise\wholesale-beer-paid-indent-list\web.png
+assets\images\projects\up-excise\wholesale-beer-paid-indent-view\Mobile.png
+assets\images\projects\up-excise\wholesale-beer-paid-indent-view\Tab.png
+assets\images\projects\up-excise\wholesale-beer-paid-indent-view\Web.png
+assets\images\projects\uppds\1.0\E-Pop Screen-1.png
+assets\images\projects\uppds\1.0\E-Pop Screen-10.png
+assets\images\projects\uppds\1.0\E-Pop Screen-11.png
+assets\images\projects\uppds\1.0\E-Pop Screen-12.png
+assets\images\projects\uppds\1.0\E-Pop Screen-13.png
+assets\images\projects\uppds\1.0\E-Pop Screen-14.png
+assets\images\projects\uppds\1.0\E-Pop Screen-15.png
+assets\images\projects\uppds\1.0\E-Pop Screen-16.png
+assets\images\projects\uppds\1.0\E-Pop Screen-17.png
+assets\images\projects\uppds\1.0\E-Pop Screen-18.png
+assets\images\projects\uppds\1.0\E-Pop Screen-19.png
+assets\images\projects\uppds\1.0\E-Pop Screen-2.png
+assets\images\projects\uppds\1.0\E-Pop Screen-20.png
+assets\images\projects\uppds\1.0\E-Pop Screen-21.png
+assets\images\projects\uppds\1.0\E-Pop Screen-22.png
+assets\images\projects\uppds\1.0\E-Pop Screen-23.png
+assets\images\projects\uppds\1.0\E-Pop Screen-24.png
+assets\images\projects\uppds\1.0\E-Pop Screen-25.png
+assets\images\projects\uppds\1.0\E-Pop Screen-26.png
+assets\images\projects\uppds\1.0\E-Pop Screen-27.png
+assets\images\projects\uppds\1.0\E-Pop Screen-28.png
+assets\images\projects\uppds\1.0\E-Pop Screen-29.png
+assets\images\projects\uppds\1.0\E-Pop Screen-3.png
+assets\images\projects\uppds\1.0\E-Pop Screen-30.png
+assets\images\projects\uppds\1.0\E-Pop Screen-31.png
+assets\images\projects\uppds\1.0\E-Pop Screen-32.png
+assets\images\projects\uppds\1.0\E-Pop Screen-33.png
+assets\images\projects\uppds\1.0\E-Pop Screen-34.png
+assets\images\projects\uppds\1.0\E-Pop Screen-35.png
+assets\images\projects\uppds\1.0\E-Pop Screen-36.png
+assets\images\projects\uppds\1.0\E-Pop Screen-4.png
+assets\images\projects\uppds\1.0\E-Pop Screen-5.png
+assets\images\projects\uppds\1.0\E-Pop Screen-6.png
+assets\images\projects\uppds\1.0\E-Pop Screen-7.png
+assets\images\projects\uppds\1.0\E-Pop Screen-8.png
+assets\images\projects\uppds\1.0\E-Pop Screen-9.png
+assets\images\projects\uppds\2.0\1.png
+assets\images\projects\uppds\2.0\10.png
+assets\images\projects\uppds\2.0\11.png
+assets\images\projects\uppds\2.0\12.png
+assets\images\projects\uppds\2.0\13.png
+assets\images\projects\uppds\2.0\14.png
+assets\images\projects\uppds\2.0\15.png
+assets\images\projects\uppds\2.0\16.png
+assets\images\projects\uppds\2.0\17.png
+assets\images\projects\uppds\2.0\18.png
+assets\images\projects\uppds\2.0\19.png
+assets\images\projects\uppds\2.0\2.png
+assets\images\projects\uppds\2.0\20.png
+assets\images\projects\uppds\2.0\21.png
+assets\images\projects\uppds\2.0\22.png
+assets\images\projects\uppds\2.0\23.png
+assets\images\projects\uppds\2.0\24.png
+assets\images\projects\uppds\2.0\25.png
+assets\images\projects\uppds\2.0\26.png
+assets\images\projects\uppds\2.0\27.png
+assets\images\projects\uppds\2.0\28.png
+assets\images\projects\uppds\2.0\29.png
+assets\images\projects\uppds\2.0\3.png
+assets\images\projects\uppds\2.0\30.png
+assets\images\projects\uppds\2.0\31.png
+assets\images\projects\uppds\2.0\32.png
+assets\images\projects\uppds\2.0\33.png
+assets\images\projects\uppds\2.0\34.png
+assets\images\projects\uppds\2.0\35.png
+assets\images\projects\uppds\2.0\36.png
+assets\images\projects\uppds\2.0\37.png
+assets\images\projects\uppds\2.0\38.png
+assets\images\projects\uppds\2.0\39.png
+assets\images\projects\uppds\2.0\4.png
+assets\images\projects\uppds\2.0\40.png
+assets\images\projects\uppds\2.0\41.png
+assets\images\projects\uppds\2.0\42.png
+assets\images\projects\uppds\2.0\43.png
+assets\images\projects\uppds\2.0\44.png
+assets\images\projects\uppds\2.0\45.png
+assets\images\projects\uppds\2.0\46.png
+assets\images\projects\uppds\2.0\47.png
+assets\images\projects\uppds\2.0\48.png
+assets\images\projects\uppds\2.0\49.png
+assets\images\projects\uppds\2.0\5.png
+assets\images\projects\uppds\2.0\50.png
+assets\images\projects\uppds\2.0\51.png
+assets\images\projects\uppds\2.0\52.png
+assets\images\projects\uppds\2.0\53.png
+assets\images\projects\uppds\2.0\54.png
+assets\images\projects\uppds\2.0\55.png
+assets\images\projects\uppds\2.0\56.png
+assets\images\projects\uppds\2.0\57.png
+assets\images\projects\uppds\2.0\58.png
+assets\images\projects\uppds\2.0\59.png
+assets\images\projects\uppds\2.0\6.png
+assets\images\projects\uppds\2.0\60.png
+assets\images\projects\uppds\2.0\61.png
+assets\images\projects\uppds\2.0\62.png
+assets\images\projects\uppds\2.0\63.png
+assets\images\projects\uppds\2.0\64.png
+assets\images\projects\uppds\2.0\65.png
+assets\images\projects\uppds\2.0\66.png
+assets\images\projects\uppds\2.0\67.png
+assets\images\projects\uppds\2.0\68.png
+assets\images\projects\uppds\2.0\69.png
+assets\images\projects\uppds\2.0\7.png
+assets\images\projects\uppds\2.0\70.png
+assets\images\projects\uppds\2.0\71.png
+assets\images\projects\uppds\2.0\72.png
+assets\images\projects\uppds\2.0\73.png
+assets\images\projects\uppds\2.0\74.png
+assets\images\projects\uppds\2.0\75.png
+assets\images\projects\uppds\2.0\76.png
+assets\images\projects\uppds\2.0\77.png
+assets\images\projects\uppds\2.0\78.png
+assets\images\projects\uppds\2.0\79.png
+assets\images\projects\uppds\2.0\8.png
+assets\images\projects\uppds\2.0\80.png
+assets\images\projects\uppds\2.0\81.png
+assets\images\projects\uppds\2.0\82.png
+assets\images\projects\uppds\2.0\9.png
+assets\images\projects\uppds\2.0\splash.png
+assets\images\projects\yaabitech-software-solutions\yaabitech-software-solutions.png
