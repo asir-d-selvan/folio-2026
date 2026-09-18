@@ -2,57 +2,57 @@
 
 Personal portfolio website of **Asir Durai Selvan**, Senior UI/UX Designer and UI Developer.
 
-The portfolio showcases selected work across enterprise UX, government platforms, responsive web products, design systems, HRMS, travel booking, e-commerce and operational applications.
+The portfolio showcases selected work across enterprise UX, government platforms, responsive web products, design systems, HRMS, travel booking, e-commerce, and operational applications.
 
 ## About
 
 **Asir Durai Selvan**  
 Senior UI/UX Designer | UI Developer
 
-7.5+ years of experience in UI/UX design, responsive interface design, design systems and UI development.
+7.5+ years of experience across UI/UX design, product design, responsive interface design, design systems, and UI development.
 
 ### Core Focus
 
-- UI/UX Design
+- UI/UX & Product Design
 - Enterprise UX
-- Responsive Web Design
-- Mobile-First Design
-- Design Systems
+- Responsive & Mobile-First Design
+- Design Systems & Component Libraries
 - UI Development
+- Accessibility & WCAG
 - HTML5
 - CSS3
 - Bootstrap
 - JavaScript
-- Angular UI Integration
+- Angular UI
 - Figma
 
 ## Selected Projects
 
-- **PrimeTrip** — Bus Booking Platform
-- **Tamil Nadu Public Distribution System (TNPDS)** — Public Portal
 - **U.P. Excise Department Systems**
+- **Tamil Nadu Public Distribution System (TNPDS)**
+- **PrimeTrip** — Travel & Bus Booking Platform
 - **Co-Optex** — E-commerce Platform
 - **OASYS Design System & Component Library**
 - **OASYS Portal** — HRMS
 - **UPPDS** — Government E-Procurement Platform
-- **OASYS Point of Sale (POS)**
+- **OASYS POS** — Point of Sale
 
 ## Portfolio
 
-**Website:**  
-Portfolio website — deployment in progress
+🌐 **Live Portfolio:**  
+[View my portfolio](https://asir-d-selvan.github.io/folio-2026/)
 
-**LinkedIn:**  
-https://www.linkedin.com/in/asirduraiselvan/
+💼 **LinkedIn:**  
+[Asir Durai Selvan](https://www.linkedin.com/in/asir-durai-selvan/)
 
-**Behance:**  
-https://www.behance.net/asir-durai-selvan
+🎨 **Behance:**  
+[Asir Durai Selvan](https://www.behance.net/asir-durai-selvan)
 
-**GitHub:**  
-https://github.com/asir-d-selvan
+💻 **GitHub:**  
+[asir-d-selvan](https://github.com/asir-d-selvan)
 
-**Email:**  
-asir.d.selvan@gmail.com
+📧 **Email:**  
+[asir.d.selvan@gmail.com](mailto:asir.d.selvan@gmail.com)
 
 ## Technology
 
